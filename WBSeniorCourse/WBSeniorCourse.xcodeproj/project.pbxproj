@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AA12C30869300FDA808 /* WBSeniorCourseApp.swift */; };
-		5CC34AA42C30869300FDA808 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AA32C30869300FDA808 /* ContentView.swift */; };
 		5CC34AA62C30869400FDA808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC34AA52C30869400FDA808 /* Assets.xcassets */; };
 		5CC34AA92C30869400FDA808 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC34AA82C30869400FDA808 /* Preview Assets.xcassets */; };
+		5CC34AC32C30931100FDA808 /* AuthorizationPhoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC22C30931100FDA808 /* AuthorizationPhoneScreen.swift */; };
+		5CC34AC52C30931D00FDA808 /* AuthorizationCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC42C30931D00FDA808 /* AuthorizationCodeScreen.swift */; };
+		5CC34AC72C30932700FDA808 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC62C30932700FDA808 /* CustomButton.swift */; };
+		5CC34AC92C30935A00FDA808 /* VerificationCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */; };
+		5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */; };
+		5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
+		5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD52C30976C00FDA808 /* RoundImage.swift */; };
+		5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD82C3097AF00FDA808 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5CC34A9E2C30869300FDA808 /* WBSeniorCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSeniorCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC34AA12C30869300FDA808 /* WBSeniorCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBSeniorCourseApp.swift; sourceTree = "<group>"; };
-		5CC34AA32C30869300FDA808 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5CC34AA52C30869400FDA808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CC34AA82C30869400FDA808 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5CC34AC22C30931100FDA808 /* AuthorizationPhoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPhoneScreen.swift; sourceTree = "<group>"; };
+		5CC34AC42C30931D00FDA808 /* AuthorizationCodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCodeScreen.swift; sourceTree = "<group>"; };
+		5CC34AC62C30932700FDA808 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeTextField.swift; sourceTree = "<group>"; };
+		5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
+		5CC34AD22C30948B00FDA808 /* Stubable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubable.swift; sourceTree = "<group>"; };
+		5CC34AD52C30976C00FDA808 /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
+		5CC34AD82C3097AF00FDA808 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,7 @@
 		5CC34AA02C30869300FDA808 /* WBSeniorCourse */ = {
 			isa = PBXGroup;
 			children = (
+				5CC34AD02C30947100FDA808 /* Protocol */,
 				5CC34AB02C308F2E00FDA808 /* App */,
 				5CC34AB22C308F4000FDA808 /* Extension */,
 				5CC34AB62C308F8400FDA808 /* DataLayer */,
@@ -72,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				5CC34AA12C30869300FDA808 /* WBSeniorCourseApp.swift */,
-				5CC34AA32C30869300FDA808 /* ContentView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -105,6 +119,7 @@
 		5CC34AB42C308F6500FDA808 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				5CC34AB82C3091F300FDA808 /* Authorization */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -112,6 +127,10 @@
 		5CC34AB52C308F7700FDA808 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CC34AD72C30979F00FDA808 /* View */,
+				5CC34ABA2C30920300FDA808 /* Button */,
+				5CC34AD42C30974C00FDA808 /* Image */,
+				5CC34ABB2C30920900FDA808 /* TextField */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +140,80 @@
 			children = (
 			);
 			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		5CC34AB82C3091F300FDA808 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34ACD2C3093D200FDA808 /* AuthorizationPhone */,
+				5CC34ACE2C3093D800FDA808 /* AuthorizationCode */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		5CC34ABA2C30920300FDA808 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AC62C30932700FDA808 /* CustomButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		5CC34ABB2C30920900FDA808 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */,
+				5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		5CC34ACD2C3093D200FDA808 /* AuthorizationPhone */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AC22C30931100FDA808 /* AuthorizationPhoneScreen.swift */,
+			);
+			path = AuthorizationPhone;
+			sourceTree = "<group>";
+		};
+		5CC34ACE2C3093D800FDA808 /* AuthorizationCode */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AC42C30931D00FDA808 /* AuthorizationCodeScreen.swift */,
+			);
+			path = AuthorizationCode;
+			sourceTree = "<group>";
+		};
+		5CC34AD02C30947100FDA808 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AD12C30947900FDA808 /* Base */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5CC34AD12C30947900FDA808 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AD22C30948B00FDA808 /* Stubable.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5CC34AD42C30974C00FDA808 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AD52C30976C00FDA808 /* RoundImage.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		5CC34AD72C30979F00FDA808 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AD82C3097AF00FDA808 /* GradientView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +286,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CC34AA42C30869300FDA808 /* ContentView.swift in Sources */,
+				5CC34AC52C30931D00FDA808 /* AuthorizationCodeScreen.swift in Sources */,
+				5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */,
+				5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */,
+				5CC34AC32C30931100FDA808 /* AuthorizationPhoneScreen.swift in Sources */,
+				5CC34AC92C30935A00FDA808 /* VerificationCodeTextField.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
+				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
+				5CC34AC72C30932700FDA808 /* CustomButton.swift in Sources */,
+				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
