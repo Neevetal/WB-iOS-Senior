@@ -51,10 +51,11 @@
 		5CC34AA02C30869300FDA808 /* WBSeniorCourse */ = {
 			isa = PBXGroup;
 			children = (
-				5CC34AA12C30869300FDA808 /* WBSeniorCourseApp.swift */,
-				5CC34AA32C30869300FDA808 /* ContentView.swift */,
-				5CC34AA52C30869400FDA808 /* Assets.xcassets */,
-				5CC34AA72C30869400FDA808 /* Preview Content */,
+				5CC34AB02C308F2E00FDA808 /* App */,
+				5CC34AB22C308F4000FDA808 /* Extension */,
+				5CC34AB62C308F8400FDA808 /* DataLayer */,
+				5CC34AB32C308F5A00FDA808 /* UILayer */,
+				5CC34AB12C308F3800FDA808 /* Resources */,
 			);
 			path = WBSeniorCourse;
 			sourceTree = "<group>";
@@ -65,6 +66,61 @@
 				5CC34AA82C30869400FDA808 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5CC34AB02C308F2E00FDA808 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AA12C30869300FDA808 /* WBSeniorCourseApp.swift */,
+				5CC34AA32C30869300FDA808 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5CC34AB12C308F3800FDA808 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AA52C30869400FDA808 /* Assets.xcassets */,
+				5CC34AA72C30869400FDA808 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5CC34AB22C308F4000FDA808 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5CC34AB32C308F5A00FDA808 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34AB42C308F6500FDA808 /* Module */,
+				5CC34AB52C308F7700FDA808 /* View */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		5CC34AB42C308F6500FDA808 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5CC34AB52C308F7700FDA808 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5CC34AB62C308F8400FDA808 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WBSeniorCourse/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WBSeniorCourse/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 9ZH452JWRV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -301,7 +357,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WBSeniorCourse/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WBSeniorCourse/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 9ZH452JWRV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
