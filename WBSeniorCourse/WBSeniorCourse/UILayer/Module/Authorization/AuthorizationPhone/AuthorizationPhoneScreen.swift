@@ -9,6 +9,10 @@ import SwiftUI
 
 struct AuthorizationPhoneScreen: View {
     
+    // MARK: - Properties
+    
+    @State private var phoneNumber = ""
+    
     // MARK: - Body
     
     var body: some View {
@@ -29,7 +33,7 @@ struct AuthorizationPhoneScreen: View {
                     // вынести компоненты в переменные с вью билдером
                     
                     Text(AppString.Authorization.authorization)
-                        .foregroundColor(AppColor.Text.white.color)
+                        .foregroundColor(AppColor.Text.White.main.color)
                         .font(.montserratFont(size: 24, weight: .semiBold))
                         .padding(.top, 40)
                     
@@ -40,12 +44,11 @@ struct AuthorizationPhoneScreen: View {
                     .padding(.top, 28)
                     
                     Text(AppString.Authorization.loginPhonenumber)
-                        .foregroundColor(AppColor.Text.white.color)
+                        .foregroundColor(AppColor.Text.White.main.color)
                         .font(.montserratFont(size: 16, weight: .regular))
                         .padding(.top, 16)
                     
-                    Rectangle()
-                        .background(Color.red)
+                    PhoneTextField(phoneNumber: $phoneNumber)
                         .padding(.top, 32)
                         .padding(.horizontal, 24)
                     

@@ -3,6 +3,9 @@
   "strings" : {
     "Hello, World!" : {
 
+    },
+    "Привет" : {
+
     }
   },
   "version" : "1.0"

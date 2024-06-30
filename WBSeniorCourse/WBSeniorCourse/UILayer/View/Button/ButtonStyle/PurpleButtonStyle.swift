@@ -16,7 +16,7 @@ struct PurpleButtonStyle: ButtonStyle {
             .padding(14)
             .frame(maxWidth: .infinity)
             .background(AppColor.Background.Purple.main.color)
-            .foregroundColor(AppColor.Text.white.color)
+            .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 16, weight: .medium))
             .opacity(isEnabled ? 1 : 0.8)
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
