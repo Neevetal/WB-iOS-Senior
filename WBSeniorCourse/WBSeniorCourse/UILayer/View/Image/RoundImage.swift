@@ -11,7 +11,7 @@ struct RoundImage: View {
     
     // MARK: - Properties
     
-    public var imageIcon: UIImage!
+    private let imageIcon: UIImage!
     private let sideSize: CGFloat
     
     // MARK: - Initialization and deinitialization
@@ -42,7 +42,7 @@ struct RoundImage: View {
 extension RoundImage: Stubable {
     static func stub() -> RoundImage {
         return RoundImage(
-            imageIcon: UIImage.Asset.Authorization.profileIcon.image,
+            imageIcon: .Asset.Authorization.profileIcon.image,
             sideSize: 96
         )
     }

@@ -26,7 +26,7 @@ extension UIImage {
     }
 }
 
-// MARK: - RawRepresentable
+// MARK: - Protection
 
 extension RawRepresentable where RawValue == String {
     var image: UIImage {
