@@ -8,11 +8,48 @@
 import SwiftUI
 
 struct RoundImage: View {
+    
+    // MARK: - Properties
+    
+    public var imageIcon: UIImage!
+    private let sideSize: CGFloat
+    
+    // MARK: - Initialization and deinitialization
+    
+    init(imageIcon: UIImage? = nil, sideSize: CGFloat) {
+        self.imageIcon = imageIcon
+        self.sideSize = sideSize
+    }
+    
+    // MARK: - Body
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(
+            uiImage: imageIcon == nil
+            ? .Asset.Common.noPhotoIcon.image
+            : imageIcon
+        )
+        .resizable()
+        .scaledToFill()
+        .clipShape(Circle())
+        .frame(width: sideSize, height: sideSize)
+        
     }
 }
 
+// MARK: - Stubable
+
+extension RoundImage: Stubable {
+    static func stub() -> RoundImage {
+        return RoundImage(
+            imageIcon: UIImage.Asset.Authorization.profileIcon.image,
+            sideSize: 96
+        )
+    }
+}
+
+// MARK: - Preview
+
 #Preview {
-    RoundImage()
+    RoundImage.stub()
 }
