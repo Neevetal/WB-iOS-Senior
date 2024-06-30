@@ -16,17 +16,19 @@ struct AuthorizationPhoneScreen: View {
                 // view фон подложки (блюр)
                 Rectangle()
                     .fill(.green)
-                VStack {
+                VStack(spacing: 0) {
                     Text(AppString.Authorization.authorization)
                     .foregroundColor(.white)
                     .font(.montserratFont(size: 24, weight: .semiBold))
                     .padding(.top, 40)
                     
                     RoundImage(sideSize: 96)
+                        .padding(.top, 28)
                     
                     Text(AppString.Authorization.loginPhonenumber)
                         .foregroundColor(.white)
                         .font(.montserratFont(size: 16, weight: .regular))
+                        .padding(.top, 16)
                     
                     PhoneTextField()
                         .background(Color.red)
