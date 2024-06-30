@@ -21,6 +21,7 @@ extension UIImage {
         
         enum Authorization: String {
             case profileIcon = "profileIcon"
+            case mailIcon = "mailIcon"
         }
     }
 }

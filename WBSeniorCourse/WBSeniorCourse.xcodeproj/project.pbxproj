@@ -12,7 +12,6 @@
 		5CC34AA92C30869400FDA808 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC34AA82C30869400FDA808 /* Preview Assets.xcassets */; };
 		5CC34AC32C30931100FDA808 /* AuthorizationPhoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC22C30931100FDA808 /* AuthorizationPhoneScreen.swift */; };
 		5CC34AC52C30931D00FDA808 /* AuthorizationCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC42C30931D00FDA808 /* AuthorizationCodeScreen.swift */; };
-		5CC34AC72C30932700FDA808 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC62C30932700FDA808 /* CustomButton.swift */; };
 		5CC34AC92C30935A00FDA808 /* VerificationCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */; };
 		5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */; };
 		5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
@@ -27,6 +26,9 @@
 		5CC34B032C3157D800FDA808 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CC34AF12C3157D700FDA808 /* Montserrat-Light.ttf */; };
 		5CC34B092C315A8600FDA808 /* FontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B082C315A8600FDA808 /* FontFamily.swift */; };
 		5CC34B0C2C315C4800FDA808 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0B2C315C4800FDA808 /* AppString.swift */; };
+		5CC34B0F2C31635300FDA808 /* PurpleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0E2C31635300FDA808 /* PurpleButtonStyle.swift */; };
+		5CC34B122C31642200FDA808 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC34B112C31642200FDA808 /* Colors.xcassets */; };
+		5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B132C3164AC00FDA808 /* AppColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +38,6 @@
 		5CC34AA82C30869400FDA808 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5CC34AC22C30931100FDA808 /* AuthorizationPhoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPhoneScreen.swift; sourceTree = "<group>"; };
 		5CC34AC42C30931D00FDA808 /* AuthorizationCodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCodeScreen.swift; sourceTree = "<group>"; };
-		5CC34AC62C30932700FDA808 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeTextField.swift; sourceTree = "<group>"; };
 		5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		5CC34AD22C30948B00FDA808 /* Stubable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubable.swift; sourceTree = "<group>"; };
@@ -52,6 +53,9 @@
 		5CC34B052C31589600FDA808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CC34B082C315A8600FDA808 /* FontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamily.swift; sourceTree = "<group>"; };
 		5CC34B0B2C315C4800FDA808 /* AppString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppString.swift; sourceTree = "<group>"; };
+		5CC34B0E2C31635300FDA808 /* PurpleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButtonStyle.swift; sourceTree = "<group>"; };
+		5CC34B112C31642200FDA808 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		5CC34B132C3164AC00FDA808 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +118,10 @@
 			isa = PBXGroup;
 			children = (
 				5CC34B052C31589600FDA808 /* Info.plist */,
+				5CC34ADC2C30CD3000FDA808 /* Assets */,
+				5CC34B102C31640A00FDA808 /* Color */,
 				5CC34ADE2C30CD5B00FDA808 /* Localizable */,
 				5CC34ADD2C30CD4100FDA808 /* Font */,
-				5CC34ADC2C30CD3000FDA808 /* Assets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -175,7 +180,7 @@
 		5CC34ABA2C30920300FDA808 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				5CC34AC62C30932700FDA808 /* CustomButton.swift */,
+				5CC34B0D2C31632000FDA808 /* ButtonStyle */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -240,8 +245,8 @@
 		5CC34ADC2C30CD3000FDA808 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				5CC34AA52C30869400FDA808 /* Assets.xcassets */,
 				5CC34ADA2C30CD2400FDA808 /* Asset.swift */,
+				5CC34AA52C30869400FDA808 /* Assets.xcassets */,
 				5CC34AA72C30869400FDA808 /* Preview Content */,
 			);
 			path = Assets;
@@ -259,8 +264,8 @@
 		5CC34ADE2C30CD5B00FDA808 /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
-				5CC34ADF2C30CDE300FDA808 /* Localizable.xcstrings */,
 				5CC34B0B2C315C4800FDA808 /* AppString.swift */,
+				5CC34ADF2C30CDE300FDA808 /* Localizable.xcstrings */,
 			);
 			path = Localizable;
 			sourceTree = "<group>";
@@ -275,6 +280,23 @@
 				5CC34AE22C3157D700FDA808 /* Montserrat-Bold.ttf */,
 			);
 			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		5CC34B0D2C31632000FDA808 /* ButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34B0E2C31635300FDA808 /* PurpleButtonStyle.swift */,
+			);
+			path = ButtonStyle;
+			sourceTree = "<group>";
+		};
+		5CC34B102C31640A00FDA808 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				5CC34B132C3164AC00FDA808 /* AppColor.swift */,
+				5CC34B112C31642200FDA808 /* Colors.xcassets */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC34B122C31642200FDA808 /* Colors.xcassets in Resources */,
 				5CC34B032C3157D800FDA808 /* Montserrat-Light.ttf in Resources */,
 				5CC34B002C3157D800FDA808 /* Montserrat-Regular.ttf in Resources */,
 				5CC34AF42C3157D800FDA808 /* Montserrat-Bold.ttf in Resources */,
@@ -356,6 +379,7 @@
 				5CC34B092C315A8600FDA808 /* FontFamily.swift in Sources */,
 				5CC34AC52C30931D00FDA808 /* AuthorizationCodeScreen.swift in Sources */,
 				5CC34B0C2C315C4800FDA808 /* AppString.swift in Sources */,
+				5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */,
 				5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */,
 				5CC34ADB2C30CD2400FDA808 /* Asset.swift in Sources */,
 				5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */,
@@ -363,7 +387,7 @@
 				5CC34AC92C30935A00FDA808 /* VerificationCodeTextField.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
-				5CC34AC72C30932700FDA808 /* CustomButton.swift in Sources */,
+				5CC34B0F2C31635300FDA808 /* PurpleButtonStyle.swift in Sources */,
 				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

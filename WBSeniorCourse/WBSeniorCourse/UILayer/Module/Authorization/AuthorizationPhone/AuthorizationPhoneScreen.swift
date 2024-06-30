@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AuthorizationPhoneScreen: View {
+    
+    // MARK: - Body
+    
     var body: some View {
         ZStack {
             // view фона (градиент)
@@ -18,7 +21,7 @@ struct AuthorizationPhoneScreen: View {
                     .fill(.green)
                 VStack(spacing: 0) {
                     Text(AppString.Authorization.authorization)
-                    .foregroundColor(.white)
+                        .foregroundColor(AppColor.Text.white)
                     .font(.montserratFont(size: 24, weight: .semiBold))
                     .padding(.top, 40)
                     
@@ -26,7 +29,7 @@ struct AuthorizationPhoneScreen: View {
                         .padding(.top, 28)
                     
                     Text(AppString.Authorization.loginPhonenumber)
-                        .foregroundColor(.white)
+                        .foregroundColor(AppColor.Text.white)
                         .font(.montserratFont(size: 16, weight: .regular))
                         .padding(.top, 16)
                     
@@ -35,11 +38,14 @@ struct AuthorizationPhoneScreen: View {
                         .padding(.top, 32)
                         .padding(.horizontal, 24)
                     
-                    CustomButton()
-                        .background(Color.red)
-                        .padding(24)
-                        .padding(.bottom, 24)
-                    
+                    Button(AppString.Authorization.requestCode) {
+                        print("Button pressed!")
+                    }
+                    .buttonStyle(PurpleButtonStyle())
+                    .cornerRadius(12)
+                    .padding(24)
+                    .padding(.bottom, 24)
+                    .disabled(false)
                 }
             }
             .fixedSize(horizontal: true, vertical: true)
@@ -47,6 +53,8 @@ struct AuthorizationPhoneScreen: View {
         }
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     AuthorizationPhoneScreen()
