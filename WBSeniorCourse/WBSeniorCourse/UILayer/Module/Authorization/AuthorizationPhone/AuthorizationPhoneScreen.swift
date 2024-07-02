@@ -16,60 +16,73 @@ struct AuthorizationPhoneScreen: View {
     // MARK: - Body
     
     var body: some View {
-        ZStack {
-            AppColor.Background.Purple.dark.color
-            
-            // вынести центр подложку как кастом баттон с вью билдером из видео
-            
-            ZStack {
-                Rectangle()
-                    .fill(LinearGradient(
-                        gradient: AppColor.Gradient.darkPurple.gradient,
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ))
-                VStack(spacing: 0) {
-                    
-                    // вынести компоненты в переменные с вью билдером
-                    
-                    Text(AppString.Authorization.authorization)
-                        .foregroundColor(AppColor.Text.White.main.color)
-                        .font(.montserratFont(size: 24, weight: .semiBold))
-                        .padding(.top, 40)
-                    
-                    RoundImage(
-                        imageIcon: .Asset.Authorization.profileIcon.image,
-                        sideSize: 96
-                    )
-                    .padding(.top, 28)
-                    
-                    Text(AppString.Authorization.loginPhonenumber)
-                        .foregroundColor(AppColor.Text.White.main.color)
-                        .font(.montserratFont(size: 16, weight: .regular))
-                        .padding(.top, 16)
-                    
-                    PhoneTextField(phoneNumber: $phoneNumber)
-                        .padding(.top, 32)
-                        .padding(.horizontal, 24)
-                    
-                    Button(AppString.Authorization.requestCode) {
-                        print("Button pressed!")
+        ZStack() {
+            BackgroundImageView(
+                image: .Asset.Common.Background.purpleBackgroundImage.image,
+                color: Color.black
+            ) {
+                PopupView {
+                    VStack(spacing: 0) {
+                        authorizationText
+                        roundImage
+                        loginPhoneNumberText
+                        phoneTextField
+                        requestCodeButton
                     }
-                    .buttonStyle(PurpleButtonStyle())
-                    .cornerRadius(12)
-                    .padding(24)
-                    .padding(.bottom, 24)
-                    .disabled(false)
                 }
             }
-            .frame(
-                minWidth: 300,
-                maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 400 : 300
-            )
-            .fixedSize(horizontal: false, vertical: true)
-            .cornerRadius(28)
         }
-        .edgesIgnoringSafeArea(.all)
+    }
+}
+
+// MARK: - UI Properties
+
+private extension AuthorizationPhoneScreen {
+    @ViewBuilder
+    private var authorizationText: some View {
+        Text(AppString.Authorization.authorization)
+            .foregroundColor(AppColor.Text.White.main.color)
+            .font(.montserratFont(size: 24, weight: .semiBold))
+            .padding(.top, 40)
+    }
+    
+    @ViewBuilder
+    private var roundImage: some View {
+        RoundImage(
+            imageIcon: .Asset.Authorization.profileIcon.image,
+            sideSize: 96
+        )
+        .padding(.top, 28)
+    }
+    
+    @ViewBuilder
+    private var loginPhoneNumberText: some View {
+        Text(AppString.Authorization.loginPhoneNumber)
+            .foregroundColor(AppColor.Text.White.main.color)
+            .font(.montserratFont(size: 16, weight: .regular))
+            .padding(.top, 16)
+    }
+    
+    @ViewBuilder
+    private var phoneTextField: some View {
+        PhoneTextField(
+            phoneNumber: $phoneNumber,
+            isError: .constant(false)
+        )
+        .padding(.top, 32)
+        .padding(.horizontal, 24)
+    }
+    
+    @ViewBuilder
+    private var requestCodeButton: some View {
+        Button(AppString.Authorization.requestCode) {
+            print("Button pressed!")
+        }
+        .buttonStyle(PurpleButtonStyle())
+        .cornerRadius(12)
+        .padding(24)
+        .padding(.bottom, 24)
+        .disabled(false)
     }
 }
 

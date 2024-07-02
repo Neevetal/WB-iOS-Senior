@@ -7,12 +7,47 @@
 
 import SwiftUI
 
-struct GradientView: View {
+struct GradientView<Content>: View where Content: View {
+    
+    // MARK: - Properties
+    
+    private let gradient: Gradient
+    private let points: (startPoint: UnitPoint, endPoint: UnitPoint)
+    private let content: Content
+    
+    // MARK: - Initialization and deinitialization
+    
+    init(
+        gradient: Gradient,
+        points: (UnitPoint, UnitPoint),
+        @ViewBuilder content: @escaping () -> Content
+    ) {
+        self.gradient = gradient
+        self.points = points
+        self.content = content()
+    }
+    
+    // MARK: - Body
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Rectangle()
+                .fill(LinearGradient(
+                    gradient: gradient,
+                    startPoint: points.startPoint,
+                    endPoint: points.endPoint
+                ))
+            content
+        }
     }
 }
 
+// MARK: - Preview
+
 #Preview {
-    GradientView()
+    GradientView<EmptyView>(
+        gradient: AppColor.Gradient.darkPurple.gradient, 
+        points: (.leading, .trailing)) {
+            EmptyView()
+        }
 }

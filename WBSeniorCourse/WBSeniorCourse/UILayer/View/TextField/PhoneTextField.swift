@@ -12,11 +12,13 @@ struct PhoneTextField: View {
     // MARK: - Properties
     
     @Binding private var phoneNumber: String
+    @Binding private var isError: Bool
     
     // MARK: - Initialization and deinitialization
     
-    init(phoneNumber: Binding<String>) {
+    init(phoneNumber: Binding<String>, isError: Binding<Bool>) {
         _phoneNumber = phoneNumber
+        _isError = isError
     }
     
     // MARK: - Body
@@ -41,6 +43,13 @@ private extension PhoneTextField {
             .keyboardType(.numberPad)
             .padding(.vertical, 14)
             .padding(.horizontal, 16)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(
+                        AppColor.Background.red.color,
+                        lineWidth: isError ? 1 : 0
+                    )
+            )
             .background(
                 RoundedRectangle(cornerRadius: 12)
                     .fill(.gray)
@@ -67,9 +76,13 @@ private extension PhoneTextField {
 
 extension PhoneTextField: Stubable {
     @State static var phoneNumber = ""
+    @State static var isError = false
     
     static func stub() -> PhoneTextField {
-        PhoneTextField(phoneNumber: PhoneTextField.$phoneNumber)
+        PhoneTextField(
+            phoneNumber: PhoneTextField.$phoneNumber,
+            isError: PhoneTextField.$isError
+        )
     }
 }
 

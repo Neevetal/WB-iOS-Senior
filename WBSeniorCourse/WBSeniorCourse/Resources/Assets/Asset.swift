@@ -15,6 +15,11 @@ extension UIImage {
         
         enum Common: String {
             case noPhotoIcon = "noPhotoIcon"
+            
+            enum Background: String {
+                case purpleBackgroundImage = "purpleBackgroundImage"
+                case purpleBackgroundImagePNG = "purpleBackgroundImagePNG"
+            }
         }
         
         // MARK: - Authorization
