@@ -11,25 +11,34 @@ struct OTPTextField: View {
     
     // MARK: - Properties
     
-    private let numberOfFields: Int
+    private let fieldCount: Int
     private let color: Color
+    
     @FocusState private var fieldFocus: Int?
-    @State var enterValue: [String]
-    @State var oldValue = ""
+    @State private var enterValue: [String]
+    @State private var oldValue = ""
+    
+    @Binding private var code: String
+    @State private var type: ViewType = .main
     
     // MARK: - Initialization and deinitialization
     
-    init(numberOfFields: Int, color: Color) {
-        self.numberOfFields = numberOfFields
+    init(
+        fieldCount: Int,
+        color: Color,
+        code: Binding<String>
+    ) {
+        self.fieldCount = fieldCount
         self.color = color
-        self.enterValue = Array(repeating: "", count: numberOfFields)
+        _code = code
+        self.enterValue = Array(repeating: "", count: fieldCount)
     }
     
     // MARK: - Body
     
     var body: some View {
         HStack(spacing: Constants.stackSpacing) {
-            ForEach(0 ..< numberOfFields, id: \.self) { index in
+            ForEach(0 ..< fieldCount, id: \.self) { index in
                 TextField("", text: $enterValue[index], onEditingChanged: { editing in
                     if editing {
                         oldValue = enterValue[index]
@@ -47,17 +56,21 @@ struct OTPTextField: View {
                             : String(enterValue[index].prefix(1))
                         }
                         
-                        fieldFocus = index == numberOfFields - 1
+                        fieldFocus = index == fieldCount - 1
                         ? nil
                         : (fieldFocus ?? 0) + 1
                     } else {
                         fieldFocus = (fieldFocus ?? 0) - 1
                     }
+                    
+                    code = enterValue
+                        .map { String($0) }
+                        .joined(separator: "")
                 }
             }
         }
         .padding(.top, 18)
-        .padding(.bottom, 30)
+        .padding(.bottom, Constants.bottomPadding)
     }
 }
 
@@ -77,6 +90,11 @@ extension OTPTextField {
                 height: isIPad ? 80 : 60
             )
         }
+        
+        static var bottomPadding: CGFloat {
+            let isIPad = UIDevice.current.userInterfaceIdiom == .pad
+            return isIPad ? 30 : 18
+        }
     }
 }
 
@@ -85,7 +103,9 @@ extension OTPTextField {
 extension OTPTextField: Stubable {
     static func stub() -> OTPTextField {
         return OTPTextField(
-            numberOfFields: 4, color: .gray.opacity(0.1)
+            fieldCount: 4,
+            color: .gray.opacity(0.1),
+            code: .constant("")
         )
     }
 }

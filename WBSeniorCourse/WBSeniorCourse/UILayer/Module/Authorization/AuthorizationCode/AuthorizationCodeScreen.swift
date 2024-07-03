@@ -14,6 +14,14 @@ struct AuthorizationCodeScreen: View {
     @State private var code = ""
     @State private var phoneNumber = "+7 (921) 233-123-44"
     
+    @State var isNeedRepeatCode = false
+    @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
+    private let timer = Timer.publish(
+        every: 1,
+        on: .main,
+        in: .common
+    ).autoconnect()
+    
     // MARK: - Body
     
     var body: some View {
@@ -62,28 +70,43 @@ private extension AuthorizationCodeScreen {
     @ViewBuilder
     private var otpTextField: some View {
         OTPTextField(
-            numberOfFields: 4, color: AppColor.Background.White.main08.color
+            fieldCount: Constants.fieldCount,
+            color: AppColor.Background.White.main08.color,
+            code: $code
         )
         .padding(.top, 24)
     }
     
     @ViewBuilder
     private var repeatСodeText: some View {
-        Rectangle()
-            .fill(Color.yellow)
-            .padding(.top, 15)
+        Text(
+            AppString.Authorization
+                .requestTheCodeAgain(String(repeatCodeSeconds))
+        )
+        .onReceive(timer) { time in
+            if repeatCodeSeconds > 0 {
+                repeatCodeSeconds -= 1
+            } else {
+                isNeedRepeatCode = false
+            }
+        }
+        .foregroundColor(AppColor.Text.White.main.color)
+        .font(.montserratFont(size: 14, weight: .regular))
+        .opacity(isNeedRepeatCode ? 1 : 0)
+        .padding(.vertical, isNeedRepeatCode ? 15 : 0)
     }
     
     @ViewBuilder
     private var authorizationButton: some View {
         Button(AppString.Authorization.login) {
+            isNeedRepeatCode = true
             print("AuthorizationButton pressed!")
+            print("Code", code)
         }
         .buttonStyle(PurpleButtonStyle())
         .cornerRadius(12)
-        .padding(24)
-        .padding(.bottom, 24)
-        .disabled(false) // от содержимого филда кода
+        .padding(.init(top: 9, leading: 24, bottom: 24, trailing: 24))
+        .disabled(code.count != Constants.fieldCount)
     }
     
     @ViewBuilder
@@ -92,6 +115,15 @@ private extension AuthorizationCodeScreen {
             .fill(Color.yellow)
             .frame(height: 50)
             .padding(.top, 32)
+    }
+}
+
+// MARK: - Nested types
+
+extension AuthorizationCodeScreen {
+    enum Constants {
+        static let fieldCount: Int = 4
+        static let defaultRepeatCodeSeconds: Int = 60
     }
 }
 
