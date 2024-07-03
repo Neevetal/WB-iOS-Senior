@@ -199,7 +199,6 @@
 				5CF2D8392C355AB200BE02D6 /* OTPTextField */,
 				5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */,
 				5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */,
-				5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -314,6 +313,7 @@
 		5CF2D8392C355AB200BE02D6 /* OTPTextField */ = {
 			isa = PBXGroup;
 			children = (
+				5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */,
 				5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */,
 			);
 			path = OTPTextField;
