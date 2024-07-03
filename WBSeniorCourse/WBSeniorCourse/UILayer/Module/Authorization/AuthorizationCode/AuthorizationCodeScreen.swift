@@ -79,6 +79,8 @@ private extension AuthorizationCodeScreen {
     
     @ViewBuilder
     private var repeatСodeText: some View {
+        // вынести в отдельный компонент
+        
         Text(
             AppString.Authorization
                 .requestTheCodeAgain(String(repeatCodeSeconds))
@@ -100,6 +102,7 @@ private extension AuthorizationCodeScreen {
     private var authorizationButton: some View {
         Button(AppString.Authorization.login) {
             isNeedRepeatCode = true
+            repeatCodeSeconds = Constants.defaultRepeatCodeSeconds
             print("AuthorizationButton pressed!")
             print("Code", code)
         }
