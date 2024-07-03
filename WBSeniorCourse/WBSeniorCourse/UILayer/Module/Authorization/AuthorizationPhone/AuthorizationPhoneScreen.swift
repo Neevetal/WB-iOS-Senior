@@ -76,13 +76,13 @@ private extension AuthorizationPhoneScreen {
     @ViewBuilder
     private var requestCodeButton: some View {
         Button(AppString.Authorization.requestCode) {
-            print("Button pressed!")
+            print("RequestCodeButton pressed!")
         }
         .buttonStyle(PurpleButtonStyle())
         .cornerRadius(12)
         .padding(24)
         .padding(.bottom, 24)
-        .disabled(false)
+        .disabled(false) // от содержимого филда номера
     }
 }
 

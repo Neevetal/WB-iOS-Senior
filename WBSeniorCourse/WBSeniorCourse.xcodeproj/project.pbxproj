@@ -31,6 +31,8 @@
 		5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B132C3164AC00FDA808 /* AppColor.swift */; };
 		5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAACEC2C336EF5000CB0FD /* BackgroundImageView.swift */; };
 		5CCAACEF2C337E1E000CB0FD /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAACEE2C337E1E000CB0FD /* PopupView.swift */; };
+		5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */; };
+		5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		5CC34B132C3164AC00FDA808 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		5CCAACEC2C336EF5000CB0FD /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		5CCAACEE2C337E1E000CB0FD /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OTPTextField+ViewType.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,8 +196,10 @@
 		5CC34ABB2C30920900FDA808 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				5CF2D8392C355AB200BE02D6 /* OTPTextField */,
 				5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */,
 				5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */,
+				5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -305,6 +311,14 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
+		5CF2D8392C355AB200BE02D6 /* OTPTextField */ = {
+			isa = PBXGroup;
+			children = (
+				5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */,
+			);
+			path = OTPTextField;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,12 +399,14 @@
 				5CC34B092C315A8600FDA808 /* FontFamily.swift in Sources */,
 				5CC34AC52C30931D00FDA808 /* AuthorizationCodeScreen.swift in Sources */,
 				5CC34B0C2C315C4800FDA808 /* AppString.swift in Sources */,
+				5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */,
 				5CCAACEF2C337E1E000CB0FD /* PopupView.swift in Sources */,
 				5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */,
 				5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */,
 				5CC34ADB2C30CD2400FDA808 /* Asset.swift in Sources */,
 				5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */,
 				5CC34AC32C30931100FDA808 /* AuthorizationPhoneScreen.swift in Sources */,
+				5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */,
 				5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */,
 				5CC34AC92C30935A00FDA808 /* VerificationCodeTextField.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
