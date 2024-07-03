@@ -33,6 +33,7 @@
 		5CCAACEF2C337E1E000CB0FD /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAACEE2C337E1E000CB0FD /* PopupView.swift */; };
 		5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */; };
 		5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */; };
+		5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		5CCAACEE2C337E1E000CB0FD /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OTPTextField+ViewType.swift"; sourceTree = "<group>"; };
+		5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +98,8 @@
 		5CC34AA02C30869300FDA808 /* WBSeniorCourse */ = {
 			isa = PBXGroup;
 			children = (
-				5CC34AD02C30947100FDA808 /* Protocol */,
 				5CC34AB02C308F2E00FDA808 /* App */,
+				5CC34AD02C30947100FDA808 /* Protocol */,
 				5CC34AB22C308F4000FDA808 /* Extension */,
 				5CC34AB62C308F8400FDA808 /* DataLayer */,
 				5CC34AB32C308F5A00FDA808 /* UILayer */,
@@ -146,6 +148,7 @@
 			children = (
 				5CC34AB42C308F6500FDA808 /* Module */,
 				5CC34AB52C308F7700FDA808 /* View */,
+				5CF2D83C2C356C1700BE02D6 /* Modifier */,
 			);
 			path = UILayer;
 			sourceTree = "<group>";
@@ -319,6 +322,14 @@
 			path = OTPTextField;
 			sourceTree = "<group>";
 		};
+		5CF2D83C2C356C1700BE02D6 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,6 +423,7 @@
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
 				5CC34B0F2C31635300FDA808 /* PurpleButtonStyle.swift in Sources */,
+				5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */,
 				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

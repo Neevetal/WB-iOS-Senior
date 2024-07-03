@@ -17,61 +17,65 @@ struct OTPTextField: View {
     @State var enterValue: [String]
     @State var oldValue = ""
     
+    // MARK: - Initialization and deinitialization
+    
     init(numberOfFields: Int, color: Color) {
         self.numberOfFields = numberOfFields
         self.color = color
         self.enterValue = Array(repeating: "", count: numberOfFields)
     }
     
+    // MARK: - Body
+    
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: Constants.stackSpacing) {
             ForEach(0 ..< numberOfFields, id: \.self) { index in
                 TextField("", text: $enterValue[index], onEditingChanged: { editing in
                     if editing {
                         oldValue = enterValue[index]
                     }
                 })
-                .keyboardType(.numberPad)
-                .frame(width: 64, height: 80)
-                .background(color)
-                .cornerRadius(5)
-                .multilineTextAlignment(.center)
+                .otpTextField(with: Constants.size, color: color)
                 .focused($fieldFocus, equals: index)
                 .tag(index)
                 .onChange(of: enterValue[index]) { newValue in
                     if !newValue.isEmpty {
-                        // Update to new value if there is already an value.
                         if enterValue[index].count > 1 {
                             let currentValue = Array(enterValue[index])
-                            
-                            // ADD THIS IF YOU DON'T HAVE TO HIDE THE KEYBOARD WHEN THEY ENTERED
-                            // THE LAST VALUE.
-                            // if oldValue.count == 0 {
-                            //    enterValue[index] = String(enterValue[index].suffix(1))
-                            //    return
-                            // }
-                            
-                            if currentValue[0] == Character(oldValue) {
-                                enterValue[index] = String(enterValue[index].suffix(1))
-                            } else {
-                                enterValue[index] = String(enterValue[index].prefix(1))
-                            }
+                            enterValue[index] = currentValue[0] == Character(oldValue)
+                            ? String(enterValue[index].suffix(1))
+                            : String(enterValue[index].prefix(1))
                         }
                         
-                        // MARK: - Move to Next
-                        if index == numberOfFields-1 {
-                            // COMMENT IF YOU DON'T HAVE TO HIDE THE KEYBOARD WHEN THEY ENTERED
-                            // THE LAST VALUE.
-                            fieldFocus = nil
-                        } else {
-                            fieldFocus = (fieldFocus ?? 0) + 1
-                        }
+                        fieldFocus = index == numberOfFields - 1
+                        ? nil
+                        : (fieldFocus ?? 0) + 1
                     } else {
-                        // MARK: - Move back
                         fieldFocus = (fieldFocus ?? 0) - 1
                     }
                 }
             }
+        }
+        .padding(.top, 18)
+        .padding(.bottom, 30)
+    }
+}
+
+// MARK: - Nested types
+
+extension OTPTextField {
+    enum Constants {
+        static var stackSpacing: CGFloat {
+            let isIPad = UIDevice.current.userInterfaceIdiom == .pad
+            return isIPad ? 24 : 16
+        }
+        
+        static var size: CGSize {
+            let isIPad = UIDevice.current.userInterfaceIdiom == .pad
+            return .init(
+                width: isIPad ? 64 : 48,
+                height: isIPad ? 80 : 60
+            )
         }
     }
 }
@@ -88,6 +92,6 @@ extension OTPTextField: Stubable {
 
 // MARK: - Preview
 
-//#Preview {
-//    OTPTextField.stub()
-//}
+#Preview {
+    OTPTextField.stub()
+}
