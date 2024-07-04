@@ -34,6 +34,7 @@
 		5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */; };
 		5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */; };
 		5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */; };
+		5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83F2C3618A800BE02D6 /* BackTextButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		5CF2D8372C349BD600BE02D6 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OTPTextField+ViewType.swift"; sourceTree = "<group>"; };
 		5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldModifier.swift; sourceTree = "<group>"; };
+		5CF2D83F2C3618A800BE02D6 /* BackTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTextButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		5CC34ABA2C30920300FDA808 /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				5CF2D83F2C3618A800BE02D6 /* BackTextButton.swift */,
 				5CC34B0D2C31632000FDA808 /* ButtonStyle */,
 			);
 			path = Button;
@@ -421,6 +424,7 @@
 				5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */,
 				5CC34AC92C30935A00FDA808 /* VerificationCodeTextField.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
+				5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */,
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
 				5CC34B0F2C31635300FDA808 /* PurpleButtonStyle.swift in Sources */,
 				5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */,

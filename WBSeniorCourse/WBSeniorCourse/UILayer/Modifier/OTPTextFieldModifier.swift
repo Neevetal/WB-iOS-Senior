@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct OTPTextFieldModifier: ViewModifier {
-    private var fontSize: CGFloat {
-        let isIPad = UIDevice.current.userInterfaceIdiom == .pad
-        return isIPad ? 36 : 24
-    }
     
-    var size: CGSize
-    var color: Color
+    // MARK: - Properties
+    
+    public var size: CGSize
+    public var color: Color
+    
+    // MARK: - Body
     
     func body(content: Content) -> some View {
         content
@@ -23,9 +23,20 @@ struct OTPTextFieldModifier: ViewModifier {
             .background(color)
             .cornerRadius(12)
             .foregroundColor(AppColor.Text.White.main.color)
-            .font(.montserratFont(size: fontSize, weight: .medium))
+            .font(.montserratFont(size: Constants.fontSize, weight: .medium))
             .accentColor(.clear)
             .multilineTextAlignment(.center)
+    }
+}
+
+// MARK: - Nested types
+
+extension OTPTextFieldModifier {
+    enum Constants {
+        static var fontSize: CGFloat {
+            let isIPad = UIDevice.current.userInterfaceIdiom == .pad
+            return isIPad ? 36 : 24
+        }
     }
 }
 

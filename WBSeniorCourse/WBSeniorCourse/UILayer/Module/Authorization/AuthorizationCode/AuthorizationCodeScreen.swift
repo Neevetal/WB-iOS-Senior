@@ -114,10 +114,12 @@ private extension AuthorizationCodeScreen {
     
     @ViewBuilder
     private var backButton: some View {
-        Rectangle()
-            .fill(Color.yellow)
-            .frame(height: 50)
-            .padding(.top, 32)
+        BackTextButton(
+            text:  AppString.Authorization.comeBack
+        ) {
+            print("BackTextButton")
+        }
+        .padding(.top, 32)
     }
 }
 
