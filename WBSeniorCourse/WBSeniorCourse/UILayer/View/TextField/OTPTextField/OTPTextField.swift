@@ -63,9 +63,9 @@ struct OTPTextField: View {
                         fieldFocus = (fieldFocus ?? 0) - 1
                     }
                     
-//                    code = enterValue
-//                        .map { String($0) }
-//                        .joined(separator: "")
+                    code = enterValue
+                        .map { String($0) }
+                        .joined(separator: "")
                 }
             }
         }
