@@ -35,6 +35,7 @@
 		5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */; };
 		5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */; };
 		5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D83F2C3618A800BE02D6 /* BackTextButton.swift */; };
+		5CF2D8422C3775DD00BE02D6 /* KeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2D8412C3775DD00BE02D6 /* KeyboardModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		5CF2D83A2C355AEE00BE02D6 /* OTPTextField+ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OTPTextField+ViewType.swift"; sourceTree = "<group>"; };
 		5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldModifier.swift; sourceTree = "<group>"; };
 		5CF2D83F2C3618A800BE02D6 /* BackTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTextButton.swift; sourceTree = "<group>"; };
+		5CF2D8412C3775DD00BE02D6 /* KeyboardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */,
+				5CF2D8412C3775DD00BE02D6 /* KeyboardModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CC34B092C315A8600FDA808 /* FontFamily.swift in Sources */,
+				5CF2D8422C3775DD00BE02D6 /* KeyboardModifier.swift in Sources */,
 				5CC34AC52C30931D00FDA808 /* AuthorizationCodeScreen.swift in Sources */,
 				5CC34B0C2C315C4800FDA808 /* AppString.swift in Sources */,
 				5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */,

@@ -44,7 +44,7 @@ struct OTPTextField: View {
                         oldValue = enterValue[index]
                     }
                 })
-                .otpTextField(with: Constants.size, color: color)
+                .otpTextField(with: type, size: Constants.size, color: color)
                 .focused($fieldFocus, equals: index)
                 .tag(index)
                 .onChange(of: enterValue[index]) { newValue in

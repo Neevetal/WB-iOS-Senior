@@ -39,9 +39,11 @@ struct AuthorizationCodeScreen: View {
                             repeatСodeText
                             authorizationButton
                         }
+                        .hideKeyboardOnTap()
                     }
                     backButton
                 }
+                .hideKeyboardOnTap()
             }
         }
     }

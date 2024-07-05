@@ -13,6 +13,7 @@ struct OTPTextFieldModifier: ViewModifier {
     
     public var size: CGSize
     public var color: Color
+    public var type: OTPTextField.ViewType
     
     // MARK: - Body
     
@@ -26,6 +27,10 @@ struct OTPTextFieldModifier: ViewModifier {
             .font(.montserratFont(size: Constants.fontSize, weight: .medium))
             .accentColor(.clear)
             .multilineTextAlignment(.center)
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(type.borderColor)
+            )
     }
 }
 
@@ -41,7 +46,13 @@ extension OTPTextFieldModifier {
 }
 
 extension View {
-    func otpTextField(with size: CGSize, color: Color) -> some View {
-        modifier(OTPTextFieldModifier(size: size, color: color))
+    func otpTextField(
+        with type: OTPTextField.ViewType,
+        size: CGSize,
+        color: Color
+    ) -> some View {
+        modifier(OTPTextFieldModifier(
+            size: size, color: color, type: type
+        ))
     }
 }

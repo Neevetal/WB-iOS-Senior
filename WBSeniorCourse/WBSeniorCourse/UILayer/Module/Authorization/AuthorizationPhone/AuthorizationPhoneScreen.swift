@@ -29,7 +29,9 @@ struct AuthorizationPhoneScreen: View {
                         phoneTextField
                         requestCodeButton
                     }
+                    .hideKeyboardOnTap()
                 }
+                .hideKeyboardOnTap()
             }
         }
     }
