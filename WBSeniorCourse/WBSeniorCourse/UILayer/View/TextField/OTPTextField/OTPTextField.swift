@@ -9,68 +9,112 @@ import SwiftUI
 
 struct OTPTextField: View {
     
-    // MARK: - Properties
+    // MARK: - Property Wrappers
     
-    private let fieldCount: Int
-    private let color: Color
-    
-    @FocusState private var fieldFocus: Int?
-    @State private var enterValue: [String]
-    @State private var oldValue = ""
-    
+    @State private var text: String
+    @State private var activeFieldIndex: Int = 0
+    @FocusState private var isCodeFocused: Bool
     @Binding private var code: String
     @State private var type: ViewType = .main
     
-    // MARK: - Initialization and deinitialization
+    // MARK: - Private Properties
+    
+    private let fieldCount: Int
+    private let fieldColor: Color
+    private let errorText: String?
+    private let isEnabled: Bool
+    
+    // MARK: - Initializers
     
     init(
         fieldCount: Int,
-        color: Color,
+        fieldColor: Color,
+        errorText: String?,
+        isEnabled: Bool = true,
         code: Binding<String>
     ) {
         self.fieldCount = fieldCount
-        self.color = color
+        self.fieldColor = fieldColor
+        self.errorText = errorText
+        self.isEnabled = isEnabled
+        self.text = String("".prefix(fieldCount))
         _code = code
-        self.enterValue = Array(repeating: "", count: fieldCount)
     }
     
     // MARK: - Body
     
     var body: some View {
-        HStack(spacing: Constants.stackSpacing) {
+        HStack(spacing: 16) {
             ForEach(0 ..< fieldCount, id: \.self) { index in
-                TextField("", text: $enterValue[index], onEditingChanged: { editing in
-                    if editing {
-                        oldValue = enterValue[index]
-                    }
-                })
-                .otpTextField(with: type, size: Constants.size, color: color)
-                .focused($fieldFocus, equals: index)
-                .tag(index)
-                .onChange(of: enterValue[index]) { newValue in
-                    if !newValue.isEmpty {
-                        if enterValue[index].count > 1 {
-                            let currentValue = Array(enterValue[index])
-                            enterValue[index] = currentValue[0] == Character(oldValue)
-                            ? String(enterValue[index].suffix(1))
-                            : String(enterValue[index].prefix(1))
-                        }
-                        
-                        fieldFocus = index == fieldCount - 1
-                        ? nil
-                        : (fieldFocus ?? 0) + 1
-                    } else {
-                        fieldFocus = (fieldFocus ?? 0) - 1
-                    }
-                    
-                    code = enterValue
-                        .map { String($0) }
-                        .joined(separator: "")
-                }
+                fieldLabel(with: index)
             }
         }
-        .padding(.top, 18)
-        .padding(.bottom, Constants.bottomPadding)
+        .background(
+            TextField("", text: $text)
+                .keyboardType(.numberPad)
+                .opacity(.zero)
+                .focused($isCodeFocused)
+        )
+        .contentShape(Rectangle())
+        .onTapGesture {
+            if isEnabled {
+                isCodeFocused = true
+            }
+        }
+        .overlay {
+            if let errorText = errorText {
+                Text(errorText)
+                    .foregroundStyle(AppColor.Text.red.color)
+                    .font(.montserratFont(size: 14, weight: .regular))
+                    .padding(.top, 110)
+                    .padding(.horizontal, 16)
+            }
+        }
+        .onChange(of: text) { newValue in
+            updateText(with: newValue)
+        }
+    }
+}
+
+// MARK: - Private methods
+
+private extension OTPTextField {
+    func fieldLabel(with index: Int) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 12)
+                .fill(fieldColor)
+            
+            if text.count > index {
+                let characterIndex = text.index(
+                    text.startIndex, offsetBy: index
+                )
+                
+                let textCharacter = String(text[characterIndex])
+                
+                Text(textCharacter)
+                    .otpTextField(
+                        with: type,
+                        color: fieldColor
+                    )
+            }
+        }
+        .frame(width: Constants.size.width, height: Constants.size.height)
+    }
+    
+    func updateText(with newValue: String) {
+        text = Self.filteredText(newValue, limit: fieldCount)
+        activeFieldIndex = text.count
+        
+        if text.count == fieldCount {
+            isCodeFocused = false
+        }
+        
+        code = text
+    }
+    
+    static func filteredText(_ text: String, limit: Int) -> String {
+        let filteredText = text.filter { "0123456789".contains($0) }
+        return String(filteredText.prefix(limit))
     }
 }
 
@@ -104,7 +148,8 @@ extension OTPTextField: Stubable {
     static func stub() -> OTPTextField {
         return OTPTextField(
             fieldCount: 4,
-            color: .gray.opacity(0.1),
+            fieldColor: AppColor.Background.White.main08.color,
+            errorText: "Неверный пароль",
             code: .constant("")
         )
     }

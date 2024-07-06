@@ -11,16 +11,24 @@ struct AuthorizationCodeScreen: View {
     
     // MARK: - Properties
     
-    @State private var code = ""
-    @State private var phoneNumber = "+7 (921) 233-123-44"
-    
-    @State var isNeedRepeatCode = false
-    @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
+    private let phoneNumber: String
     private let timer = Timer.publish(
         every: 1,
         on: .main,
         in: .common
     ).autoconnect()
+    
+    // MARK: - Property Wrappers
+    
+    @State private var code: String = ""
+    @State private var isNeedRepeatCode: Bool = false
+    @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
+    
+    // MARK: - Initialization and deinitialization
+    
+    init(phoneNumber: String = "+7 (921) 233-123-44") {
+        self.phoneNumber = phoneNumber
+    }
     
     // MARK: - Body
     
@@ -72,8 +80,9 @@ private extension AuthorizationCodeScreen {
     @ViewBuilder
     private var otpTextField: some View {
         OTPTextField(
-            fieldCount: Constants.fieldCount,
-            color: AppColor.Background.White.main08.color,
+            fieldCount: 4,
+            fieldColor: AppColor.Background.White.main08.color,
+            errorText: "Неверный пароль",
             code: $code
         )
         .padding(.top, 24)
