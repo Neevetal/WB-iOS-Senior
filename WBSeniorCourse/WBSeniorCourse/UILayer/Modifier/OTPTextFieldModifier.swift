@@ -11,14 +11,16 @@ struct OTPTextFieldModifier: ViewModifier {
     
     // MARK: - Properties
     
-    public var color: Color
     public var type: OTPTextField.ViewType
+    public let size: CGSize
+    public let color: Color
     
     // MARK: - Body
     
     func body(content: Content) -> some View {
         content
             .keyboardType(.numberPad)
+            .frame(width: size.width, height: size.height)
             .background(color)
             .cornerRadius(12)
             .foregroundColor(AppColor.Text.White.main.color)
@@ -26,7 +28,7 @@ struct OTPTextFieldModifier: ViewModifier {
             .accentColor(.clear)
             .multilineTextAlignment(.center)
             .background(
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 12)
                     .stroke(type.borderColor)
             )
     }
@@ -46,10 +48,11 @@ extension OTPTextFieldModifier {
 extension View {
     func otpTextField(
         with type: OTPTextField.ViewType,
+        size: CGSize,
         color: Color
     ) -> some View {
         modifier(OTPTextFieldModifier(
-            color: color, type: type
+            type: type, size: size, color: color
         ))
     }
 }

@@ -15,10 +15,10 @@ struct OTPTextField: View {
     @State private var activeFieldIndex: Int = 0
     @FocusState private var isCodeFocused: Bool
     @Binding private var code: String
-    @State private var type: ViewType = .main
     
     // MARK: - Private Properties
     
+    @Binding private var type: ViewType
     private let fieldCount: Int
     private let fieldColor: Color
     private let errorText: String?
@@ -27,24 +27,38 @@ struct OTPTextField: View {
     // MARK: - Initializers
     
     init(
+        type: Binding<ViewType>,
         fieldCount: Int,
         fieldColor: Color,
         errorText: String?,
         isEnabled: Bool = true,
         code: Binding<String>
     ) {
+        _type = type
         self.fieldCount = fieldCount
         self.fieldColor = fieldColor
         self.errorText = errorText
         self.isEnabled = isEnabled
-        self.text = String("".prefix(fieldCount))
+        text = String("".prefix(fieldCount))
         _code = code
     }
     
     // MARK: - Body
     
     var body: some View {
-        HStack(spacing: 16) {
+        VStack(spacing: 12) {
+            fieldLabels
+            errorLabel
+        }
+    }
+}
+
+// MARK: - UI Properties
+
+private extension OTPTextField {
+    @ViewBuilder
+    private var fieldLabels: some View {
+        HStack(spacing: Constants.stackSpacing) {
             ForEach(0 ..< fieldCount, id: \.self) { index in
                 fieldLabel(with: index)
             }
@@ -59,20 +73,27 @@ struct OTPTextField: View {
         .onTapGesture {
             if isEnabled {
                 isCodeFocused = true
-            }
-        }
-        .overlay {
-            if let errorText = errorText {
-                Text(errorText)
-                    .foregroundStyle(AppColor.Text.red.color)
-                    .font(.montserratFont(size: 14, weight: .regular))
-                    .padding(.top, 110)
-                    .padding(.horizontal, 16)
+                
+                if type != .main {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        type = .main
+                    }
+                }
             }
         }
         .onChange(of: text) { newValue in
             updateText(with: newValue)
         }
+        .padding(.top, 18)
+        .padding(.horizontal, 36)
+    }
+    
+    @ViewBuilder
+    private var errorLabel: some View {
+        Text(errorText ?? "")
+            .foregroundStyle(AppColor.Text.red.color)
+            .font(.montserratFont(size: 14, weight: .regular))
+            .opacity(type == .error ? 1 : 0)
     }
 }
 
@@ -80,25 +101,21 @@ struct OTPTextField: View {
 
 private extension OTPTextField {
     func fieldLabel(with index: Int) -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .fill(fieldColor)
+        var textCharacter: String = ""
+        if text.count > index {
+            let characterIndex = text.index(
+                text.startIndex, offsetBy: index
+            )
             
-            if text.count > index {
-                let characterIndex = text.index(
-                    text.startIndex, offsetBy: index
-                )
-                
-                let textCharacter = String(text[characterIndex])
-                
-                Text(textCharacter)
-                    .otpTextField(
-                        with: type,
-                        color: fieldColor
-                    )
-            }
+            textCharacter = String(text[characterIndex])
         }
-        .frame(width: Constants.size.width, height: Constants.size.height)
+        
+        return Text(textCharacter)
+            .otpTextField(
+                with: type,
+                size: Constants.size,
+                color: fieldColor
+            )
     }
     
     func updateText(with newValue: String) {
@@ -134,11 +151,6 @@ extension OTPTextField {
                 height: isIPad ? 80 : 60
             )
         }
-        
-        static var bottomPadding: CGFloat {
-            let isIPad = UIDevice.current.userInterfaceIdiom == .pad
-            return isIPad ? 30 : 18
-        }
     }
 }
 
@@ -147,9 +159,10 @@ extension OTPTextField {
 extension OTPTextField: Stubable {
     static func stub() -> OTPTextField {
         return OTPTextField(
+            type: .constant(.main),
             fieldCount: 4,
-            fieldColor: AppColor.Background.White.main08.color,
-            errorText: "Неверный пароль",
+            fieldColor: .red,
+            errorText: AppString.Authorization.incorrectPassword,
             code: .constant("")
         )
     }

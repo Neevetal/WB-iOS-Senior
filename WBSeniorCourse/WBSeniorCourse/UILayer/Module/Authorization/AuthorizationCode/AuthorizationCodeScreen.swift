@@ -20,8 +20,9 @@ struct AuthorizationCodeScreen: View {
     
     // MARK: - Property Wrappers
     
+    @State private var otpType: OTPTextField.ViewType = .main
     @State private var code: String = ""
-    @State private var isNeedRepeatCode: Bool = false
+    @State private var isNeedRepeatCode: Bool = true
     @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
     
     // MARK: - Initialization and deinitialization
@@ -80,9 +81,10 @@ private extension AuthorizationCodeScreen {
     @ViewBuilder
     private var otpTextField: some View {
         OTPTextField(
+            type: $otpType,
             fieldCount: 4,
             fieldColor: AppColor.Background.White.main08.color,
-            errorText: "Неверный пароль",
+            errorText: AppString.Authorization.incorrectPassword,
             code: $code
         )
         .padding(.top, 24)
@@ -106,20 +108,27 @@ private extension AuthorizationCodeScreen {
         .foregroundColor(AppColor.Text.White.main.color)
         .font(.montserratFont(size: 14, weight: .regular))
         .opacity(isNeedRepeatCode ? 1 : 0)
-        .padding(.vertical, isNeedRepeatCode ? 15 : 0)
+        .padding(.top, 15)
     }
     
     @ViewBuilder
     private var authorizationButton: some View {
         Button(AppString.Authorization.login) {
-            isNeedRepeatCode = true
             repeatCodeSeconds = Constants.defaultRepeatCodeSeconds
+            
+            withAnimation(.easeInOut(duration: 0.2)) {
+                // добавить вызов ошибки otp
+                // otpType = .error
+                
+                otpType = .succes
+            }
+            
             print("AuthorizationButton pressed!")
             print("Code", code)
         }
         .buttonStyle(PurpleButtonStyle())
         .cornerRadius(12)
-        .padding(.init(top: 9, leading: 24, bottom: 24, trailing: 24))
+        .padding(.all, 24)
         .disabled(code.count != Constants.fieldCount)
     }
     
