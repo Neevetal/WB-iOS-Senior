@@ -9,6 +9,13 @@ import SwiftUI
 
 struct AuthorizationCodeScreen: View {
     
+    // MARK: - Property Wrappers
+    
+    @State private var otpType: OTPTextField.ViewType = .main
+    @State private var code: String = ""
+    @State private var isNeedRepeatCode: Bool = true
+    @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
+    
     // MARK: - Properties
     
     private let phoneNumber: String
@@ -17,13 +24,6 @@ struct AuthorizationCodeScreen: View {
         on: .main,
         in: .common
     ).autoconnect()
-    
-    // MARK: - Property Wrappers
-    
-    @State private var otpType: OTPTextField.ViewType = .main
-    @State private var code: String = ""
-    @State private var isNeedRepeatCode: Bool = true
-    @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
     
     // MARK: - Initialization and deinitialization
     
@@ -45,7 +45,7 @@ struct AuthorizationCodeScreen: View {
                             mailImage
                             phoneNumberText
                             otpTextField
-                            repeatСodeText
+                            repeatСodeButton
                             authorizationButton
                         }
                         .hideKeyboardOnTap()
@@ -82,7 +82,7 @@ private extension AuthorizationCodeScreen {
     private var otpTextField: some View {
         OTPTextField(
             type: $otpType,
-            fieldCount: 4,
+            fieldCount: Constants.fieldCount,
             fieldColor: AppColor.Background.White.main08.color,
             errorText: AppString.Authorization.incorrectPassword,
             code: $code
@@ -91,13 +91,14 @@ private extension AuthorizationCodeScreen {
     }
     
     @ViewBuilder
-    private var repeatСodeText: some View {
-        // вынести в отдельный компонент
-        
-        Text(
-            AppString.Authorization
-                .requestTheCodeAgain(String(repeatCodeSeconds))
-        )
+    private var repeatСodeButton: some View {
+        Button(
+            isNeedRepeatCode
+            ? AppString.Authorization.requestTheCodeAgain(String(repeatCodeSeconds))
+            : AppString.Authorization.requestCode
+        ) {
+            print("Код запрошен")
+        }
         .onReceive(timer) { time in
             if repeatCodeSeconds > 0 {
                 repeatCodeSeconds -= 1
@@ -107,24 +108,22 @@ private extension AuthorizationCodeScreen {
         }
         .foregroundColor(AppColor.Text.White.main.color)
         .font(.montserratFont(size: 14, weight: .regular))
-        .opacity(isNeedRepeatCode ? 1 : 0)
         .padding(.top, 15)
+        .disabled(isNeedRepeatCode)
     }
     
     @ViewBuilder
     private var authorizationButton: some View {
         Button(AppString.Authorization.login) {
             repeatCodeSeconds = Constants.defaultRepeatCodeSeconds
-            
-            withAnimation(.easeInOut(duration: 0.2)) {
+            withAnimation(Constants.otpAnimation) {
                 // добавить вызов ошибки otp
                 // otpType = .error
                 
                 otpType = .succes
             }
             
-            print("AuthorizationButton pressed!")
-            print("Code", code)
+            print("Авторизация, код", code)
         }
         .buttonStyle(PurpleButtonStyle())
         .cornerRadius(12)
@@ -137,7 +136,7 @@ private extension AuthorizationCodeScreen {
         BackTextButton(
             text:  AppString.Authorization.comeBack
         ) {
-            print("BackTextButton")
+            print("Вернулись назад")
         }
         .padding(.top, 32)
     }
@@ -149,6 +148,7 @@ extension AuthorizationCodeScreen {
     enum Constants {
         static let fieldCount: Int = 4
         static let defaultRepeatCodeSeconds: Int = 60
+        static let otpAnimation: Animation = .easeInOut(duration: 0.2)
     }
 }
 

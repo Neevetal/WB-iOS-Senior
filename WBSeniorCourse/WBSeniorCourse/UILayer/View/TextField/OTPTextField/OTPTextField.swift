@@ -119,7 +119,7 @@ private extension OTPTextField {
     }
     
     func updateText(with newValue: String) {
-        text = Self.filteredText(newValue, limit: fieldCount)
+        text = filteredText(newValue, limit: fieldCount)
         activeFieldIndex = text.count
         
         if text.count == fieldCount {
@@ -129,7 +129,7 @@ private extension OTPTextField {
         code = text
     }
     
-    static func filteredText(_ text: String, limit: Int) -> String {
+    func filteredText(_ text: String, limit: Int) -> String {
         let filteredText = text.filter { "0123456789".contains($0) }
         return String(filteredText.prefix(limit))
     }

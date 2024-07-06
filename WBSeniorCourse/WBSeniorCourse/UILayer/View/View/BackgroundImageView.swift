@@ -47,7 +47,8 @@ struct BackgroundImageView<Content>: View where Content: View {
 #Preview {
     BackgroundImageView<EmptyView>(
         image: .Asset.Common.Background.purpleBackgroundImage.image,
-        color: Color.black) {
-            EmptyView()
-        }
+        color: Color.black
+    ) {
+        EmptyView()
+    }
 }

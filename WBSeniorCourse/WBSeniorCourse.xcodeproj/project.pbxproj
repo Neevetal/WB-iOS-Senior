@@ -12,7 +12,6 @@
 		5CC34AA92C30869400FDA808 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC34AA82C30869400FDA808 /* Preview Assets.xcassets */; };
 		5CC34AC32C30931100FDA808 /* AuthorizationPhoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC22C30931100FDA808 /* AuthorizationPhoneScreen.swift */; };
 		5CC34AC52C30931D00FDA808 /* AuthorizationCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC42C30931D00FDA808 /* AuthorizationCodeScreen.swift */; };
-		5CC34AC92C30935A00FDA808 /* VerificationCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */; };
 		5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */; };
 		5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
 		5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD52C30976C00FDA808 /* RoundImage.swift */; };
@@ -45,7 +44,6 @@
 		5CC34AA82C30869400FDA808 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5CC34AC22C30931100FDA808 /* AuthorizationPhoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPhoneScreen.swift; sourceTree = "<group>"; };
 		5CC34AC42C30931D00FDA808 /* AuthorizationCodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCodeScreen.swift; sourceTree = "<group>"; };
-		5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeTextField.swift; sourceTree = "<group>"; };
 		5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		5CC34AD22C30948B00FDA808 /* Stubable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubable.swift; sourceTree = "<group>"; };
 		5CC34AD52C30976C00FDA808 /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 			children = (
 				5CF2D8392C355AB200BE02D6 /* OTPTextField */,
 				5CC34ACA2C3093B600FDA808 /* PhoneTextField.swift */,
-				5CC34AC82C30935A00FDA808 /* VerificationCodeTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -426,7 +423,6 @@
 				5CC34AC32C30931100FDA808 /* AuthorizationPhoneScreen.swift in Sources */,
 				5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */,
 				5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */,
-				5CC34AC92C30935A00FDA808 /* VerificationCodeTextField.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
 				5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */,
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,

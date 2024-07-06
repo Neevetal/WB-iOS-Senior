@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AuthorizationPhoneScreen: View {
     
-    // MARK: - Properties
+    // MARK: - Property Wrappers
     
     @State private var phoneNumber = ""
     

@@ -46,8 +46,9 @@ struct GradientView<Content>: View where Content: View {
 
 #Preview {
     GradientView<EmptyView>(
-        gradient: AppColor.Gradient.darkPurple.gradient, 
-        points: (.leading, .trailing)) {
-            EmptyView()
-        }
+        gradient: AppColor.Gradient.darkPurple.gradient,
+        points: (.leading, .trailing)
+    ) {
+        EmptyView()
+    }
 }
