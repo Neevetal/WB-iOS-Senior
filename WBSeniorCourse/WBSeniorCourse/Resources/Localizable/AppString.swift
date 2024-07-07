@@ -15,6 +15,7 @@ enum AppString {
         static let authorization = "Авторизация"
         static let loginPhoneNumber = "Вход по номеру телефона"
         static let requestCode = "Запросить код"
+        static let incorrectNumberFormat = "Некорректный формат номера"
         static var requestTheCodeAgain: (String) -> String = {
             return "Запросить повторно через \($0) сек"
         }

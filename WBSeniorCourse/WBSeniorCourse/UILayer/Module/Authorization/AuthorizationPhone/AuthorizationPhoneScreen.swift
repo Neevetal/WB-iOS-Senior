@@ -12,6 +12,7 @@ struct AuthorizationPhoneScreen: View {
     // MARK: - Property Wrappers
     
     @State private var phoneNumber = ""
+    @State private var isError = false
     
     // MARK: - Body
     
@@ -69,7 +70,8 @@ private extension AuthorizationPhoneScreen {
     private var phoneTextField: some View {
         PhoneTextField(
             phoneNumber: $phoneNumber,
-            isError: .constant(false)
+            isError: isError,
+            errorText: AppString.Authorization.incorrectNumberFormat
         )
         .padding(.top, 32)
         .padding(.horizontal, 24)
