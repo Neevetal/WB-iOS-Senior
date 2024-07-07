@@ -14,32 +14,57 @@ struct PhoneTextField: View {
     @State private var text: String = ""
     @Binding private var phoneNumber: String
     @FocusState private var isFocused: Bool
+    @Binding private var isError: Bool
     
     // MARK: - Properties
     
-    private var isError: Bool
+    private let mask: String
     private let errorText: String
     
     // MARK: - Initialization and deinitialization
     
     init(
         phoneNumber: Binding<String>,
-        isError: Bool,
+        isError: Binding<Bool>,
+        mask: String,
         errorText: String
     ) {
         _phoneNumber = phoneNumber
-        self.isError = isError
+        _isError = isError
+        self.mask = mask
         self.errorText = errorText
     }
     
     // MARK: - Body
     
     var body: some View {
-        VStack {
-            errorLabel
-            ZStack(alignment: .trailing) {
-                textField
+        ZStack() {
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(
+                    AppColor.Background.red.color,
+                    lineWidth: isError ? 1 : 0
+                )
+                .background(AppColor.Background.White.main08.color)
+            HStack(spacing: 8) {
+                VStack(alignment: .leading, spacing: 0) {
+                    if isError {
+                        errorLabel
+                    }
+                    textField
+                }
                 clearButton
+            }
+            .padding(.horizontal, 16)
+        }
+        .cornerRadius(12)
+        .frame(height: 48)
+        .onTapGesture {
+            isFocused = true
+            
+            if isError {
+                withAnimation(Constants.errorAnimation) {
+                    isError = false
+                }
             }
         }
     }
@@ -56,24 +81,15 @@ private extension PhoneTextField {
             .font(.montserratFont(size: 16, weight: .medium))
             .keyboardType(.numberPad)
             .focused($isFocused)
-            .padding(.vertical, 14)
-            .padding(.horizontal, 16)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(
-                        AppColor.Background.red.color,
-                        lineWidth: isError ? 1 : 0
-                    )
-            )
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(AppColor.Background.White.main08.color)
-            )
             .onChange(of: text) { newValue in
-                formatMask(Constants.phoneMask, input: newValue)
+                formatMask(mask, input: newValue)
                 filterPhone(text: newValue)
-                print("text", text)
-                print("phoneNumber", phoneNumber)
+                
+                if isError {
+                    withAnimation(Constants.errorAnimation) {
+                        isError = false
+                    }
+                }
             }
     }
     
@@ -85,7 +101,6 @@ private extension PhoneTextField {
                 clear()
             }
             .frame(width: 16, height: 16)
-            .padding(.trailing, 16)
             .opacity(text == "" ? 0 : 1)
     }
     
@@ -105,18 +120,13 @@ private extension PhoneTextField {
         var result: Array<Character> = []
         
         for index in 0 ..< mask.count {
-            print("index", index)
             let maskCharacterIndex = String.Index(utf16Offset: index, in: mask)
             let maskCharacter = mask[maskCharacterIndex]
-            print("maskCharacterIndex", maskCharacterIndex)
-            print("maskCharacter", maskCharacter)
             
-            guard let firstInputCharacter = inputArray.first else {
-                print("break")
+            guard let firstInputCharacter = inputArray.first
+            else {
                 break
             }
-            
-            print("firstInputCharacter", firstInputCharacter)
             
             if (maskCharacter == firstInputCharacter || maskCharacter == "_") {
                 result.append(firstInputCharacter)
@@ -124,8 +134,6 @@ private extension PhoneTextField {
             } else {
                 result.append(maskCharacter)
             }
-            
-            print(" ")
         }
         
         text = String(result)
@@ -139,6 +147,12 @@ private extension PhoneTextField {
     func clear() {
         text = ""
         phoneNumber = ""
+        
+        if isError {
+            withAnimation(Constants.errorAnimation) {
+                isError = false
+            }
+        }
     }
 }
 
@@ -146,7 +160,6 @@ private extension PhoneTextField {
 
 extension PhoneTextField {
     enum Constants {
-        static let phoneMask: String = "+7 (___) ___ - __ - __"
         static let xmarkImageName: String = "xmark.circle.fill"
         static let errorAnimation: Animation = .easeInOut(duration: 0.2)
     }
@@ -160,7 +173,8 @@ extension PhoneTextField: Stubable {
     static func stub() -> PhoneTextField {
         PhoneTextField(
             phoneNumber: PhoneTextField.$phoneNumber,
-            isError: false,
+            isError: .constant(false),
+            mask: "+7 (___) ___ - __ - __",
             errorText: AppString.Authorization.incorrectNumberFormat
         )
     }

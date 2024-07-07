@@ -70,7 +70,8 @@ private extension AuthorizationPhoneScreen {
     private var phoneTextField: some View {
         PhoneTextField(
             phoneNumber: $phoneNumber,
-            isError: isError,
+            isError: $isError, 
+            mask: Constants.phoneMask,
             errorText: AppString.Authorization.incorrectNumberFormat
         )
         .padding(.top, 32)
@@ -80,13 +81,24 @@ private extension AuthorizationPhoneScreen {
     @ViewBuilder
     private var requestCodeButton: some View {
         Button(AppString.Authorization.requestCode) {
-            print("RequestCodeButton pressed!")
+            withAnimation(Constants.errorAnimation) {
+                isError = phoneNumber.count != 12
+            }
         }
         .buttonStyle(PurpleButtonStyle())
         .cornerRadius(12)
         .padding(24)
         .padding(.bottom, 24)
-        .disabled(false) // от содержимого филда номера
+        .disabled(phoneNumber.count < 5)
+    }
+}
+
+// MARK: - Nested types
+
+extension AuthorizationPhoneScreen {
+    enum Constants {
+        static let phoneMask: String = "+7 (___) ___ - __ - __"
+        static let errorAnimation: Animation = .easeInOut(duration: 0.2)
     }
 }
 
