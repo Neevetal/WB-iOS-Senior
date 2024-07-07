@@ -24,7 +24,7 @@ struct OTPTextField: View {
     private let errorText: String?
     private let isEnabled: Bool
     
-    // MARK: - Initializers
+    // MARK: - Initialization and deinitialization
     
     init(
         type: Binding<ViewType>,
