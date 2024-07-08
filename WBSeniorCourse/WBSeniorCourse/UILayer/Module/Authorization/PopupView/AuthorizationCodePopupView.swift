@@ -71,7 +71,7 @@ private extension AuthorizationCodePopupView {
     
     @ViewBuilder
     private var phoneNumberText: some View {
-        Text(user.phone)
+        Text(format(user.phone))
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 24, weight: .semiBold))
             .padding(.top, 16)
@@ -159,12 +159,39 @@ private extension AuthorizationCodePopupView {
             }
         }
     }
+    
+    func format(_ input: String) -> String {
+        let mask = Constants.phoneMask
+        var inputArray = Array(input)
+        var result: Array<Character> = []
+        
+        for index in 0 ..< mask.count {
+            let maskCharacterIndex = String.Index(utf16Offset: index, in: mask)
+            let maskCharacter = mask[maskCharacterIndex]
+            
+            guard let firstInputCharacter = inputArray.first
+            else {
+                result.append(maskCharacter)
+                continue
+            }
+            
+            if (maskCharacter == firstInputCharacter || maskCharacter == "_") {
+                result.append(firstInputCharacter)
+                inputArray.removeFirst()
+            } else {
+                result.append(maskCharacter)
+            }
+        }
+        
+        return String(result)
+    }
 }
 
 // MARK: - Nested types
 
 extension AuthorizationCodePopupView {
     enum Constants {
+        static let phoneMask: String = "+7 (___) ___ - __ - __"
         static let fieldCount: Int = 4
         static let defaultRepeatCodeSeconds: Int = 60
         static let otpAnimation: Animation = .easeInOut(duration: 0.2)

@@ -123,7 +123,6 @@
 			children = (
 				5CC34AB02C308F2E00FDA808 /* App */,
 				5CC34AD02C30947100FDA808 /* Protocol */,
-				5CC34AB22C308F4000FDA808 /* Extension */,
 				5CC34AB62C308F8400FDA808 /* DataLayer */,
 				5CC34AB32C308F5A00FDA808 /* UILayer */,
 				5CC34AB12C308F3800FDA808 /* Resources */,
@@ -157,13 +156,6 @@
 				5CC34ADD2C30CD4100FDA808 /* Font */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		5CC34AB22C308F4000FDA808 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		5CC34AB32C308F5A00FDA808 /* UILayer */ = {
