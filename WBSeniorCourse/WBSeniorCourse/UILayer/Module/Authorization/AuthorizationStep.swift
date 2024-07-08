@@ -10,5 +10,4 @@ import Foundation
 enum AuthorizationStep {
     case phone
     case code
-    case loading
 }

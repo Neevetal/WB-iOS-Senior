@@ -15,7 +15,7 @@ struct AuthorizationScreen: View {
     @ObservedObject private var user: User = .init(phone: "", code: "")
     
     // MARK: - Body
-
+    
     var body: some View {
         ZStack {
             BackgroundImageView(
@@ -38,8 +38,6 @@ private extension AuthorizationScreen {
             AuthorizationPhonePopupView(user: .init(wrappedValue: user), step: $step)
         case .code:
             AuthorizationCodePopupView(user: .init(wrappedValue: user), step: $step)
-        case .loading:
-            EmptyView()
         }
     }
 }

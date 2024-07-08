@@ -16,6 +16,7 @@ struct AuthorizationCodePopupView: View {
     @State private var otpType: OTPTextField.ViewType = .main
     @State private var isNeedRepeatCode: Bool = true
     @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
+    @State private var isLoading: Bool = false
     
     // MARK: - Properties
     
@@ -39,7 +40,7 @@ struct AuthorizationCodePopupView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            PopupView {
+            PopupView(isLoading: isLoading) {
                 VStack(spacing: 0) {
                     mailImage
                     phoneNumberText
@@ -50,6 +51,7 @@ struct AuthorizationCodePopupView: View {
                 .hideKeyboardOnTap()
             }
             backButton
+                .opacity(isLoading ? 0 : 1)
         }
         .hideKeyboardOnTap()
     }
@@ -127,7 +129,7 @@ private extension AuthorizationCodePopupView {
     @ViewBuilder
     private var backButton: some View {
         BackTextButton(
-            text:  AppString.Authorization.comeBack
+            text: AppString.Authorization.comeBack
         ) {
             withAnimation {
                 step = .phone
@@ -151,7 +153,10 @@ private extension AuthorizationCodePopupView {
             print("Авторизация")
             print("Телефон", user.phone)
             print("Код", user.code)
-            step = .loading
+            
+            withAnimation(Constants.loadingAnimation) {
+                isLoading = true
+            }
         }
     }
 }
@@ -163,6 +168,7 @@ extension AuthorizationCodePopupView {
         static let fieldCount: Int = 4
         static let defaultRepeatCodeSeconds: Int = 60
         static let otpAnimation: Animation = .easeInOut(duration: 0.2)
+        static let loadingAnimation: Animation = .easeInOut(duration: 0.2)
     }
 }
 

@@ -28,7 +28,7 @@ struct AuthorizationPhonePopupView: View {
     // MARK: - Body
     
     var body: some View {
-        PopupView {
+        PopupView(isLoading: false) {
             VStack(spacing: 0) {
                 authorizationText
                 roundImage
