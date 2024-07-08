@@ -12,7 +12,7 @@ struct AuthorizationScreen: View {
     // MARK: - Property Wrappers
     
     @State private var step: AuthorizationStep = .phone
-    @StateObject private var user: User = .init(phone: "", code: "")
+    @ObservedObject private var user: User = .init(phone: "", code: "")
     
     // MARK: - Body
 
@@ -35,9 +35,9 @@ private extension AuthorizationScreen {
     private var currentPopup: some View {
         switch step {
         case .phone:
-            AuthorizationPhonePopupView(user: .init(initialValue: user), step: $step)
+            AuthorizationPhonePopupView(user: .init(wrappedValue: user), step: $step)
         case .code:
-            AuthorizationCodePopupView(user: .init(initialValue: user), step: $step)
+            AuthorizationCodePopupView(user: .init(wrappedValue: user), step: $step)
         case .loading:
             EmptyView()
         }

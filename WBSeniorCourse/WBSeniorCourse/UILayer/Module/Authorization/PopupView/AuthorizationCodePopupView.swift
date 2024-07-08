@@ -12,7 +12,7 @@ struct AuthorizationCodePopupView: View {
     // MARK: - Property Wrappers
     
     @Binding private var step: AuthorizationStep
-    @ObservedObject private var user: User
+    @StateObject private var user: User
     @State private var otpType: OTPTextField.ViewType = .main
     @State private var isNeedRepeatCode: Bool = true
     @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
@@ -28,7 +28,7 @@ struct AuthorizationCodePopupView: View {
     // MARK: - Initialization and deinitialization
     
     init(
-        user: ObservedObject<User>,
+        user: StateObject<User>,
         step: Binding<AuthorizationStep>
     ) {
         _user = user
@@ -112,7 +112,10 @@ private extension AuthorizationCodePopupView {
     @ViewBuilder
     private var authorizationButton: some View {
         Button(AppString.Authorization.login) {
-            repeatCodeSeconds = Constants.defaultRepeatCodeSeconds
+            if repeatCodeSeconds <= 0 {
+                repeatCodeSeconds = Constants.defaultRepeatCodeSeconds
+            }
+            
             getUser()
         }
         .buttonStyle(PurpleButtonStyle())
@@ -168,7 +171,7 @@ extension AuthorizationCodePopupView {
 extension AuthorizationCodePopupView: Stubable {
     static func stub() -> AuthorizationCodePopupView {
         return AuthorizationCodePopupView(
-            user: .init(initialValue: .init(phone: "+70985453434", code: "")),
+            user: .init(wrappedValue: .init(phone: "+70985453434", code: "")),
             step: .constant(.phone)
         )
     }

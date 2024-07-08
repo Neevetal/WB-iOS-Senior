@@ -12,13 +12,13 @@ struct AuthorizationPhonePopupView: View {
     // MARK: - Property Wrappers
     
     @State private var isError = false
-    @ObservedObject private var user: User
+    @StateObject private var user: User
     @Binding private var step: AuthorizationStep
     
     // MARK: - Initialization and deinitialization
     
     init(
-        user: ObservedObject<User>,
+        user: StateObject<User>,
         step: Binding<AuthorizationStep>
     ) {
         _user = user
@@ -125,7 +125,7 @@ extension AuthorizationPhonePopupView {
 extension AuthorizationPhonePopupView: Stubable {
     static func stub() -> AuthorizationPhonePopupView {
         return AuthorizationPhonePopupView(
-            user: .init(initialValue: .init(phone: "", code: "")),
+            user: .init(wrappedValue: .init(phone: "", code: "")),
             step: .constant(.phone)
         )
     }
