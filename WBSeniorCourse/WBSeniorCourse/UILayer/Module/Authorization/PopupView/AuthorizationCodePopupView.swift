@@ -1,5 +1,5 @@
 //
-//  AuthorizationCodeScreen.swift
+//  AuthorizationCodePopupView.swift
 //  WBSeniorCourse
 //
 //  Created by Vitaly Malkov on 29.06.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AuthorizationCodeScreen: View {
+struct AuthorizationCodePopupView: View {
     
     // MARK: - Property Wrappers
     
@@ -57,7 +57,7 @@ struct AuthorizationCodeScreen: View {
 
 // MARK: - UI Properties
 
-private extension AuthorizationCodeScreen {
+private extension AuthorizationCodePopupView {
     @ViewBuilder
     private var mailImage: some View {
         Image(uiImage: .Asset.Authorization.mailIcon.image)
@@ -136,7 +136,7 @@ private extension AuthorizationCodeScreen {
 
 // MARK: - Private methods
 
-private extension AuthorizationCodeScreen {
+private extension AuthorizationCodePopupView {
     func getUser() {
         let randomBool = Bool.random()
         
@@ -155,7 +155,7 @@ private extension AuthorizationCodeScreen {
 
 // MARK: - Nested types
 
-extension AuthorizationCodeScreen {
+extension AuthorizationCodePopupView {
     enum Constants {
         static let fieldCount: Int = 4
         static let defaultRepeatCodeSeconds: Int = 60
@@ -165,9 +165,9 @@ extension AuthorizationCodeScreen {
 
 // MARK: - Stubable
 
-extension AuthorizationCodeScreen: Stubable {
-    static func stub() -> AuthorizationCodeScreen {
-        return AuthorizationCodeScreen(
+extension AuthorizationCodePopupView: Stubable {
+    static func stub() -> AuthorizationCodePopupView {
+        return AuthorizationCodePopupView(
             user: .init(initialValue: .init(phone: "+70985453434", code: "")),
             step: .constant(.phone)
         )
@@ -177,5 +177,5 @@ extension AuthorizationCodeScreen: Stubable {
 // MARK: - Preview
 
 #Preview {
-    AuthorizationCodeScreen.stub()
+    AuthorizationCodePopupView.stub()
 }

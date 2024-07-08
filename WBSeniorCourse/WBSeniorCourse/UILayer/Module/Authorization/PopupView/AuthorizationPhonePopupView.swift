@@ -1,5 +1,5 @@
 //
-//  AuthorizationPhoneScreen.swift
+//  AuthorizationPhonePopupView.swift
 //  WBSeniorCourse
 //
 //  Created by Vitaly Malkov on 29.06.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AuthorizationPhoneScreen: View {
+struct AuthorizationPhonePopupView: View {
     
     // MARK: - Property Wrappers
     
@@ -44,7 +44,7 @@ struct AuthorizationPhoneScreen: View {
 
 // MARK: - UI Properties
 
-private extension AuthorizationPhoneScreen {
+private extension AuthorizationPhonePopupView {
     @ViewBuilder
     private var authorizationText: some View {
         Text(AppString.Authorization.authorization)
@@ -97,7 +97,7 @@ private extension AuthorizationPhoneScreen {
 
 // MARK: - Private methods
 
-private extension AuthorizationPhoneScreen {
+private extension AuthorizationPhonePopupView {
     func getCode() {
         withAnimation(Constants.errorAnimation) {
             isError = !user.isPhoneValid
@@ -113,7 +113,7 @@ private extension AuthorizationPhoneScreen {
 
 // MARK: - Nested types
 
-extension AuthorizationPhoneScreen {
+extension AuthorizationPhonePopupView {
     enum Constants {
         static let phoneMask: String = "+7 (___) ___ - __ - __"
         static let errorAnimation: Animation = .easeInOut(duration: 0.2)
@@ -122,9 +122,9 @@ extension AuthorizationPhoneScreen {
 
 // MARK: - Stubable
 
-extension AuthorizationPhoneScreen: Stubable {
-    static func stub() -> AuthorizationPhoneScreen {
-        return AuthorizationPhoneScreen(
+extension AuthorizationPhonePopupView: Stubable {
+    static func stub() -> AuthorizationPhonePopupView {
+        return AuthorizationPhonePopupView(
             user: .init(initialValue: .init(phone: "", code: "")),
             step: .constant(.phone)
         )
@@ -134,5 +134,5 @@ extension AuthorizationPhoneScreen: Stubable {
 // MARK: - Preview
 
 #Preview {
-    AuthorizationPhoneScreen.stub()
+    AuthorizationPhonePopupView.stub()
 }
