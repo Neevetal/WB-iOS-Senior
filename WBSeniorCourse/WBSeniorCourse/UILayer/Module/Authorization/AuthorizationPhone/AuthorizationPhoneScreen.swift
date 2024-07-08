@@ -11,30 +11,34 @@ struct AuthorizationPhoneScreen: View {
     
     // MARK: - Property Wrappers
     
-    @State private var phoneNumber = ""
     @State private var isError = false
+    @ObservedObject private var user: User
+    @Binding private var step: AuthorizationStep
+    
+    // MARK: - Initialization and deinitialization
+    
+    init(
+        user: ObservedObject<User>,
+        step: Binding<AuthorizationStep>
+    ) {
+        _user = user
+        _step = step
+    }
     
     // MARK: - Body
     
     var body: some View {
-        ZStack() {
-            BackgroundImageView(
-                image: .Asset.Common.Background.purpleBackgroundImage.image,
-                color: Color.black
-            ) {
-                PopupView {
-                    VStack(spacing: 0) {
-                        authorizationText
-                        roundImage
-                        loginPhoneNumberText
-                        phoneTextField
-                        requestCodeButton
-                    }
-                    .hideKeyboardOnTap()
-                }
-                .hideKeyboardOnTap()
+        PopupView {
+            VStack(spacing: 0) {
+                authorizationText
+                roundImage
+                loginPhoneNumberText
+                phoneTextField
+                requestCodeButton
             }
+            .hideKeyboardOnTap()
         }
+        .hideKeyboardOnTap()
     }
 }
 
@@ -69,8 +73,8 @@ private extension AuthorizationPhoneScreen {
     @ViewBuilder
     private var phoneTextField: some View {
         PhoneTextField(
-            phoneNumber: $phoneNumber,
-            isError: $isError, 
+            phoneNumber: $user.phone,
+            isError: $isError,
             mask: Constants.phoneMask,
             errorText: AppString.Authorization.incorrectNumberFormat
         )
@@ -81,15 +85,29 @@ private extension AuthorizationPhoneScreen {
     @ViewBuilder
     private var requestCodeButton: some View {
         Button(AppString.Authorization.requestCode) {
-            withAnimation(Constants.errorAnimation) {
-                isError = phoneNumber.count != 12
-            }
+            getCode()
         }
         .buttonStyle(PurpleButtonStyle())
         .cornerRadius(12)
         .padding(24)
         .padding(.bottom, 24)
-        .disabled(phoneNumber.count < 5)
+        .disabled(user.phone.count < 5)
+    }
+}
+
+// MARK: - Private methods
+
+private extension AuthorizationPhoneScreen {
+    func getCode() {
+        withAnimation(Constants.errorAnimation) {
+            isError = !user.isPhoneValid
+        }
+        
+        if !isError {
+            withAnimation {
+                step = .code
+            }
+        }
     }
 }
 
@@ -102,8 +120,19 @@ extension AuthorizationPhoneScreen {
     }
 }
 
+// MARK: - Stubable
+
+extension AuthorizationPhoneScreen: Stubable {
+    static func stub() -> AuthorizationPhoneScreen {
+        return AuthorizationPhoneScreen(
+            user: .init(initialValue: .init(phone: "", code: "")),
+            step: .constant(.phone)
+        )
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    AuthorizationPhoneScreen()
+    AuthorizationPhoneScreen.stub()
 }

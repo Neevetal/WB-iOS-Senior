@@ -11,14 +11,14 @@ struct AuthorizationCodeScreen: View {
     
     // MARK: - Property Wrappers
     
+    @Binding private var step: AuthorizationStep
+    @ObservedObject private var user: User
     @State private var otpType: OTPTextField.ViewType = .main
-    @State private var code: String = ""
     @State private var isNeedRepeatCode: Bool = true
     @State private var repeatCodeSeconds: Int = Constants.defaultRepeatCodeSeconds
     
     // MARK: - Properties
     
-    private let phoneNumber: String
     private let timer = Timer.publish(
         every: 1,
         on: .main,
@@ -27,34 +27,31 @@ struct AuthorizationCodeScreen: View {
     
     // MARK: - Initialization and deinitialization
     
-    init(phoneNumber: String = "+7 (921) 233-123-44") {
-        self.phoneNumber = phoneNumber
+    init(
+        user: ObservedObject<User>,
+        step: Binding<AuthorizationStep>
+    ) {
+        _user = user
+        _step = step
     }
     
     // MARK: - Body
     
     var body: some View {
-        ZStack() {
-            BackgroundImageView(
-                image: .Asset.Common.Background.purpleBackgroundImage.image,
-                color: Color.black
-            ) {
+        VStack(spacing: 0) {
+            PopupView {
                 VStack(spacing: 0) {
-                    PopupView {
-                        VStack(spacing: 0) {
-                            mailImage
-                            phoneNumberText
-                            otpTextField
-                            repeatСodeButton
-                            authorizationButton
-                        }
-                        .hideKeyboardOnTap()
-                    }
-                    backButton
+                    mailImage
+                    phoneNumberText
+                    otpTextField
+                    repeatСodeButton
+                    authorizationButton
                 }
                 .hideKeyboardOnTap()
             }
+            backButton
         }
+        .hideKeyboardOnTap()
     }
 }
 
@@ -72,7 +69,7 @@ private extension AuthorizationCodeScreen {
     
     @ViewBuilder
     private var phoneNumberText: some View {
-        Text(phoneNumber)
+        Text(user.phone)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 24, weight: .semiBold))
             .padding(.top, 16)
@@ -85,7 +82,7 @@ private extension AuthorizationCodeScreen {
             fieldCount: Constants.fieldCount,
             fieldColor: AppColor.Background.White.main08.color,
             errorText: AppString.Authorization.incorrectPassword,
-            code: $code
+            code: $user.code
         )
         .padding(.top, 24)
     }
@@ -116,19 +113,12 @@ private extension AuthorizationCodeScreen {
     private var authorizationButton: some View {
         Button(AppString.Authorization.login) {
             repeatCodeSeconds = Constants.defaultRepeatCodeSeconds
-            withAnimation(Constants.otpAnimation) {
-                // добавить вызов ошибки otp
-                // otpType = .error
-                
-                otpType = .succes
-            }
-            
-            print("Авторизация, код", code)
+            getUser()
         }
         .buttonStyle(PurpleButtonStyle())
         .cornerRadius(12)
         .padding(.all, 24)
-        .disabled(code.count != Constants.fieldCount)
+        .disabled(user.code.count != Constants.fieldCount)
     }
     
     @ViewBuilder
@@ -136,9 +126,30 @@ private extension AuthorizationCodeScreen {
         BackTextButton(
             text:  AppString.Authorization.comeBack
         ) {
-            print("Вернулись назад")
+            withAnimation {
+                step = .phone
+            }
         }
         .padding(.top, 32)
+    }
+}
+
+// MARK: - Private methods
+
+private extension AuthorizationCodeScreen {
+    func getUser() {
+        let randomBool = Bool.random()
+        
+        withAnimation(Constants.otpAnimation) {
+            otpType = randomBool ? .succes : .error
+        }
+        
+        if randomBool {
+            print("Авторизация")
+            print("Телефон", user.phone)
+            print("Код", user.code)
+            step = .loading
+        }
     }
 }
 
@@ -152,8 +163,19 @@ extension AuthorizationCodeScreen {
     }
 }
 
+// MARK: - Stubable
+
+extension AuthorizationCodeScreen: Stubable {
+    static func stub() -> AuthorizationCodeScreen {
+        return AuthorizationCodeScreen(
+            user: .init(initialValue: .init(phone: "+70985453434", code: "")),
+            step: .constant(.phone)
+        )
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    AuthorizationCodeScreen()
+    AuthorizationCodeScreen.stub()
 }
