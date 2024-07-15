@@ -25,3 +25,17 @@ extension Stack {
         return elements.popLast()
     }
 }
+
+// MARK: - Container
+
+extension Stack: Container {
+    typealias Item = Element
+    
+    mutating func add(_ item: Element) {
+        push(item)
+    }
+    
+    mutating func remove() -> Element? {
+        return pop()
+    }
+}

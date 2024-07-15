@@ -29,3 +29,17 @@ extension Queue {
         return elements.removeFirst()
     }
 }
+
+// MARK: - Container
+
+extension Queue: Container {
+    typealias Item = Element
+    
+    func add(_ item: Element) {
+        enqueue(item)
+    }
+    
+    func remove() -> Element? {
+        return dequeue()
+    }
+}
