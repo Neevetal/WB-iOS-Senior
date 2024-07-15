@@ -23,4 +23,12 @@ enum AppString {
         static let comeBack = "Вернуться назад"
         static let incorrectPassword = "Неверный пароль"
     }
+    
+    enum L10n {
+        static let dog = "Dog_L10n_Key"
+        static let cat = "Cat_L10n_Key"
+        static let rabbit = "Rabbit_L10n_Key"
+        static let fish = "Fish_L10n_Key"
+        static let changeLanguage = "СhangeLanguage_L10n_Key"
+    }
 }

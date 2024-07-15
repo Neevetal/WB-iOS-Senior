@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WBSeniorCourse
+
+  Created by Vitaly Malkov on 15.07.2024.
+  
+*/
+
+"Dog_L10n_Key" = "Dog";
+"Cat_L10n_Key" = "Cat";
+"Rabbit_L10n_Key" = "Rabbit";
+"Fish_L10n_Key" = "Fish";
+"СhangeLanguage_L10n_Key" = "Сhange language";
