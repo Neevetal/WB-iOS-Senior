@@ -12,6 +12,7 @@
 		5C02FB252C44866B00232A90 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB242C44866B00232A90 /* Screen.swift */; };
 		5C02FB272C44891D00232A90 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB262C44891D00232A90 /* NavigationView.swift */; };
 		5C02FB2D2C4490B400232A90 /* MockNavigationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */; };
+		5C02FB302C44ADBE00232A90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB2F2C44ADBE00232A90 /* Stack.swift */; };
 		5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */; };
 		5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF52C3C02C9002DB3E1 /* User.swift */; };
 		5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */; };
@@ -50,6 +51,7 @@
 		5C02FB242C44866B00232A90 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		5C02FB262C44891D00232A90 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationRootView.swift; sourceTree = "<group>"; };
+		5C02FB2F2C44ADBE00232A90 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		5C68CCF52C3C02C9002DB3E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStep.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 				5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5C02FB2E2C44ADAE00232A90 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB2F2C44ADBE00232A90 /* Stack.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
@@ -230,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				5C68CCF42C3C02BC002DB3E1 /* Model */,
+				5C02FB2E2C44ADAE00232A90 /* Container */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -462,6 +473,7 @@
 				5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
 				5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */,
+				5C02FB302C44ADBE00232A90 /* Stack.swift in Sources */,
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
 				5C02FB232C44865D00232A90 /* NavigationType.swift in Sources */,
 				5CC34B0F2C31635300FDA808 /* PurpleButtonStyle.swift in Sources */,
