@@ -19,6 +19,7 @@ struct LocalizableView: View {
         AppString.L10n.fish
     ]
     @State private var formattedDates: [String] = []
+    @State private var distanceInMeters: Double = 1000
     
     // MARK: - Body
     
@@ -26,13 +27,11 @@ struct LocalizableView: View {
         VStack(spacing: 16) {
             L10nView
             formattedDatesView
+            unitsView
         }
+        .hideKeyboardOnTap()
         .onAppear {
-            formattedDates = [
-                formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .short),
-                formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .medium),
-                formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .long)
-            ]
+            updateFormattedDates()
         }
     }
 }
@@ -54,12 +53,7 @@ private extension LocalizableView {
             localizationManager.language = localizationManager.language == .english
             ? .russian
             : .english
-            
-            formattedDates = [
-                formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .short),
-                formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .medium),
-                formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .long)
-            ]
+            updateFormattedDates()
         }) {
             Text(AppString.L10n.changeLanguage.localized(localizationManager.language))
                 .foregroundColor(.blue)
@@ -81,24 +75,33 @@ private extension LocalizableView {
         .foregroundColor(.black)
         Spacer()
     }
+    
+    @ViewBuilder
+    private var unitsView: some View {
+        VStack(spacing: 8) {
+            Text(AppString.L10n.distance.localized(localizationManager.language))
+                .font(.title)
+            TextField("", value: $distanceInMeters, formatter: NumberFormatter())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .keyboardType(.decimalPad)
+            Text("\(FormattedManager.formattedDistance(distanceInMeters, languageCode: localizationManager.language.rawValue, unit: .kilometers))")
+            Text("\(FormattedManager.formattedDistance(distanceInMeters, languageCode: localizationManager.language.rawValue, unit: .miles))")
+            Spacer()
+        }
+        .padding()
+    }
 }
 
 // MARK: - Private methods
 
 private extension LocalizableView {
-    static let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        return dateFormatter
-    }()
-    
-    func formattedCurrentDate(languageCode: String, style: DateFormatter.Style) -> String {
-        let languageLocale = Locale(identifier: languageCode)
-        LocalizableView.dateFormatter.locale = Locale(identifier: "\(languageCode)_\(Locale.current.region?.identifier ?? "US")")
-        
-        LocalizableView.dateFormatter.dateStyle = style
-        LocalizableView.dateFormatter.timeStyle = style
-        let currentDate = Date()
-        return LocalizableView.dateFormatter.string(from: currentDate)
+    func updateFormattedDates() {
+        formattedDates = [
+            FormattedManager.formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .short),
+            FormattedManager.formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .medium),
+            FormattedManager.formattedCurrentDate(languageCode: localizationManager.language.rawValue, style: .long)
+        ]
     }
 }
 
