@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Queue<Element> {
+final class Queue<Element> {
     
     // MARK: - Properties
     
@@ -17,11 +17,11 @@ struct Queue<Element> {
 // MARK: - Public methods
 
 extension Queue {
-    mutating func enqueue(_ item: Element) {
+    func enqueue(_ item: Element) {
         elements.append(item)
     }
 
-    mutating func dequeue() -> Element? {
+    func dequeue() -> Element? {
         guard !elements.isEmpty else {
             return nil
         }
