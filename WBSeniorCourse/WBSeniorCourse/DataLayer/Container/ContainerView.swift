@@ -12,7 +12,7 @@ struct ContainerView: View {
     // MARK: - Body
     
     var body: some View {
-        Text("ContainerView")
+        Text("WORK IN CONSOLE")
             .onAppear {
                 start()
             }
@@ -22,12 +22,52 @@ struct ContainerView: View {
 // MARK: - Private methods
 
 private extension ContainerView {
-    func makeOpaqueContainer<T: Container>(container: T) -> some Container {
+    func makeOpaque<T: Container>(container: T) -> some Container {
         return container
     }
     
     func start() {
-        print("Start")
+        var intStack = Stack<Int>()
+        intStack.add(1)
+        intStack.add(2)
+        intStack.add(3)
+        print("intStack remove", intStack.remove())
+
+        var stringQueue = Queue<String>()
+        stringQueue.add("Ivan")
+        stringQueue.add("Marina")
+        print("stringQueue remove", stringQueue.remove())
+        
+        // Opaque Type
+
+        let opaqueIntStack = makeOpaque(container: intStack)
+        if var stack = opaqueIntStack as? Stack<Int> {
+            stack.add(3)
+            intStack = stack
+        }
+        
+        let opaqueStringQueue = makeOpaque(container: stringQueue)
+        if let queue = opaqueStringQueue as? Queue<String> {
+            queue.add("Sasha")
+            stringQueue = queue
+        }
+
+        // Type Erasure
+
+        let anyIntStack = AnyContainer(intStack)
+        anyIntStack.add(4)
+        anyIntStack.add(5)
+        print("anyIntStack remove", anyIntStack.remove())
+        print("anyIntStack remove", anyIntStack.remove())
+        print("anyIntStack remove", anyIntStack.remove())
+        print("anyIntStack remove", anyIntStack.remove())
+
+        let anyStringQueue = AnyContainer(stringQueue)
+        anyStringQueue.add("Igor")
+        print("anyStringQueue remove", anyStringQueue.remove())
+        print("anyStringQueue remove", anyStringQueue.remove())
+        print("anyStringQueue remove", anyStringQueue.remove())
+        print("anyStringQueue remove", anyStringQueue.remove())
     }
 }
 
