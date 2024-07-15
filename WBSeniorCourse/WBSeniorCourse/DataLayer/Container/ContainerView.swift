@@ -13,6 +13,9 @@ struct ContainerView: View {
     
     var body: some View {
         Text("ContainerView")
+            .onAppear {
+                start()
+            }
     }
 }
 
@@ -21,6 +24,10 @@ struct ContainerView: View {
 private extension ContainerView {
     func makeOpaqueContainer<T: Container>(container: T) -> some Container {
         return container
+    }
+    
+    func start() {
+        print("Start")
     }
 }
 
