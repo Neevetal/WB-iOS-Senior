@@ -150,15 +150,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5C02FB2E2C44ADAE00232A90 /* Container */ = {
-			isa = PBXGroup;
-			children = (
-				5C02FB372C44B27000232A90 /* Model */,
-			);
-			path = Container;
-			sourceTree = "<group>";
-		};
-		5C02FB372C44B27000232A90 /* Model */ = {
+		5C02FB372C44B27000232A90 /* Container */ = {
 			isa = PBXGroup;
 			children = (
 				5C02FB2F2C44ADBE00232A90 /* Stack.swift */,
@@ -166,7 +158,7 @@
 				5C02FB332C44AF1400232A90 /* Container.swift */,
 				5C02FB382C44B2A200232A90 /* AnyContainer.swift */,
 			);
-			path = Model;
+			path = Container;
 			sourceTree = "<group>";
 		};
 		5C02FB3C2C44C20200232A90 /* Localizable */ = {
@@ -183,14 +175,6 @@
 				5C02FB352C44B21300232A90 /* ContainerView.swift */,
 			);
 			path = Container;
-			sourceTree = "<group>";
-		};
-		5C02FB442C45455900232A90 /* Localizable */ = {
-			isa = PBXGroup;
-			children = (
-				5C02FB452C45456800232A90 /* LocalizationManager.swift */,
-			);
-			path = Localizable;
 			sourceTree = "<group>";
 		};
 		5C02FB472C45459B00232A90 /* Storage */ = {
@@ -230,6 +214,7 @@
 			children = (
 				5C68CCF52C3C02C9002DB3E1 /* User.swift */,
 				5C02FB642C4744D200232A90 /* Cargo.swift */,
+				5C02FB372C44B27000232A90 /* Container */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,8 +324,6 @@
 				5C02FB4A2C4550C700232A90 /* Utilit */,
 				5C02FB472C45459B00232A90 /* Storage */,
 				5C68CCF42C3C02BC002DB3E1 /* Model */,
-				5C02FB2E2C44ADAE00232A90 /* Container */,
-				5C02FB442C45455900232A90 /* Localizable */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -430,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				5CC34B0B2C315C4800FDA808 /* AppString.swift */,
+				5C02FB452C45456800232A90 /* LocalizationManager.swift */,
 				5C02FB402C453DCC00232A90 /* Localizable.strings */,
 			);
 			path = Localizable;
