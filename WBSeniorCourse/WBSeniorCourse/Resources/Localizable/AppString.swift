@@ -24,6 +24,16 @@ enum AppString {
         static let incorrectPassword = "Неверный пароль"
     }
     
+    // MARK: - Statistics
+    
+    enum Statistics {
+        static let statistics = "Статистика"
+        static let displayingWidgets = "Отображение виджетов"
+        static let share = "Поделиться"
+    }
+    
+    // MARK: - L10n
+    
     enum L10n {
         static let dog = "Dog_L10n_Key"
         static let cat = "Cat_L10n_Key"

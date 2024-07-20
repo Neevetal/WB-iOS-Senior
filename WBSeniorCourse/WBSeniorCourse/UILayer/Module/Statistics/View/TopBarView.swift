@@ -12,12 +12,38 @@ struct TopBarView: View {
     // MARK: - Body
     
     var body: some View {
-        HStack {
-            Text("Hello,")
+        HStack(spacing: 24) {
+            statisticsLabel
             Spacer()
-            Text(" World!")
+            displayingWidgetsButton
+            shareButton
         }
         .foregroundColor(.white)
+    }
+}
+
+// MARK: - UI Properties
+
+private extension TopBarView {
+    @ViewBuilder
+    private var statisticsLabel: some View {
+        Text(AppString.Statistics.statistics)
+            .foregroundColor(AppColor.Text.White.main.color)
+            .font(.montserratFont(size: 24, weight: .semiBold))
+    }
+    
+    @ViewBuilder
+    private var displayingWidgetsButton: some View {
+        Text(AppString.Statistics.displayingWidgets)
+            .foregroundColor(AppColor.Text.White.main.color)
+            .font(.montserratFont(size: 14, weight: .medium))
+    }
+    
+    @ViewBuilder
+    private var shareButton: some View {
+        Text(AppString.Statistics.share)
+            .foregroundColor(AppColor.Text.White.main.color)
+            .font(.montserratFont(size: 14, weight: .medium))
     }
 }
 
@@ -25,4 +51,5 @@ struct TopBarView: View {
 
 #Preview {
     TopBarView()
+        .background(Color.black)
 }

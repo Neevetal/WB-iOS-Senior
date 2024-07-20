@@ -9,18 +9,21 @@ import SwiftUI
 
 struct ContentStatisticsView: View {
     
+    // MARK: - Property Wrappers
+    
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    
     // MARK: - Body
     
     var body: some View {
-        VStack {
-            salesQuantityView
-            HStack {
-                marketingSpecialistsView
-                VStack {
-                    externalTrafficView
-                    aiSupportView
-                }
-            }
+        ScrollView(.vertical, showsIndicators: false) {
+            contentView
+                .padding(.init(
+                    top: 0, 
+                    leading: 30,
+                    bottom: 32, 
+                    trailing: 24
+                ))
         }
     }
 }
@@ -29,27 +32,46 @@ struct ContentStatisticsView: View {
 
 private extension ContentStatisticsView {
     @ViewBuilder
+    private var contentView: some View {
+        if horizontalSizeClass == .compact {
+            VStack(spacing: 24) {
+                salesQuantityView
+                marketingSpecialistsView
+                externalTrafficView
+                aiSupportView
+            }
+        } else {
+            VStack(spacing: 24) {
+                salesQuantityView
+                HStack(spacing: 24) {
+                    marketingSpecialistsView
+                    VStack(spacing: 24) {
+                        externalTrafficView
+                        aiSupportView
+                    }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
     private var salesQuantityView: some View {
         SalesQuantityView()
-            .background(Color.red)
     }
     
     @ViewBuilder
     private var marketingSpecialistsView: some View {
         MarketingSpecialistsView()
-            .background(Color.green)
     }
     
     @ViewBuilder
     private var externalTrafficView: some View {
         ExternalTrafficView()
-            .background(Color.yellow)
     }
     
     @ViewBuilder
     private var aiSupportView: some View {
         AISupportView()
-            .background(Color.blue)
     }
 }
 

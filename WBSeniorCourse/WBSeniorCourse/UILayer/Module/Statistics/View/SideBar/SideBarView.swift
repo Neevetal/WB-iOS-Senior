@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct SideBarView: View {
+    
+    // MARK: - Body
+    
     var body: some View {
-        Color.red
-            .frame(width: 80)
+        GradientView(
+            gradient: AppColor.Gradient.darkPurple.gradient,
+            points: (.leading, .trailing)) {
+                VStack(spacing: 0) {
+                    roundImage
+                    Spacer()
+                }
+            }
+          //  .fixedSize(horizontal: false, vertical: true)
+            .frame(minWidth: 80 , maxWidth: 80)
+            .fixedSize(horizontal: true, vertical: false)
     }
 }
+
+// MARK: - UI Properties
+
+private extension SideBarView {
+    @ViewBuilder
+    private var roundImage: some View {
+        RoundImage(
+            imageIcon: .Asset.Authorization.profileIcon.image,
+            sideSize: 44
+        )
+        .padding(.top, 32)
+    }
+}
+
+// MARK: - Preview
 
 #Preview {
     SideBarView()

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SalesQuantityView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Color.red
+            .frame(height: 445)
+            .cornerRadius(28)
     }
 }
 

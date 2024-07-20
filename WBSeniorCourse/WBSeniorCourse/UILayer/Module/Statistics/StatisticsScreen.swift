@@ -22,10 +22,8 @@ struct StatisticsScreen: View {
                     topBarView
                     contentView
                 }
-                .fixedSize(horizontal: false, vertical: false)
                 trendMovementView
             }
-            .edgesIgnoringSafeArea(.all)
         }
     }
 }
@@ -41,13 +39,11 @@ private extension StatisticsScreen {
     @ViewBuilder
     private var topBarView: some View {
         TopBarView()
-            .background(Color.green)
     }
     
     @ViewBuilder
     private var contentView: some View {
         ContentStatisticsView()
-            .background(Color.blue)
     }
     
     @ViewBuilder

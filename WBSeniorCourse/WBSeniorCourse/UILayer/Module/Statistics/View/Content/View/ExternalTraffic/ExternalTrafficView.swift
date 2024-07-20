@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ExternalTrafficView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Color.yellow
+            .frame(height: 280)
+            .cornerRadius(28)
     }
 }
 

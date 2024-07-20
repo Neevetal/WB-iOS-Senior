@@ -9,7 +9,9 @@ import SwiftUI
 
 struct AISupportView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Color.blue
+            .frame(height: 134)
+            .cornerRadius(28)
     }
 }
 

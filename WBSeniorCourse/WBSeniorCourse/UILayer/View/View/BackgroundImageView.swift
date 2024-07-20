@@ -30,15 +30,23 @@ struct BackgroundImageView<Content>: View where Content: View {
     // MARK: - Body
     
     var body: some View {
-        ZStack() {
-            color
-                .edgesIgnoringSafeArea(.all)
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
+        ZStack {
             content
         }
+        .background(
+            ZStack {
+                color
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                
+            }
+                .edgesIgnoringSafeArea(.all)
+                .frame(
+                    width: UIScreen.main.bounds.width,
+                    height: UIScreen.main.bounds.height
+                )
+        )
     }
 }
 
