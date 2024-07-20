@@ -25,6 +25,7 @@ struct StatisticsScreen: View {
                 trendMovementView
             }
         }
+        .statusBar(hidden: true)
     }
 }
 

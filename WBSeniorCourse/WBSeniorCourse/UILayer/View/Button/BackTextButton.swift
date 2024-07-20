@@ -21,7 +21,7 @@ struct BackTextButton: View {
         self.action = action
     }
     
-    // MARK: - body
+    // MARK: - Body
     
     var body: some View {
         Button(action: action) {

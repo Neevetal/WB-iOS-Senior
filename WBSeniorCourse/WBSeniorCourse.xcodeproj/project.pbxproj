@@ -40,6 +40,8 @@
 		5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */; };
 		5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF52C3C02C9002DB3E1 /* User.swift */; };
 		5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */; };
+		5C9DA6B52C4C628900D63B78 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DA6B42C4C628900D63B78 /* RoundedCorner.swift */; };
+		5C9DA6B72C4C819F00D63B78 /* ImageTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DA6B62C4C819F00D63B78 /* ImageTitleButton.swift */; };
 		5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AA12C30869300FDA808 /* WBSeniorCourseApp.swift */; };
 		5CC34AA62C30869400FDA808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC34AA52C30869400FDA808 /* Assets.xcassets */; };
 		5CC34AA92C30869400FDA808 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC34AA82C30869400FDA808 /* Preview Assets.xcassets */; };
@@ -104,6 +106,8 @@
 		5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		5C68CCF52C3C02C9002DB3E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStep.swift; sourceTree = "<group>"; };
+		5C9DA6B42C4C628900D63B78 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		5C9DA6B62C4C819F00D63B78 /* ImageTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleButton.swift; sourceTree = "<group>"; };
 		5CC34A9E2C30869300FDA808 /* WBSeniorCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSeniorCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC34AA12C30869300FDA808 /* WBSeniorCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBSeniorCourseApp.swift; sourceTree = "<group>"; };
 		5CC34AA52C30869400FDA808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -438,6 +442,7 @@
 				5CC34ABA2C30920300FDA808 /* Button */,
 				5CC34AD42C30974C00FDA808 /* Image */,
 				5CC34ABB2C30920900FDA808 /* TextField */,
+				5C9DA6B42C4C628900D63B78 /* RoundedCorner.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 		5CC34ABA2C30920300FDA808 /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				5C9DA6B62C4C819F00D63B78 /* ImageTitleButton.swift */,
 				5CF2D83F2C3618A800BE02D6 /* BackTextButton.swift */,
 				5CC34B0D2C31632000FDA808 /* ButtonStyle */,
 			);
@@ -672,6 +678,7 @@
 				5CC34B092C315A8600FDA808 /* FontFamily.swift in Sources */,
 				5CF2D8422C3775DD00BE02D6 /* KeyboardModifier.swift in Sources */,
 				5CC34AC52C30931D00FDA808 /* AuthorizationCodePopupView.swift in Sources */,
+				5C9DA6B52C4C628900D63B78 /* RoundedCorner.swift in Sources */,
 				5CC34B0C2C315C4800FDA808 /* AppString.swift in Sources */,
 				5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */,
 				5CCAACEF2C337E1E000CB0FD /* PopupView.swift in Sources */,
@@ -679,6 +686,7 @@
 				5C02FB602C47431100232A90 /* CargoView.swift in Sources */,
 				5C02FB7B2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift in Sources */,
 				5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */,
+				5C9DA6B72C4C819F00D63B78 /* ImageTitleButton.swift in Sources */,
 				5C02FB802C4C2A9200232A90 /* ContentStatisticsView.swift in Sources */,
 				5C02FB342C44AF1400232A90 /* Container.swift in Sources */,
 				5C02FB8D2C4C2B4800232A90 /* AISupportView.swift in Sources */,

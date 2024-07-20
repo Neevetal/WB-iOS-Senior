@@ -19,6 +19,7 @@ struct TopBarView: View {
             shareButton
         }
         .foregroundColor(.white)
+        .padding(.init(top: 32, leading: 30, bottom: 24, trailing: 24))
     }
 }
 
@@ -34,16 +35,18 @@ private extension TopBarView {
     
     @ViewBuilder
     private var displayingWidgetsButton: some View {
-        Text(AppString.Statistics.displayingWidgets)
-            .foregroundColor(AppColor.Text.White.main.color)
-            .font(.montserratFont(size: 14, weight: .medium))
+        ImageTitleButton(
+            text: AppString.Statistics.displayingWidgets,
+            icon: .Asset.Statistics.slidersIcon.image
+        ) {}
     }
     
     @ViewBuilder
     private var shareButton: some View {
-        Text(AppString.Statistics.share)
-            .foregroundColor(AppColor.Text.White.main.color)
-            .font(.montserratFont(size: 14, weight: .medium))
+        ImageTitleButton(
+            text: AppString.Statistics.share,
+            icon: .Asset.Statistics.shareIcon.image
+        ) {}
     }
 }
 

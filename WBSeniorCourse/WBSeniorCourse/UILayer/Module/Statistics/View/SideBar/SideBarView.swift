@@ -20,9 +20,9 @@ struct SideBarView: View {
                     Spacer()
                 }
             }
-          //  .fixedSize(horizontal: false, vertical: true)
             .frame(minWidth: 80 , maxWidth: 80)
             .fixedSize(horizontal: true, vertical: false)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 

@@ -28,6 +28,13 @@ extension UIImage {
             case profileIcon = "profileIcon"
             case mailIcon = "mailIcon"
         }
+        
+        // MARK: - Statistics
+        
+        enum Statistics: String {
+            case shareIcon = "shareIcon"
+            case slidersIcon = "slidersIcon"
+        }
     }
 }
 
