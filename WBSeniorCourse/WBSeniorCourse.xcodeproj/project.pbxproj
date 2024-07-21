@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C02FB212C441ACC00232A90 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB202C441ACC00232A90 /* NavigationManager.swift */; };
+		5C02FB232C44865D00232A90 /* NavigationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB222C44865D00232A90 /* NavigationType.swift */; };
+		5C02FB252C44866B00232A90 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB242C44866B00232A90 /* Screen.swift */; };
+		5C02FB272C44891D00232A90 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB262C44891D00232A90 /* NavigationView.swift */; };
+		5C02FB2D2C4490B400232A90 /* MockNavigationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */; };
 		5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */; };
 		5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF52C3C02C9002DB3E1 /* User.swift */; };
 		5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */; };
@@ -40,6 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C02FB202C441ACC00232A90 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		5C02FB222C44865D00232A90 /* NavigationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationType.swift; sourceTree = "<group>"; };
+		5C02FB242C44866B00232A90 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		5C02FB262C44891D00232A90 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationRootView.swift; sourceTree = "<group>"; };
 		5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		5C68CCF52C3C02C9002DB3E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStep.swift; sourceTree = "<group>"; };
@@ -85,6 +95,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C02FB1F2C441AB500232A90 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB202C441ACC00232A90 /* NavigationManager.swift */,
+				5C02FB292C44892B00232A90 /* View */,
+				5C02FB282C44892400232A90 /* Model */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		5C02FB282C44892400232A90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB242C44866B00232A90 /* Screen.swift */,
+				5C02FB222C44865D00232A90 /* NavigationType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C02FB292C44892B00232A90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB262C44891D00232A90 /* NavigationView.swift */,
+				5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				5CC34AA12C30869300FDA808 /* WBSeniorCourseApp.swift */,
+				5C02FB1F2C441AB500232A90 /* Navigation */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -416,6 +455,7 @@
 				5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */,
 				5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */,
 				5CC34ADB2C30CD2400FDA808 /* Asset.swift in Sources */,
+				5C02FB212C441ACC00232A90 /* NavigationManager.swift in Sources */,
 				5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */,
 				5CC34AC32C30931100FDA808 /* AuthorizationPhonePopupView.swift in Sources */,
 				5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */,
@@ -423,9 +463,13 @@
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
 				5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */,
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
+				5C02FB232C44865D00232A90 /* NavigationType.swift in Sources */,
 				5CC34B0F2C31635300FDA808 /* PurpleButtonStyle.swift in Sources */,
 				5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */,
+				5C02FB252C44866B00232A90 /* Screen.swift in Sources */,
 				5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */,
+				5C02FB272C44891D00232A90 /* NavigationView.swift in Sources */,
+				5C02FB2D2C4490B400232A90 /* MockNavigationRootView.swift in Sources */,
 				5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */,
 				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
 				5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */,

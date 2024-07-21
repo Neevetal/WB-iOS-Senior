@@ -9,9 +9,26 @@ import SwiftUI
 
 @main
 struct WBSeniorCourseApp: App {
+    
+    // MARK: - Dependencies
+    
+    private let navigationManager: NavigationManager
+    
+    // MARK: - Initialization and deinitialization
+    
+    init() {
+        self.navigationManager = NavigationManager()
+    }
+    
+    // MARK: - Body
+    
     var body: some Scene {
         WindowGroup {
-            AuthorizationScreen()
+            NavigationView(
+                navigationManager: navigationManager,
+                rootView: MockNavigationView(titleText: "Root view", color: .yellow)
+            )
+            .environmentObject(navigationManager)
         }
     }
 }
