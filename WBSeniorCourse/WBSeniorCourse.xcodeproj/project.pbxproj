@@ -22,6 +22,9 @@
 		5C02FB462C45456800232A90 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB452C45456800232A90 /* LocalizationManager.swift */; };
 		5C02FB492C4545A900232A90 /* AppStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB482C4545A900232A90 /* AppStorageKey.swift */; };
 		5C02FB4C2C4550D600232A90 /* FormattedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB4B2C4550D600232A90 /* FormattedManager.swift */; };
+		5C02FB602C47431100232A90 /* CargoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB5F2C47431100232A90 /* CargoView.swift */; };
+		5C02FB632C47447B00232A90 /* Array + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB622C47447B00232A90 /* Array + Extension.swift */; };
+		5C02FB652C4744D200232A90 /* Cargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB642C4744D200232A90 /* Cargo.swift */; };
 		5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */; };
 		5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF52C3C02C9002DB3E1 /* User.swift */; };
 		5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */; };
@@ -71,6 +74,9 @@
 		5C02FB452C45456800232A90 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		5C02FB482C4545A900232A90 /* AppStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKey.swift; sourceTree = "<group>"; };
 		5C02FB4B2C4550D600232A90 /* FormattedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedManager.swift; sourceTree = "<group>"; };
+		5C02FB5F2C47431100232A90 /* CargoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoView.swift; sourceTree = "<group>"; };
+		5C02FB622C47447B00232A90 /* Array + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extension.swift"; sourceTree = "<group>"; };
+		5C02FB642C4744D200232A90 /* Cargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cargo.swift; sourceTree = "<group>"; };
 		5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		5C68CCF52C3C02C9002DB3E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStep.swift; sourceTree = "<group>"; };
@@ -144,15 +150,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5C02FB2E2C44ADAE00232A90 /* Container */ = {
-			isa = PBXGroup;
-			children = (
-				5C02FB372C44B27000232A90 /* Model */,
-			);
-			path = Container;
-			sourceTree = "<group>";
-		};
-		5C02FB372C44B27000232A90 /* Model */ = {
+		5C02FB372C44B27000232A90 /* Container */ = {
 			isa = PBXGroup;
 			children = (
 				5C02FB2F2C44ADBE00232A90 /* Stack.swift */,
@@ -160,7 +158,7 @@
 				5C02FB332C44AF1400232A90 /* Container.swift */,
 				5C02FB382C44B2A200232A90 /* AnyContainer.swift */,
 			);
-			path = Model;
+			path = Container;
 			sourceTree = "<group>";
 		};
 		5C02FB3C2C44C20200232A90 /* Localizable */ = {
@@ -179,14 +177,6 @@
 			path = Container;
 			sourceTree = "<group>";
 		};
-		5C02FB442C45455900232A90 /* Localizable */ = {
-			isa = PBXGroup;
-			children = (
-				5C02FB452C45456800232A90 /* LocalizationManager.swift */,
-			);
-			path = Localizable;
-			sourceTree = "<group>";
-		};
 		5C02FB472C45459B00232A90 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,10 +193,28 @@
 			path = Utilit;
 			sourceTree = "<group>";
 		};
+		5C02FB5E2C4742FB00232A90 /* Cargo */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB5F2C47431100232A90 /* CargoView.swift */,
+			);
+			path = Cargo;
+			sourceTree = "<group>";
+		};
+		5C02FB612C47446300232A90 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB622C47447B00232A90 /* Array + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5C68CCF52C3C02C9002DB3E1 /* User.swift */,
+				5C02FB642C4744D200232A90 /* Cargo.swift */,
+				5C02FB372C44B27000232A90 /* Container */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				5CC34AB02C308F2E00FDA808 /* App */,
+				5C02FB612C47446300232A90 /* Extension */,
 				5CC34AD02C30947100FDA808 /* Protocol */,
 				5CC34AB62C308F8400FDA808 /* DataLayer */,
 				5CC34AB32C308F5A00FDA808 /* UILayer */,
@@ -293,6 +302,7 @@
 				5CC34AB82C3091F300FDA808 /* Authorization */,
 				5C02FB3F2C44C21D00232A90 /* Container */,
 				5C02FB3C2C44C20200232A90 /* Localizable */,
+				5C02FB5E2C4742FB00232A90 /* Cargo */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -314,8 +324,6 @@
 				5C02FB4A2C4550C700232A90 /* Utilit */,
 				5C02FB472C45459B00232A90 /* Storage */,
 				5C68CCF42C3C02BC002DB3E1 /* Model */,
-				5C02FB2E2C44ADAE00232A90 /* Container */,
-				5C02FB442C45455900232A90 /* Localizable */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -405,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				5CC34B0B2C315C4800FDA808 /* AppString.swift */,
+				5C02FB452C45456800232A90 /* LocalizationManager.swift */,
 				5C02FB402C453DCC00232A90 /* Localizable.strings */,
 			);
 			path = Localizable;
@@ -542,6 +551,7 @@
 				5CC34B0C2C315C4800FDA808 /* AppString.swift in Sources */,
 				5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */,
 				5CCAACEF2C337E1E000CB0FD /* PopupView.swift in Sources */,
+				5C02FB602C47431100232A90 /* CargoView.swift in Sources */,
 				5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */,
 				5C02FB342C44AF1400232A90 /* Container.swift in Sources */,
 				5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */,
@@ -566,11 +576,13 @@
 				5C02FB492C4545A900232A90 /* AppStorageKey.swift in Sources */,
 				5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */,
 				5C02FB272C44891D00232A90 /* NavigationView.swift in Sources */,
+				5C02FB652C4744D200232A90 /* Cargo.swift in Sources */,
 				5C02FB2D2C4490B400232A90 /* MockNavigationRootView.swift in Sources */,
 				5C02FB462C45456800232A90 /* LocalizationManager.swift in Sources */,
 				5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */,
 				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
 				5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */,
+				5C02FB632C47447B00232A90 /* Array + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

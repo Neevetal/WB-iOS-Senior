@@ -14,20 +14,25 @@ struct WBSeniorCourseApp: App {
     
     private let navigationManager: NavigationManager
     private let localizationManager: LocalizationManager
+    private let cargos: [Cargo?]
     
     // MARK: - Initialization and deinitialization
     
     init() {
         self.navigationManager = NavigationManager()
         self.localizationManager = LocalizationManager()
+        self.cargos = [
+            .randomMock(),
+            .randomMock(),
+            nil
+        ]
     }
     
     // MARK: - Body
     
     var body: some Scene {
         WindowGroup {
-            LocalizableView()
-                .environmentObject(localizationManager)
+            CargoView(cargos: cargos)
         }
     }
 }
