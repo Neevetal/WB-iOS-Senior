@@ -9,24 +9,63 @@ import SwiftUI
 
 struct PhoneTextField: View {
     
+    // MARK: - Property Wrappers
+    
+    @State private var text: String = ""
+    @Binding private var phoneNumber: String
+    @FocusState private var isFocused: Bool
+    @Binding private var isError: Bool
+    
     // MARK: - Properties
     
-    @Binding private var phoneNumber: String
-    @Binding private var isError: Bool
+    private let mask: String
+    private let errorText: String
     
     // MARK: - Initialization and deinitialization
     
-    init(phoneNumber: Binding<String>, isError: Binding<Bool>) {
+    init(
+        phoneNumber: Binding<String>,
+        isError: Binding<Bool>,
+        mask: String,
+        errorText: String
+    ) {
         _phoneNumber = phoneNumber
         _isError = isError
+        self.mask = mask
+        self.errorText = errorText
     }
     
     // MARK: - Body
     
     var body: some View {
-        ZStack(alignment: .trailing) {
-            textField
-            clearButton
+        ZStack() {
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(
+                    AppColor.Background.red.color,
+                    lineWidth: isError ? 1 : 0
+                )
+                .background(AppColor.Background.White.main08.color)
+            HStack(spacing: 8) {
+                VStack(alignment: .leading, spacing: 0) {
+                    if isError {
+                        errorLabel
+                    }
+                    textField
+                }
+                clearButton
+            }
+            .padding(.horizontal, 16)
+        }
+        .cornerRadius(12)
+        .frame(height: 48)
+        .onTapGesture {
+            isFocused = true
+            
+            if isError {
+                withAnimation(Constants.errorAnimation) {
+                    isError = false
+                }
+            }
         }
     }
 }
@@ -36,52 +75,107 @@ struct PhoneTextField: View {
 private extension PhoneTextField {
     @ViewBuilder
     private var textField: some View {
-        TextField("Привет", text: $phoneNumber)
+        TextField("", text: $text)
             .accentColor(AppColor.Background.White.main.color)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 16, weight: .medium))
             .keyboardType(.numberPad)
-            .padding(.vertical, 14)
-            .padding(.horizontal, 16)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(
-                        AppColor.Background.red.color,
-                        lineWidth: isError ? 1 : 0
-                    )
-            )
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(.gray)
-            )//AppColor.Background.White.main08.color))
-            .onChange(of: phoneNumber) { newValue in
-                print("newValue", newValue)
+            .focused($isFocused)
+            .onChange(of: text) { newValue in
+                formatMask(mask, input: newValue)
+                filterPhone(text: newValue)
+                
+                if isError {
+                    withAnimation(Constants.errorAnimation) {
+                        isError = false
+                    }
+                }
             }
     }
     
     @ViewBuilder
     private var clearButton: some View {
-        Image(systemName: "xmark.circle.fill")
+        Image(systemName: Constants.xmarkImageName)
             .foregroundColor(AppColor.Background.White.main.color)
             .onTapGesture {
-                phoneNumber = ""
+                clear()
             }
             .frame(width: 16, height: 16)
-            .padding(.trailing, 16)
-            .opacity(phoneNumber == "" ? 0 : 1)
+            .opacity(text == "" ? 0 : 1)
+    }
+    
+    @ViewBuilder
+    private var errorLabel: some View {
+        Text(errorText)
+            .foregroundColor(AppColor.Text.red.color)
+            .font(.montserratFont(size: 12, weight: .medium))
     }
 }
 
-// MARK: - Preview
+// MARK: - Private methods
+
+private extension PhoneTextField {
+    func formatMask(_ mask: String, input: String) {
+        var inputArray = Array(input)
+        var result: Array<Character> = []
+        
+        for index in 0 ..< mask.count {
+            let maskCharacterIndex = String.Index(utf16Offset: index, in: mask)
+            let maskCharacter = mask[maskCharacterIndex]
+            
+            guard let firstInputCharacter = inputArray.first
+            else {
+                break
+            }
+            
+            if (maskCharacter == firstInputCharacter || maskCharacter == "_") {
+                result.append(firstInputCharacter)
+                inputArray.removeFirst()
+            } else {
+                result.append(maskCharacter)
+            }
+        }
+        
+        text = String(result)
+    }
+    
+    func filterPhone(text: String) {
+        phoneNumber = text.filter { "0123456789+".contains($0) }
+        isFocused = phoneNumber.count != 12
+    }
+    
+    func clear() {
+        text = ""
+        phoneNumber = ""
+        
+        if isError {
+            withAnimation(Constants.errorAnimation) {
+                isError = false
+            }
+        }
+    }
+}
+
+// MARK: - Nested types
+
+extension PhoneTextField {
+    enum Constants {
+        static let xmarkImageName: String = "xmark.circle.fill"
+        static let errorAnimation: Animation = .easeInOut(duration: 0.2)
+    }
+}
+
+// MARK: - Stubable
 
 extension PhoneTextField: Stubable {
     @State static var phoneNumber = ""
-    @State static var isError = false
     
     static func stub() -> PhoneTextField {
         PhoneTextField(
             phoneNumber: PhoneTextField.$phoneNumber,
-            isError: PhoneTextField.$isError
+            isError: .constant(false),
+            mask: "+7 (___) ___ - __ - __",
+            errorText: AppString.Authorization.incorrectNumberFormat
         )
     }
 }

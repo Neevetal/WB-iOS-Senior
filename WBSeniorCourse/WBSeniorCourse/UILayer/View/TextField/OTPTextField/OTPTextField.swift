@@ -13,7 +13,7 @@ struct OTPTextField: View {
     
     @State private var text: String
     @State private var activeFieldIndex: Int = 0
-    @FocusState private var isCodeFocused: Bool
+    @FocusState private var isFocused: Bool
     @Binding private var code: String
     
     // MARK: - Private Properties
@@ -24,7 +24,7 @@ struct OTPTextField: View {
     private let errorText: String?
     private let isEnabled: Bool
     
-    // MARK: - Initializers
+    // MARK: - Initialization and deinitialization
     
     init(
         type: Binding<ViewType>,
@@ -67,12 +67,12 @@ private extension OTPTextField {
             TextField("", text: $text)
                 .keyboardType(.numberPad)
                 .opacity(.zero)
-                .focused($isCodeFocused)
+                .focused($isFocused)
         )
         .contentShape(Rectangle())
         .onTapGesture {
             if isEnabled {
-                isCodeFocused = true
+                isFocused = true
                 
                 if type != .main {
                     withAnimation(.easeInOut(duration: 0.2)) {
@@ -123,7 +123,7 @@ private extension OTPTextField {
         activeFieldIndex = text.count
         
         if text.count == fieldCount {
-            isCodeFocused = false
+            isFocused = false
         }
         
         code = text

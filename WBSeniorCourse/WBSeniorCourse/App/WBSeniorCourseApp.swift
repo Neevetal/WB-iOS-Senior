@@ -11,7 +11,7 @@ import SwiftUI
 struct WBSeniorCourseApp: App {
     var body: some Scene {
         WindowGroup {
-            AuthorizationCodeScreen()
+            AuthorizationScreen()
         }
     }
 }

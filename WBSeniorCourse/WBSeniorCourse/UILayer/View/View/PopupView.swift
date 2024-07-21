@@ -11,11 +11,16 @@ struct PopupView<Content>: View where Content: View {
     
     // MARK: - Properties
     
+    private var isLoading: Bool
     private let content: Content
     
     // MARK: - Initialization and deinitialization
     
-    init(@ViewBuilder content: @escaping () -> Content) {
+    init(
+        isLoading: Bool,
+        @ViewBuilder content: @escaping () -> Content
+    ) {
+        self.isLoading = isLoading
         self.content = content()
     }
     
@@ -25,21 +30,49 @@ struct PopupView<Content>: View where Content: View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
-                content
+                ZStack {
+                    content
+                        .opacity(isLoading ? 0 : 1)
+                    if isLoading {
+                        loader
+                    }
+                }
             }
             .frame(
                 minWidth: 300,
-                maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 400 : 300
+                maxWidth: Constants.maxWidth
             )
             .fixedSize(horizontal: false, vertical: true)
             .cornerRadius(28)
     }
 }
 
+// MARK: - UI Properties
+
+private extension PopupView {
+    @ViewBuilder
+    private var loader: some View {
+        ProgressView()
+            .tint(.white)
+    }
+}
+
+// MARK: - Nested types
+
+extension PopupView {
+    enum Constants {
+        static var maxWidth: CGFloat {
+            return UIDevice.current.userInterfaceIdiom == .pad
+            ? 400
+            : 300
+        }
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    PopupView<EmptyView>() {
+    PopupView<EmptyView>(isLoading: false) {
         EmptyView()
     }
 }
