@@ -24,11 +24,20 @@ struct TrendMovementView: View {
     }
 }
 
+// MARK: - Stubable
+
+extension TrendMovementView: Stubable {
+    static func stub() -> any View {
+        return HStack(spacing: 0) {
+            Spacer()
+            TrendMovementView()
+        }
+    }
+}
+
+
 // MARK: - Preview
 
 #Preview {
-    HStack(spacing: 0) {
-        Spacer()
-        TrendMovementView()
-    }
+    TrendMovementView.stub()
 }

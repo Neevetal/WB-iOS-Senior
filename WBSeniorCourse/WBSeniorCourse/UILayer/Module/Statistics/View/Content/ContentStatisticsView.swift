@@ -9,51 +9,34 @@ import SwiftUI
 
 struct ContentStatisticsView: View {
     
-    // MARK: - Property Wrappers
-    
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    
     // MARK: - Body
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            contentView
-                .padding(.init(
-                    top: 0, 
-                    leading: 30,
-                    bottom: 32, 
-                    trailing: 24
-                ))
+        Grid(horizontalSpacing: 0, verticalSpacing: 24) {
+            GridRow {
+                salesQuantityView
+            }
+            Grid(horizontalSpacing: 24, verticalSpacing: 24) {
+                GridRow {
+                    marketingSpecialistsView
+                    Grid(horizontalSpacing: 0, verticalSpacing: 24) {
+                        GridRow {
+                            externalTrafficView
+                        }
+                        GridRow {
+                            aiSupportView
+                        }
+                    }
+                }
+            }
         }
+        .padding(.init(top: 0, leading: 30, bottom: 32, trailing: 24))
     }
 }
 
 // MARK: - UI Properties
 
 private extension ContentStatisticsView {
-    @ViewBuilder
-    private var contentView: some View {
-        if horizontalSizeClass == .compact {
-            VStack(spacing: 24) {
-                salesQuantityView
-                marketingSpecialistsView
-                externalTrafficView
-                aiSupportView
-            }
-        } else {
-            VStack(spacing: 24) {
-                salesQuantityView
-                HStack(spacing: 24) {
-                    marketingSpecialistsView
-                    VStack(spacing: 24) {
-                        externalTrafficView
-                        aiSupportView
-                    }
-                }
-            }
-        }
-    }
-    
     @ViewBuilder
     private var salesQuantityView: some View {
         SalesQuantityView()

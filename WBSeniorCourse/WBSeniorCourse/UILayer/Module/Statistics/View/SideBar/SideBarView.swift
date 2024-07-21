@@ -9,6 +9,20 @@ import SwiftUI
 
 struct SideBarView: View {
     
+    // MARK: - Property Wrappers
+    
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    
+    // MARK: - Properties
+    
+    private var imageSideSize: CGFloat {
+        return horizontalSizeClass == .compact ? 20 : 44
+    }
+    
+    private var buttonSideSize: CGFloat {
+        return horizontalSizeClass == .compact ? 24 : 48
+    }
+    
     // MARK: - Body
     
     var body: some View {
@@ -18,13 +32,12 @@ struct SideBarView: View {
                 VStack(spacing: 0) {
                     roundImage
                     Spacer()
-                    chartsButton
                     buttonsStackView
                     Spacer()
                     createNewButton
                 }
             }
-            .frame(minWidth: 80, maxWidth: 80)
+            .frame(width: horizontalSizeClass == .compact ? 40 : 80)
             .fixedSize(horizontal: true, vertical: false)
             .edgesIgnoringSafeArea(.all)
     }
@@ -37,22 +50,9 @@ private extension SideBarView {
     private var roundImage: some View {
         RoundImage(
             imageIcon: .Asset.Authorization.profileIcon.image,
-            sideSize: 44
+            sideSize: imageSideSize
         )
         .padding(.top, 32)
-    }
-    
-    @ViewBuilder
-    private var chartsButton: some View {
-        Button(action: {}) {
-            Image(
-                uiImage: .Asset
-                    .Statistics.SideBar
-                    .chartsPurpleIcon.image
-            )
-        }
-        .frame(width: 48, height: 48)
-        .padding(.bottom, 32)
     }
     
     @ViewBuilder
@@ -68,17 +68,27 @@ private extension SideBarView {
                     .Statistics.SideBar
                     .plusCircleIcon.image
             )
+            .resizable()
+            .scaledToFill()
         }
-        .frame(width: 48, height: 48)
+        .frame(width: buttonSideSize, height: buttonSideSize)
         .padding(.bottom, 32)
+    }
+}
+
+// MARK: - Stubable
+
+extension SideBarView: Stubable {
+    static func stub() -> any View {
+        return HStack(spacing: 0) {
+            SideBarView()
+            Spacer()
+        }
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    HStack(spacing: 0) {
-        SideBarView()
-        Spacer()
-    }
+    SideBarView.stub()
 }

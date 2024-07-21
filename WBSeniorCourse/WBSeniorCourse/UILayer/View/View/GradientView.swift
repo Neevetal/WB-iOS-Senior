@@ -42,13 +42,21 @@ struct GradientView<Content>: View where Content: View {
     }
 }
 
+// MARK: - Stubable
+
+extension GradientView: Stubable {
+    static func stub() -> any View {
+        return GradientView<EmptyView>(
+            gradient: AppColor.Gradient.darkPurple.gradient,
+            points: (.leading, .trailing)
+        ) {
+            EmptyView()
+        }
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    GradientView<EmptyView>(
-        gradient: AppColor.Gradient.darkPurple.gradient,
-        points: (.leading, .trailing)
-    ) {
-        EmptyView()
-    }
+    GradientView<EmptyView>.stub()
 }

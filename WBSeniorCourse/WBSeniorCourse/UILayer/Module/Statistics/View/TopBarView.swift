@@ -9,6 +9,10 @@ import SwiftUI
 
 struct TopBarView: View {
     
+    // MARK: - Property Wrappers
+    
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    
     // MARK: - Body
     
     var body: some View {
@@ -30,13 +34,18 @@ private extension TopBarView {
     private var statisticsLabel: some View {
         Text(AppString.Statistics.statistics)
             .foregroundColor(AppColor.Text.White.main.color)
-            .font(.montserratFont(size: 24, weight: .semiBold))
+            .font(.montserratFont(
+                size: horizontalSizeClass == .regular ? 24 : 18,
+                weight: .semiBold
+            ))
     }
     
     @ViewBuilder
     private var displayingWidgetsButton: some View {
         ImageTitleButton(
-            text: AppString.Statistics.displayingWidgets,
+            text: horizontalSizeClass == .regular
+            ? AppString.Statistics.displayingWidgets
+            : "",
             icon: .Asset.Statistics.slidersIcon.image
         ) {}
     }
@@ -44,15 +53,25 @@ private extension TopBarView {
     @ViewBuilder
     private var shareButton: some View {
         ImageTitleButton(
-            text: AppString.Statistics.share,
+            text: horizontalSizeClass == .regular
+            ? AppString.Statistics.share
+            : "",
             icon: .Asset.Statistics.shareIcon.image
         ) {}
+    }
+}
+
+// MARK: - Stubable
+
+extension TopBarView: Stubable {
+    static func stub() -> any View {
+        return TopBarView()
+            .background(Color.black)
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    TopBarView()
-        .background(Color.black)
+    TopBarView.stub()
 }

@@ -97,7 +97,7 @@ private extension CargoView {
 // MARK: - Stubable
 
 extension CargoView: Stubable {
-    static func stub() -> CargoView {
+    static func stub() -> any View {
         return CargoView(cargos: [])
     }
 }

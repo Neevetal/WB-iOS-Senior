@@ -51,13 +51,21 @@ struct BackgroundImageView<Content>: View where Content: View {
     }
 }
 
+// MARK: - Stubable
+
+extension BackgroundImageView: Stubable {
+    static func stub() -> any View {
+        return BackgroundImageView<EmptyView>(
+            image: .Asset.Common.Background.purpleBackgroundImage.image,
+            color: Color.black
+        ) {
+            EmptyView()
+        }
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    BackgroundImageView<EmptyView>(
-        image: .Asset.Common.Background.purpleBackgroundImage.image,
-        color: Color.black
-    ) {
-        EmptyView()
-    }
+    BackgroundImageView<EmptyView>.stub()
 }

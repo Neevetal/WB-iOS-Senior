@@ -46,10 +46,12 @@ extension BackTextButton {
 // MARK: - Stubable
 
 extension BackTextButton: Stubable {
-    static func stub() -> BackTextButton {
+    static func stub() -> any View {
         return BackTextButton(
             text: AppString.Authorization.comeBack
         ) {}
+            .padding()
+            .background(Color.gray)
     }
 }
 
@@ -57,6 +59,4 @@ extension BackTextButton: Stubable {
 
 #Preview {
     BackTextButton.stub()
-        .padding()
-        .background(Color.gray)
 }

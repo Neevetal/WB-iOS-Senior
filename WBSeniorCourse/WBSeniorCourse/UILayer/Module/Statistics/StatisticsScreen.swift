@@ -18,11 +18,13 @@ struct StatisticsScreen: View {
         ) {
             HStack(spacing: 0) {
                 sideBarView
-                VStack(spacing: 0) {
-                    topBarView
-                    contentView
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 0) {
+                        topBarView
+                        contentView
+                    }
                 }
-                trendMovementView
+                //  trendMovementView
             }
         }
         .statusBar(hidden: true)

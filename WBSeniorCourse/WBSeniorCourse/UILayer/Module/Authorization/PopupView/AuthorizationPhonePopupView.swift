@@ -123,7 +123,7 @@ extension AuthorizationPhonePopupView {
 // MARK: - Stubable
 
 extension AuthorizationPhonePopupView: Stubable {
-    static func stub() -> AuthorizationPhonePopupView {
+    static func stub() -> any View {
         return AuthorizationPhonePopupView(
             user: .init(wrappedValue: .init(phone: "", code: "")),
             step: .constant(.phone)

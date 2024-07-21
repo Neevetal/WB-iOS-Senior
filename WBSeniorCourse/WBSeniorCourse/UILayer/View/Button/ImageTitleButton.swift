@@ -47,11 +47,13 @@ struct ImageTitleButton: View {
 // MARK: - Stubable
 
 extension ImageTitleButton: Stubable {
-    static func stub() -> ImageTitleButton {
+    static func stub() -> any View {
         return ImageTitleButton(
             text: AppString.Statistics.share,
             icon: .Asset.Statistics.shareIcon.image
         ) {}
+            .padding()
+            .background(Color.gray)
     }
 }
 
@@ -59,7 +61,5 @@ extension ImageTitleButton: Stubable {
 
 #Preview {
     ImageTitleButton.stub()
-        .padding()
-        .background(Color.gray)
 }
 

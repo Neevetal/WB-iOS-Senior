@@ -170,13 +170,14 @@ extension PhoneTextField {
 extension PhoneTextField: Stubable {
     @State static var phoneNumber = ""
     
-    static func stub() -> PhoneTextField {
+    static func stub() -> any View {
         PhoneTextField(
             phoneNumber: PhoneTextField.$phoneNumber,
             isError: .constant(false),
             mask: "+7 (___) ___ - __ - __",
             errorText: AppString.Authorization.incorrectNumberFormat
         )
+        .padding()
     }
 }
 
@@ -184,5 +185,5 @@ extension PhoneTextField: Stubable {
 
 #Preview {
     PhoneTextField.stub()
-        .padding()
+        
 }
