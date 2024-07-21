@@ -12,6 +12,11 @@
 		5C02FB252C44866B00232A90 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB242C44866B00232A90 /* Screen.swift */; };
 		5C02FB272C44891D00232A90 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB262C44891D00232A90 /* NavigationView.swift */; };
 		5C02FB2D2C4490B400232A90 /* MockNavigationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */; };
+		5C02FB302C44ADBE00232A90 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB2F2C44ADBE00232A90 /* Stack.swift */; };
+		5C02FB322C44AE8C00232A90 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB312C44AE8C00232A90 /* Queue.swift */; };
+		5C02FB342C44AF1400232A90 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB332C44AF1400232A90 /* Container.swift */; };
+		5C02FB362C44B21300232A90 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB352C44B21300232A90 /* ContainerView.swift */; };
+		5C02FB392C44B2A200232A90 /* AnyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB382C44B2A200232A90 /* AnyContainer.swift */; };
 		5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */; };
 		5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF52C3C02C9002DB3E1 /* User.swift */; };
 		5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */; };
@@ -50,6 +55,11 @@
 		5C02FB242C44866B00232A90 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		5C02FB262C44891D00232A90 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationRootView.swift; sourceTree = "<group>"; };
+		5C02FB2F2C44ADBE00232A90 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		5C02FB312C44AE8C00232A90 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		5C02FB332C44AF1400232A90 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		5C02FB352C44B21300232A90 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		5C02FB382C44B2A200232A90 /* AnyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContainer.swift; sourceTree = "<group>"; };
 		5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		5C68CCF52C3C02C9002DB3E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStep.swift; sourceTree = "<group>"; };
@@ -121,6 +131,26 @@
 				5C02FB2C2C4490B400232A90 /* MockNavigationRootView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5C02FB2E2C44ADAE00232A90 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB352C44B21300232A90 /* ContainerView.swift */,
+				5C02FB372C44B27000232A90 /* Model */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		5C02FB372C44B27000232A90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB2F2C44ADBE00232A90 /* Stack.swift */,
+				5C02FB312C44AE8C00232A90 /* Queue.swift */,
+				5C02FB332C44AF1400232A90 /* Container.swift */,
+				5C02FB382C44B2A200232A90 /* AnyContainer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
@@ -230,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				5C68CCF42C3C02BC002DB3E1 /* Model */,
+				5C02FB2E2C44ADAE00232A90 /* Container */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -446,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C02FB362C44B21300232A90 /* ContainerView.swift in Sources */,
 				5CC34B092C315A8600FDA808 /* FontFamily.swift in Sources */,
 				5CF2D8422C3775DD00BE02D6 /* KeyboardModifier.swift in Sources */,
 				5CC34AC52C30931D00FDA808 /* AuthorizationCodePopupView.swift in Sources */,
@@ -453,6 +485,7 @@
 				5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */,
 				5CCAACEF2C337E1E000CB0FD /* PopupView.swift in Sources */,
 				5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */,
+				5C02FB342C44AF1400232A90 /* Container.swift in Sources */,
 				5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */,
 				5CC34ADB2C30CD2400FDA808 /* Asset.swift in Sources */,
 				5C02FB212C441ACC00232A90 /* NavigationManager.swift in Sources */,
@@ -462,10 +495,13 @@
 				5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
 				5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */,
+				5C02FB302C44ADBE00232A90 /* Stack.swift in Sources */,
+				5C02FB322C44AE8C00232A90 /* Queue.swift in Sources */,
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
 				5C02FB232C44865D00232A90 /* NavigationType.swift in Sources */,
 				5CC34B0F2C31635300FDA808 /* PurpleButtonStyle.swift in Sources */,
 				5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */,
+				5C02FB392C44B2A200232A90 /* AnyContainer.swift in Sources */,
 				5C02FB252C44866B00232A90 /* Screen.swift in Sources */,
 				5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */,
 				5C02FB272C44891D00232A90 /* NavigationView.swift in Sources */,

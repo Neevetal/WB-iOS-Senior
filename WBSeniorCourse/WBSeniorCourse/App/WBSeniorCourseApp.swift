@@ -24,11 +24,7 @@ struct WBSeniorCourseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView(
-                navigationManager: navigationManager,
-                rootView: MockNavigationView(titleText: "Root view", color: .yellow)
-            )
-            .environmentObject(navigationManager)
+            ContainerView()
         }
     }
 }
