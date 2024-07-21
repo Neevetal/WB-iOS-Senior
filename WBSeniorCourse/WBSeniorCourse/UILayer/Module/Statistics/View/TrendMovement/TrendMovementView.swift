@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct TrendMovementView: View {
+    
+    // MARK: - Body
+    
     var body: some View {
-        Color.yellow
-            .frame(width: 220)
+        GradientView(
+            gradient: AppColor.Gradient.darkPurple.gradient,
+            points: (.leading, .trailing)) {
+                VStack(spacing: 0) {}
+            }
+            .frame(minWidth: 220, maxWidth: 220)
+            .fixedSize(horizontal: true, vertical: false)
             .cornerRadius(44, corners: [.topLeft, .bottomLeft])
             .edgesIgnoringSafeArea(.all)
     }
 }
 
+// MARK: - Preview
+
 #Preview {
-    TrendMovementView()
+    HStack(spacing: 0) {
+        Spacer()
+        TrendMovementView()
+    }
 }

@@ -34,6 +34,15 @@ extension UIImage {
         enum Statistics: String {
             case shareIcon = "shareIcon"
             case slidersIcon = "slidersIcon"
+            
+            enum SideBar: String {
+                case calendarIcon = "calendarIcon"
+                case chartsPurpleIcon = "chartsPurpleIcon"
+                case chatIcon = "chatIcon"
+                case fireIcon = "fireIcon"
+                case plusCircleIcon = "plusCircleIcon"
+                case settingsIcon = "settingsIcon"
+            }
         }
     }
 }

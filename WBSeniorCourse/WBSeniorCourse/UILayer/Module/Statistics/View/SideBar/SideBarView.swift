@@ -18,9 +18,13 @@ struct SideBarView: View {
                 VStack(spacing: 0) {
                     roundImage
                     Spacer()
+                    chartsButton
+                    buttonsStackView
+                    Spacer()
+                    createNewButton
                 }
             }
-            .frame(minWidth: 80 , maxWidth: 80)
+            .frame(minWidth: 80, maxWidth: 80)
             .fixedSize(horizontal: true, vertical: false)
             .edgesIgnoringSafeArea(.all)
     }
@@ -37,10 +41,44 @@ private extension SideBarView {
         )
         .padding(.top, 32)
     }
+    
+    @ViewBuilder
+    private var chartsButton: some View {
+        Button(action: {}) {
+            Image(
+                uiImage: .Asset
+                    .Statistics.SideBar
+                    .chartsPurpleIcon.image
+            )
+        }
+        .frame(width: 48, height: 48)
+        .padding(.bottom, 32)
+    }
+    
+    @ViewBuilder
+    private var buttonsStackView: some View {
+        SideBarButtonsStackView()
+    }
+    
+    @ViewBuilder
+    private var createNewButton: some View {
+        Button(action: {}) {
+            Image(
+                uiImage: .Asset
+                    .Statistics.SideBar
+                    .plusCircleIcon.image
+            )
+        }
+        .frame(width: 48, height: 48)
+        .padding(.bottom, 32)
+    }
 }
 
 // MARK: - Preview
 
 #Preview {
-    SideBarView()
+    HStack(spacing: 0) {
+        SideBarView()
+        Spacer()
+    }
 }

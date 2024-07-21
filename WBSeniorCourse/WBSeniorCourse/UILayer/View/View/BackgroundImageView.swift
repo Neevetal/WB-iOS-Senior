@@ -36,6 +36,7 @@ struct BackgroundImageView<Content>: View where Content: View {
         .background(
             ZStack {
                 color
+                    .opacity(0.8)
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFill()
