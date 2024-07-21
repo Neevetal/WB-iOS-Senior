@@ -13,18 +13,21 @@ struct WBSeniorCourseApp: App {
     // MARK: - Dependencies
     
     private let navigationManager: NavigationManager
+    private let localizationManager: LocalizationManager
     
     // MARK: - Initialization and deinitialization
     
     init() {
         self.navigationManager = NavigationManager()
+        self.localizationManager = LocalizationManager()
     }
     
     // MARK: - Body
     
     var body: some Scene {
         WindowGroup {
-            ContainerView()
+            LocalizableView()
+                .environmentObject(localizationManager)
         }
     }
 }
