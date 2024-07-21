@@ -15,6 +15,10 @@ struct SideBarView: View {
     
     // MARK: - Properties
     
+    private var verticalOffset: CGFloat {
+        return horizontalSizeClass == .compact ? 16 : 32
+    }
+    
     private var imageSideSize: CGFloat {
         return horizontalSizeClass == .compact ? 20 : 44
     }
@@ -52,7 +56,7 @@ private extension SideBarView {
             imageIcon: .Asset.Authorization.profileIcon.image,
             sideSize: imageSideSize
         )
-        .padding(.top, 32)
+        .padding(.top, verticalOffset)
     }
     
     @ViewBuilder
@@ -72,7 +76,7 @@ private extension SideBarView {
             .scaledToFill()
         }
         .frame(width: buttonSideSize, height: buttonSideSize)
-        .padding(.bottom, 32)
+        .padding(.bottom, verticalOffset)
     }
 }
 
