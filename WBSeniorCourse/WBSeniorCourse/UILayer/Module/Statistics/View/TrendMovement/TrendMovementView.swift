@@ -13,7 +13,8 @@ struct TrendMovementView<Content>: View where Content: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var showType: ShowType = .close
-    @State private var xSideOffset: CGFloat = Constants.xMaxSideOffset
+    @State private var xSideOffset: CGFloat = Constants.sideViewWidth
+    @State private var contentSpacing: CGFloat = Constants.sideViewWidth
     
     // MARK: - Properties
     
@@ -30,6 +31,7 @@ struct TrendMovementView<Content>: View where Content: View {
     var body: some View {
         ZStack(alignment: .trailing) {
             content
+                .padding(.trailing, horizontalSizeClass == .compact ? 0 : contentSpacing)
             sideView
         }
         .animation(.easeInOut, value: xSideOffset)
@@ -50,7 +52,7 @@ private extension TrendMovementView {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {}
-            .frame(width: 320)
+            .frame(width: Constants.sideViewWidth)
             .cornerRadius(44, corners: [.topLeft, .bottomLeft])
             .offset(x: xSideOffset)
             .gesture(
@@ -58,23 +60,25 @@ private extension TrendMovementView {
                     .onChanged { value in
                         if showType == .open {
                             if value.translation.width > 0 {
-                                xSideOffset = min(Constants.xMaxSideOffset, value.translation.width)
+                                xSideOffset = min(Constants.sideViewWidth, value.translation.width)
+                                contentSpacing = Constants.sideViewWidth - xSideOffset
                             }
                         } else {
                             if value.translation.width < 0 {
-                                xSideOffset = max(0, Constants.xMaxSideOffset + value.translation.width)
+                                xSideOffset = max(0, Constants.sideViewWidth + value.translation.width)
+                                contentSpacing = Constants.sideViewWidth - xSideOffset
                             }
                         }
                     }
                     .onEnded { value in
                         if showType == .open {
-                            if value.translation.width > Constants.xMaxSideOffset / 2 {
+                            if value.translation.width > Constants.sideViewWidth / 2 {
                                 closeSideView()
                             } else {
                                 openSideView()
                             }
                         } else {
-                            if value.translation.width < -(Constants.xMaxSideOffset / 2) {
+                            if value.translation.width < -(Constants.sideViewWidth / 2) {
                                 openSideView()
                             } else {
                                 closeSideView()
@@ -84,15 +88,21 @@ private extension TrendMovementView {
             )
             .edgesIgnoringSafeArea(.all)
     }
-    
-    private func openSideView() {
+}
+
+// MARK: - Private methods
+
+private extension TrendMovementView {
+    func openSideView() {
         showType = .open
         xSideOffset = showType.xSideOffset
+        contentSpacing = Constants.sideViewWidth - xSideOffset
     }
     
-    private func closeSideView() {
+    func closeSideView() {
         showType = .close
         xSideOffset = showType.xSideOffset
+        contentSpacing = Constants.sideViewWidth - xSideOffset
     }
 }
 
@@ -114,8 +124,8 @@ extension TrendMovementView {
     }
     
     enum Constants {
-        static var xMaxSideOffset: CGFloat {
-            return 300
+        static var sideViewWidth: CGFloat {
+            return 320
         }
     }
 }
