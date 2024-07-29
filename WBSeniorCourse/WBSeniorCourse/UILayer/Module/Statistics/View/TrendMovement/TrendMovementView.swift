@@ -12,17 +12,12 @@ struct TrendMovementView<Content>: View where Content: View {
     // MARK: - Property Wrappers
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @State private var offset: CGSize = .zero
+    @State private var showType: ShowType = .close
+    @State private var xSideOffset: CGFloat = Constants.xMaxSideOffset
     
     // MARK: - Properties
     
     private let content: Content
-    private var sideSpacing: CGSize {
-        return .init(
-            width: horizontalSizeClass == .compact ? 300 : 0,
-            height: 0
-        )
-    }
     
     // MARK: - Initialization and deinitialization
     
@@ -33,12 +28,16 @@ struct TrendMovementView<Content>: View where Content: View {
     // MARK: - Body
     
     var body: some View {
-        HStack(spacing: 0) {
+        ZStack(alignment: .trailing) {
             content
             sideView
         }
+        .animation(.easeInOut, value: xSideOffset)
         .onAppear {
-            offset = sideSpacing
+            showType = horizontalSizeClass == .compact
+            ? .close
+            : .open
+            xSideOffset = showType.xSideOffset
         }
     }
 }
@@ -50,35 +49,74 @@ private extension TrendMovementView {
     private var sideView: some View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
-            points: (.leading, .trailing)) {
-                VStack(spacing: 0) {}
-            }
+            points: (.leading, .trailing)) {}
             .frame(width: 320)
-            //.fixedSize(horizontal: true, vertical: false)
             .cornerRadius(44, corners: [.topLeft, .bottomLeft])
-            .offset(offset)
+            .offset(x: xSideOffset)
             .gesture(
                 DragGesture()
-                    .onChanged { gesture in
-                        offset = gesture.translation
-                        print("offset", offset)
-                    }
-                    .onEnded { _ in
-                        if abs(offset.width) > 100 {
-                            // remove the card
+                    .onChanged { value in
+                        if showType == .open {
+                            if value.translation.width > 0 {
+                                xSideOffset = min(Constants.xMaxSideOffset, value.translation.width)
+                            }
                         } else {
-                            offset = .zero
+                            if value.translation.width < 0 {
+                                xSideOffset = max(0, Constants.xMaxSideOffset + value.translation.width)
+                            }
+                        }
+                    }
+                    .onEnded { value in
+                        if showType == .open {
+                            if value.translation.width > Constants.xMaxSideOffset / 2 {
+                                closeSideView()
+                            } else {
+                                openSideView()
+                            }
+                        } else {
+                            if value.translation.width < -(Constants.xMaxSideOffset / 2) {
+                                openSideView()
+                            } else {
+                                closeSideView()
+                            }
                         }
                     }
             )
+            .edgesIgnoringSafeArea(.all)
+    }
+    
+    private func openSideView() {
+        showType = .open
+        xSideOffset = showType.xSideOffset
+    }
+    
+    private func closeSideView() {
+        showType = .close
+        xSideOffset = showType.xSideOffset
     }
 }
 
 // MARK: - Nested types
 
 extension TrendMovementView {
+    enum ShowType {
+        case open
+        case close
+        
+        var xSideOffset: CGFloat {
+            switch self {
+            case .open:
+                return 0
+            case .close:
+                return 300
+            }
+        }
+    }
+    
     enum Constants {
-        static var backImageName: String { "chevron.left" }
+        static var xMaxSideOffset: CGFloat {
+            return 300
+        }
     }
 }
 
