@@ -26,7 +26,7 @@
 		5C02FB632C47447B00232A90 /* Array + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB622C47447B00232A90 /* Array + Extension.swift */; };
 		5C02FB652C4744D200232A90 /* Cargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB642C4744D200232A90 /* Cargo.swift */; };
 		5C02FB6D2C4C28F200232A90 /* StatisticsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB6C2C4C28F200232A90 /* StatisticsScreen.swift */; };
-		5C02FB702C4C292300232A90 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB6F2C4C292300232A90 /* SideBarView.swift */; };
+		5C02FB702C4C292300232A90 /* SideTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB6F2C4C292300232A90 /* SideTabBarView.swift */; };
 		5C02FB732C4C298900232A90 /* TrendMovementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB722C4C298900232A90 /* TrendMovementView.swift */; };
 		5C02FB762C4C29BE00232A90 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB752C4C29BE00232A90 /* TopBarView.swift */; };
 		5C02FB792C4C2A0F00232A90 /* YearlyTrendChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */; };
@@ -93,7 +93,7 @@
 		5C02FB622C47447B00232A90 /* Array + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extension.swift"; sourceTree = "<group>"; };
 		5C02FB642C4744D200232A90 /* Cargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cargo.swift; sourceTree = "<group>"; };
 		5C02FB6C2C4C28F200232A90 /* StatisticsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsScreen.swift; sourceTree = "<group>"; };
-		5C02FB6F2C4C292300232A90 /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
+		5C02FB6F2C4C292300232A90 /* SideTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideTabBarView.swift; sourceTree = "<group>"; };
 		5C02FB722C4C298900232A90 /* TrendMovementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMovementView.swift; sourceTree = "<group>"; };
 		5C02FB752C4C29BE00232A90 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyTrendChartView.swift; sourceTree = "<group>"; };
@@ -253,7 +253,6 @@
 			children = (
 				5C02FB752C4C29BE00232A90 /* TopBarView.swift */,
 				5C02FB7E2C4C2A7A00232A90 /* Content */,
-				5C02FB742C4C298D00232A90 /* SideBar */,
 				5C02FB712C4C297900232A90 /* TrendMovement */,
 			);
 			path = View;
@@ -266,15 +265,6 @@
 				5C02FB772C4C29FC00232A90 /* View */,
 			);
 			path = TrendMovement;
-			sourceTree = "<group>";
-		};
-		5C02FB742C4C298D00232A90 /* SideBar */ = {
-			isa = PBXGroup;
-			children = (
-				5C02FB6F2C4C292300232A90 /* SideBarView.swift */,
-				5C9DA6B82C4C8BD000D63B78 /* View */,
-			);
-			path = SideBar;
 			sourceTree = "<group>";
 		};
 		5C02FB772C4C29FC00232A90 /* View */ = {
@@ -366,6 +356,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5CAD79E12C57DC66002682F3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5CAD79E22C57DC6D002682F3 /* SideTabBar */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		5CAD79E22C57DC6D002682F3 /* SideTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB6F2C4C292300232A90 /* SideTabBarView.swift */,
+				5C9DA6B82C4C8BD000D63B78 /* View */,
+			);
+			path = SideTabBar;
+			sourceTree = "<group>";
+		};
 		5CC34A952C30869300FDA808 = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +456,7 @@
 		5CC34AB52C308F7700FDA808 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CAD79E12C57DC66002682F3 /* TabBar */,
 				5CC34AD72C30979F00FDA808 /* View */,
 				5CC34ABA2C30920300FDA808 /* Button */,
 				5CC34AD42C30974C00FDA808 /* Image */,
@@ -705,7 +713,7 @@
 				5C02FB732C4C298900232A90 /* TrendMovementView.swift in Sources */,
 				5CC34ADB2C30CD2400FDA808 /* Asset.swift in Sources */,
 				5C02FB6D2C4C28F200232A90 /* StatisticsScreen.swift in Sources */,
-				5C02FB702C4C292300232A90 /* SideBarView.swift in Sources */,
+				5C02FB702C4C292300232A90 /* SideTabBarView.swift in Sources */,
 				5C02FB3E2C44C20D00232A90 /* LocalizableView.swift in Sources */,
 				5C02FB212C441ACC00232A90 /* NavigationManager.swift in Sources */,
 				5C02FB792C4C2A0F00232A90 /* YearlyTrendChartView.swift in Sources */,

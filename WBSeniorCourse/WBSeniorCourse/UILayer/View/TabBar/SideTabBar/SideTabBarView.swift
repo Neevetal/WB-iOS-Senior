@@ -1,5 +1,5 @@
 //
-//  SideBarView.swift
+//  SideTabBarView.swift
 //  WBSeniorCourse
 //
 //  Created by Vitaly Malkov on 20.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SideBarView: View {
+struct SideTabBarView: View{
     
     // MARK: - Property Wrappers
     
@@ -30,6 +30,27 @@ struct SideBarView: View {
     // MARK: - Body
     
     var body: some View {
+        BackgroundImageView(
+            image: .Asset.Common.Background.purpleBackgroundImage.image,
+            color: Color.black
+        ) {
+            HStack(spacing: 0) {
+                tabBar
+                    .edgesIgnoringSafeArea(.all)
+                StatisticsScreen()
+                    .edgesIgnoringSafeArea(.bottom)
+                    .edgesIgnoringSafeArea(.horizontal)
+            }
+        }
+        .statusBar(hidden: true)
+    }
+}
+
+// MARK: - UI Properties
+
+private extension SideTabBarView {
+    @ViewBuilder
+    private var tabBar: some View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
@@ -43,13 +64,8 @@ struct SideBarView: View {
             }
             .frame(width: horizontalSizeClass == .compact ? 40 : 80)
             .fixedSize(horizontal: true, vertical: false)
-            .edgesIgnoringSafeArea(.all)
     }
-}
-
-// MARK: - UI Properties
-
-private extension SideBarView {
+    
     @ViewBuilder
     private var roundImage: some View {
         RoundImage(
@@ -82,17 +98,14 @@ private extension SideBarView {
 
 // MARK: - Stubable
 
-extension SideBarView: Stubable {
+extension SideTabBarView: Stubable {
     static func stub() -> any View {
-        return HStack(spacing: 0) {
-            SideBarView()
-            Spacer()
-        }
+        return SideTabBarView()
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    SideBarView.stub()
+    SideTabBarView.stub()
 }
