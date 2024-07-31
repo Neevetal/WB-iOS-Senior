@@ -21,6 +21,10 @@ struct SideBarButtonsStackView: View {
         return horizontalSizeClass == .compact ? 16 : 64
     }
     
+    private var gradientRectangleSide: CGFloat {
+        return horizontalSizeClass == .compact ? 32 : 48
+    }
+    
     // MARK: - Initialization and deinitialization
     
     init(
@@ -64,8 +68,8 @@ private extension SideBarButtonsStackView {
                 startPoint: .top,
                 endPoint: .bottom
             ))
-            .frame(width: 48, height: 48)
-            .cornerRadius(16)
+            .frame(width: gradientRectangleSide, height: gradientRectangleSide)
+            .cornerRadius(horizontalSizeClass == .compact ? 8 : 16)
             .shadow(
                 color: AppColor.Shadow.White.light.color,
                 radius: 12,
