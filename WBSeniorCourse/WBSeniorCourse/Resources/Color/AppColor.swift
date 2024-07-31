@@ -36,13 +36,26 @@ enum AppColor {
         case red = "redTextColor"
     }
     
+    // MARK: - Shadow
+    
+    enum Shadow {
+        enum White: String {
+            case light = "white24ShadowColor"
+        }
+    }
+    
     // MARK: - Gradient
     
     enum Gradient {
+        case purple
         case darkPurple
         
         var colorNames: [String] {
             switch self {
+            case .purple: [
+                "purple100GradientColor",
+                "purple0GradientColor"
+            ]
             case .darkPurple: [
                 "darkPurple94GradientColor",
                 "darkBlack49GradientColor"

@@ -44,10 +44,34 @@ struct SideBarButtonsStackView: View {
                     Image(uiImage: item.icon)
                         .resizable()
                         .scaledToFill()
+                        .frame(width: 24, height: 24)
+                        .background(selectedItem == item ? AnyView(gradientRectangle) : AnyView(Color.clear))
+                        .foregroundColor(.white)
                 }
-                .frame(width: 24, height: 24)
             }
         }
+    }
+}
+
+// MARK: - UI Properties
+
+private extension SideBarButtonsStackView {
+    @ViewBuilder
+    private var gradientRectangle: some View {
+        Rectangle()
+            .fill(LinearGradient(
+                gradient: AppColor.Gradient.purple.gradient,
+                startPoint: .top,
+                endPoint: .bottom
+            ))
+            .frame(width: 48, height: 48)
+            .cornerRadius(16)
+            .shadow(
+                color: AppColor.Shadow.White.light.color,
+                radius: 12,
+                x: 0,
+                y: 0
+            )
     }
 }
 
