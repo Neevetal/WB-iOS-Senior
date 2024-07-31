@@ -12,6 +12,7 @@ struct TopBarView: View {
     // MARK: - Property Wrappers
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @ObservedObject var store: StatisticsStore<StatisticsScreen.State, StatisticsScreen.Action>
     
     // MARK: - Body
     
@@ -47,7 +48,9 @@ private extension TopBarView {
             ? AppString.Statistics.displayingWidgets
             : "",
             icon: .Asset.Statistics.slidersIcon.image
-        ) {}
+        ) {
+            store.dispatch(action: .showWidgets)
+        }
     }
     
     @ViewBuilder
@@ -57,7 +60,9 @@ private extension TopBarView {
             ? AppString.Statistics.share
             : "",
             icon: .Asset.Statistics.shareIcon.image
-        ) {}
+        ) {
+            store.dispatch(action: .share)
+        }
     }
 }
 
@@ -65,7 +70,7 @@ private extension TopBarView {
 
 extension TopBarView: Stubable {
     static func stub() -> any View {
-        return TopBarView()
+        return TopBarView(store: .init(state: .main, reducer: { _,_ in return .share }))
             .background(Color.black)
     }
 }
