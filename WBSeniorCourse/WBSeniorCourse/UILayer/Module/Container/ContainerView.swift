@@ -31,12 +31,12 @@ private extension ContainerView {
         intStack.add(1)
         intStack.add(2)
         intStack.add(3)
-        print("intStack remove", intStack.remove())
+        print("intStack remove", intStack.remove() ?? 0)
 
         var stringQueue = Queue<String>()
         stringQueue.add("Ivan")
         stringQueue.add("Marina")
-        print("stringQueue remove", stringQueue.remove())
+        print("stringQueue remove", stringQueue.remove() ?? "")
         
         // Opaque Type
 
@@ -57,17 +57,17 @@ private extension ContainerView {
         let anyIntStack = AnyContainer(intStack)
         anyIntStack.add(4)
         anyIntStack.add(5)
-        print("anyIntStack remove", anyIntStack.remove())
-        print("anyIntStack remove", anyIntStack.remove())
-        print("anyIntStack remove", anyIntStack.remove())
-        print("anyIntStack remove", anyIntStack.remove())
+        print("anyIntStack remove", anyIntStack.remove() ?? 0)
+        print("anyIntStack remove", anyIntStack.remove() ?? 0)
+        print("anyIntStack remove", anyIntStack.remove() ?? 0)
+        print("anyIntStack remove", anyIntStack.remove() ?? 0)
 
         let anyStringQueue = AnyContainer(stringQueue)
         anyStringQueue.add("Igor")
-        print("anyStringQueue remove", anyStringQueue.remove())
-        print("anyStringQueue remove", anyStringQueue.remove())
-        print("anyStringQueue remove", anyStringQueue.remove())
-        print("anyStringQueue remove", anyStringQueue.remove())
+        print("anyStringQueue remove", anyStringQueue.remove() ?? "")
+        print("anyStringQueue remove", anyStringQueue.remove() ?? "")
+        print("anyStringQueue remove", anyStringQueue.remove() ?? "")
+        print("anyStringQueue remove", anyStringQueue.remove() ?? "")
     }
 }
 

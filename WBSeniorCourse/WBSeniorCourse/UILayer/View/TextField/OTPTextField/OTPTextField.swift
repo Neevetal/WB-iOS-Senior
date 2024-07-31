@@ -157,7 +157,7 @@ extension OTPTextField {
 // MARK: - Stubable
 
 extension OTPTextField: Stubable {
-    static func stub() -> OTPTextField {
+    static func stub() -> any View {
         return OTPTextField(
             type: .constant(.main),
             fieldCount: 4,

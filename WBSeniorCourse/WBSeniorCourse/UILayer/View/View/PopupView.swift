@@ -69,10 +69,18 @@ extension PopupView {
     }
 }
 
+// MARK: - Stubable
+
+extension PopupView: Stubable {
+    static func stub() -> any View {
+        return PopupView<EmptyView>(isLoading: false) {
+            EmptyView()
+        }
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    PopupView<EmptyView>(isLoading: false) {
-        EmptyView()
-    }
+    PopupView<EmptyView>.stub()
 }

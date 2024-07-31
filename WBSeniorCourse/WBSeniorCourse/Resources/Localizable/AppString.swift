@@ -9,6 +9,12 @@ import Foundation
 
 enum AppString {
     
+    // MARK: - Common
+    
+    enum Common {
+        static let screenInDevelopment = "Экран в разработке"
+    }
+    
     // MARK: - Authorization
     
     enum Authorization {
@@ -23,6 +29,16 @@ enum AppString {
         static let comeBack = "Вернуться назад"
         static let incorrectPassword = "Неверный пароль"
     }
+    
+    // MARK: - Statistics
+    
+    enum Statistics {
+        static let statistics = "Статистика"
+        static let displayingWidgets = "Отображение виджетов"
+        static let share = "Поделиться"
+    }
+    
+    // MARK: - L10n
     
     enum L10n {
         static let dog = "Dog_L10n_Key"

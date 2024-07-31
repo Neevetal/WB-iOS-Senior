@@ -94,4 +94,3 @@ extension NavigationView {
         static var backImageName: String { "chevron.left" }
     }
 }
-

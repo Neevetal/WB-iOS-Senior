@@ -30,14 +30,36 @@ struct BackgroundImageView<Content>: View where Content: View {
     // MARK: - Body
     
     var body: some View {
-        ZStack() {
-            color
-                .edgesIgnoringSafeArea(.all)
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
+        ZStack {
             content
+        }
+        .background(
+            ZStack {
+                color
+                    .opacity(0.8)
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                
+            }
+                .edgesIgnoringSafeArea(.all)
+                .frame(
+                    width: UIScreen.main.bounds.width,
+                    height: UIScreen.main.bounds.height
+                )
+        )
+    }
+}
+
+// MARK: - Stubable
+
+extension BackgroundImageView: Stubable {
+    static func stub() -> any View {
+        return BackgroundImageView<EmptyView>(
+            image: .Asset.Common.Background.purpleBackgroundImage.image,
+            color: Color.black
+        ) {
+            EmptyView()
         }
     }
 }
@@ -45,10 +67,5 @@ struct BackgroundImageView<Content>: View where Content: View {
 // MARK: - Preview
 
 #Preview {
-    BackgroundImageView<EmptyView>(
-        image: .Asset.Common.Background.purpleBackgroundImage.image,
-        color: Color.black
-    ) {
-        EmptyView()
-    }
+    BackgroundImageView<EmptyView>.stub()
 }

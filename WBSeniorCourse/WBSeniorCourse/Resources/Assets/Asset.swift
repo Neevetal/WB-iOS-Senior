@@ -28,6 +28,22 @@ extension UIImage {
             case profileIcon = "profileIcon"
             case mailIcon = "mailIcon"
         }
+        
+        // MARK: - Statistics
+        
+        enum Statistics: String {
+            case shareIcon = "shareIcon"
+            case slidersIcon = "slidersIcon"
+            
+            enum SideBar: String {
+                case calendarIcon = "calendarIcon"
+                case chartsIcon = "chartsIcon"
+                case chatIcon = "chatIcon"
+                case fireIcon = "fireIcon"
+                case plusCircleIcon = "plusCircleIcon"
+                case settingsIcon = "settingsIcon"
+            }
+        }
     }
 }
 

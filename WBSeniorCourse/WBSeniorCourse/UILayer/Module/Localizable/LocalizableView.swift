@@ -105,8 +105,17 @@ private extension LocalizableView {
     }
 }
 
+// MARK: - Stubable
+
+extension LocalizableView: Stubable {
+    static func stub() -> any View {
+        return LocalizableView()
+            .environmentObject(LocalizationManager())
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    LocalizableView()
+    LocalizableView.stub()
 }
