@@ -9,6 +9,12 @@ import Foundation
 
 enum AppString {
     
+    // MARK: - Common
+    
+    enum Common {
+        static let screenInDevelopment = "Экран в разработке"
+    }
+    
     // MARK: - Authorization
     
     enum Authorization {

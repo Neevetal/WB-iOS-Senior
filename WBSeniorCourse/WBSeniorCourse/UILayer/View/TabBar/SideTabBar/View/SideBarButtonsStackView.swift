@@ -12,20 +12,36 @@ struct SideBarButtonsStackView: View {
     // MARK: - Property Wrappers
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Binding private var selectedItem: SideTabBarView.ItemType
     
     // MARK: - Properties
     
+    private let itemTypes: [SideTabBarView.ItemType]
     private var stackSpacing: CGFloat {
         return horizontalSizeClass == .compact ? 16 : 64
+    }
+    
+    // MARK: - Initialization and deinitialization
+    
+    init(
+        selectedItem: Binding<SideTabBarView.ItemType>,
+        itemTypes: [SideTabBarView.ItemType]
+    ) {
+        _selectedItem = selectedItem
+        self.itemTypes = itemTypes
     }
     
     // MARK: - Body
     
     var body: some View {
         VStack(spacing: stackSpacing) {
-            ForEach(Constants.buttonContents, id: \.self) { content in
-                Button(action: {}) {
-                    Image(uiImage: content)
+            ForEach(itemTypes, id: \.self) { item in
+                Button(action: {
+                    withAnimation {
+                        selectedItem = item
+                    }
+                }) {
+                    Image(uiImage: item.icon)
                         .resizable()
                         .scaledToFill()
                 }
@@ -35,26 +51,15 @@ struct SideBarButtonsStackView: View {
     }
 }
 
-// MARK: - Nested types
-
-extension SideBarButtonsStackView {
-    enum Constants {
-        static let buttonContents: [UIImage] = [
-            .Asset.Statistics.SideBar.chartsIcon.image,
-            .Asset.Statistics.SideBar.chatIcon.image,
-            .Asset.Statistics.SideBar.fireIcon.image,
-            .Asset.Statistics.SideBar.calendarIcon.image,
-            .Asset.Statistics.SideBar.settingsIcon.image
-        ]
-    }
-}
-
 // MARK: - Stubable
 
 extension SideBarButtonsStackView: Stubable {
     static func stub() -> any View {
-        return SideBarButtonsStackView()
-            .background(Color.black)
+        return SideBarButtonsStackView(
+            selectedItem: .constant(.charts),
+            itemTypes: SideTabBarView.ItemType.allCases
+        )
+        .background(Color.black)
     }
 }
 

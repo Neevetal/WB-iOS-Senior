@@ -12,6 +12,7 @@ struct SideTabBarView: View{
     // MARK: - Property Wrappers
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State private var selectedItem: ItemType = .charts
     
     // MARK: - Properties
     
@@ -37,11 +38,18 @@ struct SideTabBarView: View{
             HStack(spacing: 0) {
                 tabBar
                     .edgesIgnoringSafeArea(.all)
-                StatisticsScreen()
+                selectedScreen
                     .edgesIgnoringSafeArea(.bottom)
                     .edgesIgnoringSafeArea(.horizontal)
             }
         }
+        .frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .leading
+        )
         .statusBar(hidden: true)
     }
 }
@@ -67,6 +75,17 @@ private extension SideTabBarView {
     }
     
     @ViewBuilder
+    private var selectedScreen: some View {
+        switch selectedItem {
+        case .charts: StatisticsScreen()
+        case .chat: InDevelopingView()
+        case .fire: InDevelopingView()
+        case .calendar: InDevelopingView()
+        case .settings: InDevelopingView()
+        }
+    }
+    
+    @ViewBuilder
     private var roundImage: some View {
         RoundImage(
             imageIcon: .Asset.Authorization.profileIcon.image,
@@ -77,7 +96,10 @@ private extension SideTabBarView {
     
     @ViewBuilder
     private var buttonsStackView: some View {
-        SideBarButtonsStackView()
+        SideBarButtonsStackView(
+            selectedItem: $selectedItem,
+            itemTypes: ItemType.allCases
+        )
     }
     
     @ViewBuilder
@@ -93,6 +115,33 @@ private extension SideTabBarView {
         }
         .frame(width: buttonSideSize, height: buttonSideSize)
         .padding(.bottom, verticalOffset)
+    }
+}
+
+// MARK: - Nested types
+
+extension SideTabBarView {
+    enum ItemType: CaseIterable {
+        case charts
+        case chat
+        case fire
+        case calendar
+        case settings
+        
+        var icon: UIImage {
+            switch self {
+            case .charts:
+                return .Asset.Statistics.SideBar.chartsIcon.image
+            case .chat:
+                return .Asset.Statistics.SideBar.chatIcon.image
+            case .fire:
+                return .Asset.Statistics.SideBar.fireIcon.image
+            case .calendar:
+                return .Asset.Statistics.SideBar.calendarIcon.image
+            case .settings:
+                return .Asset.Statistics.SideBar.settingsIcon.image
+            }
+        }
     }
 }
 
