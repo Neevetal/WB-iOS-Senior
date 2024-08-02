@@ -8,16 +8,16 @@
 import SwiftUI
 import MultipeerConnectivity
 
-final class MCUtilit: NSObject {
+final class MCUtilit: NSObject, ObservableObject {
     
     // MARK: - Constants
     
-    private let serviceType = "wb_mc_utilit"
+    private let serviceType = "wbmcutilit"
     
     // MARK: - Property Wrappers
     
-    private var statusText = ""
-    private var outputText = ""
+    @Published var statusText = ""
+    @Published var messageText = ""
     
     // MARK: - Properties
     
@@ -44,18 +44,6 @@ private extension MCUtilit {
         browser?.delegate = self
         browser?.startBrowsingForPeers()
     }
-    
-    func stop() {
-        if let advertiser {
-            advertiser.stopAdvertisingPeer()
-        }
-        
-        if let browser {
-            browser.stopBrowsingForPeers()
-        }
-        
-        multipeerSession?.disconnect()
-    }
 }
 
 // MARK: - Public methods
@@ -79,6 +67,19 @@ extension MCUtilit {
         
         stop()
         startBrowser()
+    }
+    
+    func stop() {
+        if let advertiser {
+            advertiser.stopAdvertisingPeer()
+        }
+        
+        if let browser {
+            browser.stopBrowsingForPeers()
+        }
+        
+        messageText = ""
+        multipeerSession?.disconnect()
     }
     
     func send(message: String) {
@@ -134,7 +135,7 @@ extension MCUtilit: MCSessionDelegate {
         }
         
         DispatchQueue.main.async {
-            self.outputText = message
+            self.messageText = message
         }
     }
     

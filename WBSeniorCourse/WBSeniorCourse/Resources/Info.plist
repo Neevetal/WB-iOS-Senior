@@ -4,11 +4,9 @@
 <dict>
 	<key>NSBonjourServices</key>
 	<array>
-		<string>_wb_mc_utilit._tcp</string>
-		<string>_wb_mc_utilit._udp</string>
+		<string>_wbmcutilit._tcp</string>
+		<string>_wbmcutilit._upd</string>
 	</array>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>This app needs local network to discover nearby device</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Light.ttf</string>

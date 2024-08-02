@@ -50,6 +50,7 @@
 		5C8531892C5D0E8200A1E5EC /* CalculatorUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531882C5D0E8200A1E5EC /* CalculatorUITest.swift */; };
 		5C85318B2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85318A2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift */; };
 		5C85318D2C5D2B7800A1E5EC /* MCUtilit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85318C2C5D2B7800A1E5EC /* MCUtilit.swift */; };
+		5C8531902C5D31C900A1E5EC /* MCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85318F2C5D31C900A1E5EC /* MCView.swift */; };
 		5C9DA6B52C4C628900D63B78 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DA6B42C4C628900D63B78 /* RoundedCorner.swift */; };
 		5C9DA6B72C4C819F00D63B78 /* ImageTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DA6B62C4C819F00D63B78 /* ImageTitleButton.swift */; };
 		5C9DA6BA2C4C8BF100D63B78 /* SideBarButtonsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DA6B92C4C8BF100D63B78 /* SideBarButtonsStackView.swift */; };
@@ -148,6 +149,7 @@
 		5C8531882C5D0E8200A1E5EC /* CalculatorUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITest.swift; sourceTree = "<group>"; };
 		5C85318A2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonStyle.swift; sourceTree = "<group>"; };
 		5C85318C2C5D2B7800A1E5EC /* MCUtilit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCUtilit.swift; sourceTree = "<group>"; };
+		5C85318F2C5D31C900A1E5EC /* MCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCView.swift; sourceTree = "<group>"; };
 		5C9DA6B42C4C628900D63B78 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		5C9DA6B62C4C819F00D63B78 /* ImageTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleButton.swift; sourceTree = "<group>"; };
 		5C9DA6B92C4C8BF100D63B78 /* SideBarButtonsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarButtonsStackView.swift; sourceTree = "<group>"; };
@@ -443,6 +445,14 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
+		5C85318E2C5D31BE00A1E5EC /* MultipeerConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				5C85318F2C5D31C900A1E5EC /* MCView.swift */,
+			);
+			path = MultipeerConnectivity;
+			sourceTree = "<group>";
+		};
 		5C9DA6B82C4C8BD000D63B78 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +553,7 @@
 		5CC34AB42C308F6500FDA808 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				5C85318E2C5D31BE00A1E5EC /* MultipeerConnectivity */,
 				5C8531852C5D0E1600A1E5EC /* Calculator */,
 				5C02FB6B2C4C28D500232A90 /* Statistics */,
 				5CC34AB82C3091F300FDA808 /* Authorization */,
@@ -908,6 +919,7 @@
 				5C02FB762C4C29BE00232A90 /* TopBarView.swift in Sources */,
 				5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */,
 				5CC34AC32C30931100FDA808 /* AuthorizationPhonePopupView.swift in Sources */,
+				5C8531902C5D31C900A1E5EC /* MCView.swift in Sources */,
 				5C85318B2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift in Sources */,
 				5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */,
 				5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */,
@@ -1168,6 +1180,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WBSeniorCourse/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app needs local network to discover nearby devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1199,6 +1212,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WBSeniorCourse/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app needs local network to discover nearby devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

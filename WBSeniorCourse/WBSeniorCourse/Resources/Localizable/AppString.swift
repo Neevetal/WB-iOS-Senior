@@ -38,6 +38,14 @@ enum AppString {
         static let share = "Поделиться"
     }
     
+    // MARK: - MultipeerConnectivity
+    
+    enum MultipeerConnectivity {
+        static let connect = "Подключиться"
+        static let disconnect = "Отключиться"
+        static let sendMessage = "Отправить сообщении"
+    }
+    
     // MARK: - L10n
     
     enum L10n {

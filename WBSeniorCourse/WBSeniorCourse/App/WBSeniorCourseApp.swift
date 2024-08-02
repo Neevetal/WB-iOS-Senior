@@ -15,6 +15,7 @@ struct WBSeniorCourseApp: App {
     private let navigationManager: NavigationManager
     private let localizationManager: LocalizationManager
     private let cargos: [Cargo?]
+    private let mcUtilit: MCUtilit
     
     // MARK: - Initialization and deinitialization
     
@@ -26,13 +27,15 @@ struct WBSeniorCourseApp: App {
             .randomMock(),
             nil
         ]
+        self.mcUtilit = MCUtilit()
     }
     
     // MARK: - Body
     
     var body: some Scene {
         WindowGroup {
-            CalculatorView()
+            MCView()
+                .environmentObject(mcUtilit)
         }
     }
 }
