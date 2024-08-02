@@ -32,7 +32,7 @@ struct WBSeniorCourseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SideTabBarView()
+            CalculatorView()
         }
     }
 }

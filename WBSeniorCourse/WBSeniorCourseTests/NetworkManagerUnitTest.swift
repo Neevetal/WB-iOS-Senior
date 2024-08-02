@@ -119,7 +119,7 @@ extension NetworkManagerTests {
         
         Task {
             do {
-                let (data, response) = try await manager.delete(url: url)
+                let (_, response) = try await manager.delete(url: url)
                 DispatchQueue.main.async {
                     guard let httpResponse = response as? HTTPURLResponse
                     else {
