@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_wbmcutilit._tcp</string>
+		<string>_wbmcutilit._upd</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Light.ttf</string>
