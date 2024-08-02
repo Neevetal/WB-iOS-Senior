@@ -29,6 +29,30 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5C8531642C5CFD9F00A1E5EC"
+               BuildableName = "WBSeniorCourseTests.xctest"
+               BlueprintName = "WBSeniorCourseTests"
+               ReferencedContainer = "container:WBSeniorCourse.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5C8531712C5CFDB400A1E5EC"
+               BuildableName = "WBSeniorCourseUITests.xctest"
+               BlueprintName = "WBSeniorCourseUITests"
+               ReferencedContainer = "container:WBSeniorCourse.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
