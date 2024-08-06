@@ -34,8 +34,7 @@ struct WBSeniorCourseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MCView()
-                .environmentObject(mcUtilit)
+            SideTabBarView()
         }
     }
 }

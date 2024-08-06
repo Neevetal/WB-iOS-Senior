@@ -57,6 +57,7 @@ private extension StatisticsScreen {
                 ContentStatisticsView()
             }
         }
+        .disableBounces()
     }
 }
 
