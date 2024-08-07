@@ -8,12 +8,23 @@
 import SwiftUI
 
 struct MarketingSpecialistsView: View {
+    
+    // MARK: - Body
+    
     var body: some View {
-        Color.green
-            .frame(height: 438)
-            .cornerRadius(28)
+        ScrollView {
+            LazyVStack {
+                ForEach(1...100, id: \.self) { _ in 
+                    MarketingSpecialistRow()
+                }
+            }
+        }
+        .frame(height: 438)
+        .cornerRadius(28)
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     MarketingSpecialistsView()

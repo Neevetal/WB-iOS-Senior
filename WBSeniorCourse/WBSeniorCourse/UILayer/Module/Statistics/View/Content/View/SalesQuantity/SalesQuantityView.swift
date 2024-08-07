@@ -8,6 +8,10 @@
 import SwiftUI
 import Charts
 
+struct YearKPISales {
+    let salesKPI: Int
+}
+
 struct SalesYear: Identifiable {
     var id = UUID()
     let months: [SalesMonth]
@@ -57,7 +61,6 @@ struct SalesYear: Identifiable {
 
 struct SalesMonth: Identifiable, Hashable {
     var id = UUID()
-    
     let name: String
     let salesCount: Int
 }
