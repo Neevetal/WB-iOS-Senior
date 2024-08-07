@@ -20,11 +20,11 @@ struct MarketingSpecialistsView: View {
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack {
-                        ForEach(service.specialists, id: \.self) { specialist in
-                            MarketingSpecialistRow()
-                        }
+                    VStack(alignment: .leading, spacing: 16) {
+                        titleLabel
+                        specialistsList
                     }
+                    .padding(20)
                 }
                 .disableBounces()
             }
@@ -38,10 +38,18 @@ struct MarketingSpecialistsView: View {
 private extension MarketingSpecialistsView {
     @ViewBuilder
     private var titleLabel: some View {
-        Text(AppString.Authorization.authorization)
+        Text(AppString.Statistics.MarketingSpecialists.title)
             .foregroundColor(AppColor.Text.White.main.color)
-            .font(.montserratFont(size: 24, weight: .semiBold))
-            .padding(.top, 40)
+            .font(.montserratFont(size: 18, weight: .semiBold))
+    }
+    
+    @ViewBuilder
+    private var specialistsList: some View {
+        LazyVStack {
+            ForEach(service.specialists, id: \.self) { specialist in
+                MarketingSpecialistRow()
+            }
+        }
     }
 }
 

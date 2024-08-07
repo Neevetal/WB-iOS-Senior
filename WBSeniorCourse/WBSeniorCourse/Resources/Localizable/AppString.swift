@@ -37,7 +37,7 @@ enum AppString {
         static let displayingWidgets = "Отображение виджетов"
         static let share = "Поделиться"
         
-        enum NumberOfSales {
+        enum SalesQuantity {
             static let title = "Количество продаж"
             static var percentageOfSales: (Int) -> String = {
                 return "+\($0)% продаж"

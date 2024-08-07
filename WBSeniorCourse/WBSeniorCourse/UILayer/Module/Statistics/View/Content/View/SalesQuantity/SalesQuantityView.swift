@@ -78,18 +78,18 @@ struct SalesQuantityView: View {
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    //chartView
-                    VStack(spacing: 0) {
+                    VStack(alignment: .leading, spacing: 0) {
+                        titleLabel
+                        percentageSalesLabel
                         chartView
                             .frame(minWidth: 64 * 12, maxWidth: .infinity)
                             .frame(height: 445)
                             .fixedSize(horizontal: false, vertical: false)
-                            .padding(20)
                     }
+                    .padding(24)
                 }
                 .disableBounces()
             }
-          //  .frame(height: 445)
             .cornerRadius(28)
     }
 }
@@ -97,6 +97,25 @@ struct SalesQuantityView: View {
 // MARK: - UI Properties
 
 private extension SalesQuantityView {
+    @ViewBuilder
+    private var titleLabel: some View {
+        Text(AppString.Statistics.SalesQuantity.title)
+            .foregroundColor(AppColor.Text.White.main.color)
+            .font(.montserratFont(size: 18, weight: .semiBold))
+    }
+    
+    @ViewBuilder
+    private var percentageSalesLabel: some View {
+        Text(
+            AppString.Statistics.SalesQuantity.percentageOfSales(53)
+            + " "
+            + AppString.Statistics.SalesQuantity.comparedLastYear
+        )
+        .foregroundColor(AppColor.Text.White.main.color)
+        .font(.montserratFont(size: 14, weight: .regular))
+        .padding(.top, 6)
+    }
+    
     @ViewBuilder
     private var chartView: some View {
         Chart(data) { year in
@@ -142,6 +161,7 @@ private extension SalesQuantityView {
         .chartForegroundStyleScale(
             range: Gradient(colors: [.yellow, .green])
         )
+        .padding(.top, 24)
     }
 }
 
