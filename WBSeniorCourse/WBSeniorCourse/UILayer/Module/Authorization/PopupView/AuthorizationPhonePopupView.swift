@@ -56,7 +56,7 @@ private extension AuthorizationPhonePopupView {
     @ViewBuilder
     private var roundImage: some View {
         RoundImage(
-            imageIcon: .Asset.Authorization.profileIcon.image,
+            imageIcon: .Asset.User.dog.image,
             sideSize: 96
         )
         .padding(.top, 28)

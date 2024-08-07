@@ -25,7 +25,6 @@ extension UIImage {
         // MARK: - Authorization
         
         enum Authorization: String {
-            case profileIcon = "profileIcon"
             case mailIcon = "mailIcon"
         }
         
@@ -43,6 +42,17 @@ extension UIImage {
                 case plusCircleIcon = "plusCircleIcon"
                 case settingsIcon = "settingsIcon"
             }
+        }
+        
+        // MARK: - User
+        
+        enum User: String {
+            case dog = "dogUserIcon"
+            case cat = "catUserIcon"
+            case man1 = "man1UserIcon"
+            case man2 = "man2UserIcon"
+            case man3 = "man3UserIcon"
+            case man4 = "man4UserIcon"
         }
     }
 }

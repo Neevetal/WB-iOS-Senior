@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SideTabBarView: View{
+struct SideTabBarView: View {
     
     // MARK: - Property Wrappers
     
@@ -88,7 +88,7 @@ private extension SideTabBarView {
     @ViewBuilder
     private var roundImage: some View {
         RoundImage(
-            imageIcon: .Asset.Authorization.profileIcon.image,
+            imageIcon: .Asset.User.dog.image,
             sideSize: imageSideSize
         )
         .padding(.top, verticalOffset)

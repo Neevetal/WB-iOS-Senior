@@ -42,7 +42,7 @@ struct RoundImage: View {
 extension RoundImage: Stubable {
     static func stub() -> any View {
         return RoundImage(
-            imageIcon: .Asset.Authorization.profileIcon.image,
+            imageIcon: .Asset.User.dog.image,
             sideSize: 96
         )
     }
