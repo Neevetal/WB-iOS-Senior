@@ -17,6 +17,7 @@ enum AppColor {
         
         enum White: String {
             case main = "whiteBackgroundColor"
+            case main04 = "whiteBackgroundColor04"
             case main08 = "whiteBackgroundColor08"
         }
         
@@ -34,6 +35,7 @@ enum AppColor {
         }
         
         case red = "redTextColor"
+        case gray = "grayTextColor"
     }
     
     // MARK: - Shadow

@@ -20,7 +20,7 @@ struct MarketingSpecialistsView: View {
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 16) {
+                    VStack(alignment: .leading, spacing: 0) {
                         titleLabel
                         specialistsList
                     }
@@ -45,10 +45,28 @@ private extension MarketingSpecialistsView {
     
     @ViewBuilder
     private var specialistsList: some View {
-        LazyVStack {
+        LazyVStack(spacing: 0) {
             ForEach(service.specialists, id: \.self) { specialist in
-                MarketingSpecialistRow()
+                MarketingSpecialistRow(specialist: specialist)
+                    .padding(.top, 12)
             }
+        }
+        .padding(.top, 4)
+    }
+}
+
+// MARK: - Stubable
+
+extension MarketingSpecialistsView: Stubable {
+    static func stub() -> any View {
+        return ZStack {
+            LinearGradient(
+                gradient: AppColor.Gradient.darkPurple.gradient,
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            MarketingSpecialistsView()
+                .environmentObject(StatisticsService())
         }
     }
 }
@@ -56,5 +74,5 @@ private extension MarketingSpecialistsView {
 // MARK: - Preview
 
 #Preview {
-    MarketingSpecialistsView()
+    MarketingSpecialistsView.stub()
 }

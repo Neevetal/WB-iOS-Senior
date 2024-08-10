@@ -107,7 +107,7 @@ private extension SideTabBarView {
         Button(action: {}) {
             Image(
                 uiImage: .Asset
-                    .Statistics.SideBar
+                    .SideBar
                     .plusCircleIcon.image
             )
             .resizable()
@@ -131,15 +131,15 @@ extension SideTabBarView {
         var icon: UIImage {
             switch self {
             case .charts:
-                return .Asset.Statistics.SideBar.chartsIcon.image
+                return .Asset.SideBar.chartsIcon.image
             case .chat:
-                return .Asset.Statistics.SideBar.chatIcon.image
+                return .Asset.SideBar.chatIcon.image
             case .fire:
-                return .Asset.Statistics.SideBar.fireIcon.image
+                return .Asset.SideBar.fireIcon.image
             case .calendar:
-                return .Asset.Statistics.SideBar.calendarIcon.image
+                return .Asset.SideBar.calendarIcon.image
             case .settings:
-                return .Asset.Statistics.SideBar.settingsIcon.image
+                return .Asset.SideBar.settingsIcon.image
             }
         }
     }

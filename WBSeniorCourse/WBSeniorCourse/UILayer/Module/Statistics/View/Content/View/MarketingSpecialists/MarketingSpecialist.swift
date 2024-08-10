@@ -14,7 +14,12 @@ struct MarketingSpecialist: Hashable {
     let marketplace: Marketplace
     let rating: Double
     let completeSalesCount: Int
+    let needToCompleteSales: Int = 1700
     let mobileOperator: MobileOperator
+    
+    var progress: Int {
+        return completeSalesCount * 100 / needToCompleteSales
+    }
 }
 
 extension MarketingSpecialist {
@@ -57,6 +62,18 @@ extension MarketingSpecialist {
 // MARK: - Mock
 
 extension MarketingSpecialist {
+    static func mock() -> Self {
+        return .init(
+            name: "Элиот Мюллер",
+            image: .Asset.User.man1.image,
+            grade: MarketingSpecialist.Grade.random,
+            marketplace: MarketingSpecialist.Marketplace.random,
+            rating: Double.random(in: 4...5),
+            completeSalesCount: Int.random(in: 1000...1700),
+            mobileOperator: MarketingSpecialist.MobileOperator.random
+        )
+    }
+    
     static func specialistsMock() -> [MarketingSpecialist] {
         return [
             .init(
