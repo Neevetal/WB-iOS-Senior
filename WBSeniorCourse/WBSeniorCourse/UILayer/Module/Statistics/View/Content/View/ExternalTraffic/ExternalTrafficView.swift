@@ -9,6 +9,16 @@ import SwiftUI
 
 struct ExternalTrafficView: View {
     
+    // MARK: - Property Wrappers
+    
+    @State var selectedMonth: MonthItem
+    
+    // MARK: - Initialization and deinitialization
+    
+    init() {
+        self.selectedMonth = MonthItem.current
+    }
+    
     // MARK: - Body
     
     var body: some View {
@@ -16,7 +26,15 @@ struct ExternalTrafficView: View {
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
                 VStack(alignment: .leading, spacing: 0) {
-                    titleLabel
+                    HStack {
+                        titleLabel
+                        Spacer()
+                        MonthPicker(item: $selectedMonth)
+                    }
+                    HStack {
+                        PercentageCircleProgressView()
+                        infoRows
+                    }
                 }
                 .padding(20)
             }
@@ -33,6 +51,14 @@ private extension ExternalTrafficView {
         Text(AppString.Statistics.ExternalTraffic.title)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 18, weight: .semiBold))
+    }
+    
+    @ViewBuilder
+    private var infoRows: some View {
+        VStack {
+            TwoLabelsView()
+            TwoLabelsView()
+        }
     }
 }
 

@@ -58,7 +58,7 @@ struct NavigationView<Content: View>: View {
 
 private extension NavigationView {
     @ViewBuilder
-    private var backButton: some View {
+    var backButton: some View {
         Button(action: {
             withAnimation {
                 navigationManager.pop()
