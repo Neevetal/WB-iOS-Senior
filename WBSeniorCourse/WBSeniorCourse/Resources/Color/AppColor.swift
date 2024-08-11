@@ -52,6 +52,7 @@ enum AppColor {
         case purple
         case darkPurple
         case darkBlue
+        case green
         
         var colorNames: [String] {
             switch self {
@@ -66,6 +67,10 @@ enum AppColor {
             case .darkBlue: [
                 "darkBlue74GradientColor",
                 "darkBlue71GradientColor"
+            ]
+            case .green: [
+                "green0GradientColor",
+                "green100GradientColor"
             ]
             }
         }

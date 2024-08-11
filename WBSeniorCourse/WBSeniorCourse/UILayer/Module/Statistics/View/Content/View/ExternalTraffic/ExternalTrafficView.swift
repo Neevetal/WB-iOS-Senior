@@ -25,14 +25,14 @@ struct ExternalTrafficView: View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
-                VStack(alignment: .leading, spacing: 0) {
-                    HStack {
+                VStack(alignment: .leading, spacing: 24) {
+                    HStack(alignment: .top) {
                         titleLabel
                         Spacer()
                         MonthPicker(item: $selectedMonth)
                     }
-                    HStack {
-                        PercentageCircleProgressView()
+                    HStack(spacing: 16) {
+                        circleProgressView
                         infoRows
                     }
                 }
@@ -54,10 +54,22 @@ private extension ExternalTrafficView {
     }
     
     @ViewBuilder
+    var circleProgressView: some View {
+        PercentageCircleProgressView(progress: .constant(0.78))
+            .frame(width: 190, height: 190)
+    }
+    
+    @ViewBuilder
     var infoRows: some View {
-        VStack {
-            TwoLabelsView()
-            TwoLabelsView()
+        VStack(spacing: 12) {
+            TwoLabelsView(
+                titleText: "445 чел.",
+                commentText: "Всего с внешнего трафика"
+            )
+            TwoLabelsView(
+                titleText: "445 чел.",
+                commentText: "Всего с внешнего трафика"
+            )
         }
     }
 }
