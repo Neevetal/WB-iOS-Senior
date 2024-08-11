@@ -28,21 +28,21 @@ struct AISupportView: View {
 
 private extension AISupportView {
     @ViewBuilder
-    private var backgroundImage: some View {
+    var backgroundImage: some View {
         Image(uiImage: .Asset.Statistics.aiSupportBackground.image)
             .resizable()
             .scaledToFill()
     }
     
     @ViewBuilder
-    private var titleLabel: some View {
+    var titleLabel: some View {
         Text(AppString.Statistics.AISupport.title)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 18, weight: .semiBold))
     }
     
     @ViewBuilder
-    private var helpButton: some View {
+    var helpButton: some View {
         Button(action: {}) {
             Text(AppString.Statistics.AISupport.helpIsNeeded)
                 .foregroundColor(AppColor.Text.White.main.color)

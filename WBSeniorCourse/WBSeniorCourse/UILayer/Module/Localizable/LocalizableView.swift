@@ -40,7 +40,7 @@ struct LocalizableView: View {
 
 private extension LocalizableView {
     @ViewBuilder
-    private var L10nView: some View {
+    var L10nView: some View {
         VStack(spacing: 8) {
             ForEach(textKeys, id: \.self) { textKey in
                 Text(textKey.localized(localizationManager.language))
@@ -62,7 +62,7 @@ private extension LocalizableView {
     }
     
     @ViewBuilder
-    private var formattedDatesView: some View {
+    var formattedDatesView: some View {
         VStack(spacing: 8) {
             Text(AppString.L10n.dates.localized(localizationManager.language))
                 .font(.title)
@@ -77,7 +77,7 @@ private extension LocalizableView {
     }
     
     @ViewBuilder
-    private var unitsView: some View {
+    var unitsView: some View {
         VStack(spacing: 8) {
             Text(AppString.L10n.distance.localized(localizationManager.language))
                 .font(.title)

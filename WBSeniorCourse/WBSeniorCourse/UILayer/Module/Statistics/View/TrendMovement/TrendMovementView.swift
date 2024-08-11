@@ -53,7 +53,7 @@ struct TrendMovementView<Content>: View where Content: View {
 
 private extension TrendMovementView {
     @ViewBuilder
-    private var sideView: some View {
+    var sideView: some View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {

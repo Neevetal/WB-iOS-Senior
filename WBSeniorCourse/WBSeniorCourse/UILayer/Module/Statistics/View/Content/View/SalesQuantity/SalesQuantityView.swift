@@ -98,14 +98,14 @@ struct SalesQuantityView: View {
 
 private extension SalesQuantityView {
     @ViewBuilder
-    private var titleLabel: some View {
+    var titleLabel: some View {
         Text(AppString.Statistics.SalesQuantity.title)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 18, weight: .semiBold))
     }
     
     @ViewBuilder
-    private var percentageSalesLabel: some View {
+    var percentageSalesLabel: some View {
         Text(
             AppString.Statistics.SalesQuantity.percentageOfSales(53)
             + " "
@@ -117,7 +117,7 @@ private extension SalesQuantityView {
     }
     
     @ViewBuilder
-    private var chartView: some View {
+    var chartView: some View {
         Chart(data) { year in
             ForEach(year.months, id: \.name) { month in
                 AreaMark(

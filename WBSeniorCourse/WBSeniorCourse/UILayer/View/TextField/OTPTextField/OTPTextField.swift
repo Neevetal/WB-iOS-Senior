@@ -57,7 +57,7 @@ struct OTPTextField: View {
 
 private extension OTPTextField {
     @ViewBuilder
-    private var fieldLabels: some View {
+    var fieldLabels: some View {
         HStack(spacing: Constants.stackSpacing) {
             ForEach(0 ..< fieldCount, id: \.self) { index in
                 fieldLabel(with: index)
@@ -89,7 +89,7 @@ private extension OTPTextField {
     }
     
     @ViewBuilder
-    private var errorLabel: some View {
+    var errorLabel: some View {
         Text(errorText ?? "")
             .foregroundStyle(AppColor.Text.red.color)
             .font(.montserratFont(size: 14, weight: .regular))

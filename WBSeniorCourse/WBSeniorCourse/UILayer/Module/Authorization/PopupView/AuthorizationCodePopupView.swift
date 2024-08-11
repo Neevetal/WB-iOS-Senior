@@ -61,7 +61,7 @@ struct AuthorizationCodePopupView: View {
 
 private extension AuthorizationCodePopupView {
     @ViewBuilder
-    private var mailImage: some View {
+    var mailImage: some View {
         Image(uiImage: .Asset.Authorization.mailIcon.image)
             .resizable()
             .scaledToFill()
@@ -70,7 +70,7 @@ private extension AuthorizationCodePopupView {
     }
     
     @ViewBuilder
-    private var phoneNumberText: some View {
+    var phoneNumberText: some View {
         Text(format(user.phone))
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 24, weight: .semiBold))
@@ -78,7 +78,7 @@ private extension AuthorizationCodePopupView {
     }
     
     @ViewBuilder
-    private var otpTextField: some View {
+    var otpTextField: some View {
         OTPTextField(
             type: $otpType,
             fieldCount: Constants.fieldCount,
@@ -90,7 +90,7 @@ private extension AuthorizationCodePopupView {
     }
     
     @ViewBuilder
-    private var repeatСodeButton: some View {
+    var repeatСodeButton: some View {
         Button(
             isNeedRepeatCode
             ? AppString.Authorization.requestTheCodeAgain(String(repeatCodeSeconds))
@@ -112,7 +112,7 @@ private extension AuthorizationCodePopupView {
     }
     
     @ViewBuilder
-    private var authorizationButton: some View {
+    var authorizationButton: some View {
         Button(AppString.Authorization.login) {
             if repeatCodeSeconds <= 0 {
                 repeatCodeSeconds = Constants.defaultRepeatCodeSeconds
@@ -127,7 +127,7 @@ private extension AuthorizationCodePopupView {
     }
     
     @ViewBuilder
-    private var backButton: some View {
+    var backButton: some View {
         BackTextButton(
             text: AppString.Authorization.comeBack
         ) {

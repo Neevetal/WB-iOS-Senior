@@ -50,7 +50,7 @@ struct StatisticsScreen: View {
 
 private extension StatisticsScreen {
     @ViewBuilder
-    private var contentView: some View {
+    var contentView: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 0) {
                 TopBarView(store: store)
@@ -61,8 +61,31 @@ private extension StatisticsScreen {
     }
 }
 
+// MARK: - Stubable
+
+extension StatisticsScreen: Stubable {
+    static func stub() -> any View {
+        let store = StatisticsStore<StatisticsScreen.State, StatisticsScreen.Action>(state: StatisticsScreen.State.main) { prevState, action in
+            switch action {
+            case .showMain:
+                print("Вернулись на главный экран")
+                return .main
+            case .showWidgets:
+                print("Открыли настройку виджетов")
+                return .widgets
+            case .share:
+                print("Поделились статистикой")
+                return .share
+            }
+        }
+        
+        return StatisticsScreen(store: store)
+            .environmentObject(StatisticsService())
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    StatisticsScreen()
+    StatisticsScreen.stub()
 }

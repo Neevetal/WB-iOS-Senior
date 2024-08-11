@@ -38,7 +38,7 @@ struct MCView: View {
 
 private extension MCView {
     @ViewBuilder
-    private var statusLabel: some View {
+    var statusLabel: some View {
         Text(mcUtilit.statusText)
             .foregroundColor(AppColor.Text.red.color)
             .font(.montserratFont(size: 14, weight: .regular))
@@ -46,7 +46,7 @@ private extension MCView {
     }
     
     @ViewBuilder
-    private var messageLabel: some View {
+    var messageLabel: some View {
         Text(mcUtilit.messageText)
             .foregroundColor(Color.black)
             .font(.montserratFont(size: 16, weight: .medium))
@@ -54,7 +54,7 @@ private extension MCView {
     }
     
     @ViewBuilder
-    private var connectButton: some View {
+    var connectButton: some View {
         Button(AppString.MultipeerConnectivity.connect) {
             mcUtilit.connect()
         }
@@ -64,7 +64,7 @@ private extension MCView {
     }
     
     @ViewBuilder
-    private var disconnectButton: some View {
+    var disconnectButton: some View {
         Button(AppString.MultipeerConnectivity.disconnect) {
             mcUtilit.disconnect()
         }
@@ -74,7 +74,7 @@ private extension MCView {
     }
     
     @ViewBuilder
-    private var sendMessageButton: some View {
+    var sendMessageButton: some View {
         Button(AppString.MultipeerConnectivity.sendMessage) {
             mcUtilit.send(message: "Hello from \(UIDevice.current.name)")
         }
@@ -85,8 +85,17 @@ private extension MCView {
     }
 }
 
+// MARK: - Stubable
+
+extension MCView: Stubable {
+    static func stub() -> any View {
+        return MCView()
+            .environmentObject(MCUtilit())
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    MCView()
+    MCView.stub()
 }

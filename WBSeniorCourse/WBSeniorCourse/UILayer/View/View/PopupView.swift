@@ -51,7 +51,7 @@ struct PopupView<Content>: View where Content: View {
 
 private extension PopupView {
     @ViewBuilder
-    private var loader: some View {
+    var loader: some View {
         ProgressView()
             .tint(.white)
     }

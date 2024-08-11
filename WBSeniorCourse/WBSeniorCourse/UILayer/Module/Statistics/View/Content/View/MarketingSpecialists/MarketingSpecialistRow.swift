@@ -53,7 +53,7 @@ struct MarketingSpecialistRow: View {
 
 private extension MarketingSpecialistRow {
     @ViewBuilder
-    private var roundImage: some View {
+    var roundImage: some View {
         RoundImage(
             imageIcon: specialist.image,
             sideSize: 40
@@ -61,14 +61,14 @@ private extension MarketingSpecialistRow {
     }
     
     @ViewBuilder
-    private var nameLabel: some View {
+    var nameLabel: some View {
         Text(specialist.name)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 18, weight: .semiBold))
     }
     
     @ViewBuilder
-    private var infoLabel: some View {
+    var infoLabel: some View {
         Text(
             specialist.grade.rawValue
             + ", "
@@ -79,7 +79,7 @@ private extension MarketingSpecialistRow {
     }
     
     @ViewBuilder
-    private var progressView: some View {
+    var progressView: some View {
         ProgressView(value: Double(specialist.progress) / 100)
             .tint(AppColor.Background.Purple.main.color)
             .frame(height: 6)
@@ -87,7 +87,7 @@ private extension MarketingSpecialistRow {
     }
     
     @ViewBuilder
-    private var salesCompletedLabel: some View {
+    var salesCompletedLabel: some View {
         Text(AppString.Statistics.MarketingSpecialists.salesCompleted(
             specialist.completeSalesCount, specialist.needToCompleteSales
         ))
@@ -96,7 +96,7 @@ private extension MarketingSpecialistRow {
     }
     
     @ViewBuilder
-    private var completedLabel: some View {
+    var completedLabel: some View {
         Text(AppString.Statistics.MarketingSpecialists.completed(
             specialist.progress
         ))

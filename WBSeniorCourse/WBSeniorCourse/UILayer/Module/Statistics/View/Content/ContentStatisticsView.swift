@@ -38,28 +38,37 @@ struct ContentStatisticsView: View {
 
 private extension ContentStatisticsView {
     @ViewBuilder
-    private var salesQuantityView: some View {
+    var salesQuantityView: some View {
         SalesQuantityView()
     }
     
     @ViewBuilder
-    private var marketingSpecialistsView: some View {
+    var marketingSpecialistsView: some View {
         MarketingSpecialistsView()
     }
     
     @ViewBuilder
-    private var externalTrafficView: some View {
+    var externalTrafficView: some View {
         ExternalTrafficView()
     }
     
     @ViewBuilder
-    private var aiSupportView: some View {
+    var aiSupportView: some View {
         AISupportView()
+    }
+}
+
+// MARK: - Stubable
+
+extension ContentStatisticsView: Stubable {
+    static func stub() -> any View {
+        return ContentStatisticsView()
+            .environmentObject(StatisticsService())
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    ContentStatisticsView()
+    ContentStatisticsView.stub()
 }

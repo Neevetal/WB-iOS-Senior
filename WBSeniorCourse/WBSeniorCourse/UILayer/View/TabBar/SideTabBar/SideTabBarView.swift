@@ -58,7 +58,7 @@ struct SideTabBarView: View {
 
 private extension SideTabBarView {
     @ViewBuilder
-    private var tabBar: some View {
+    var tabBar: some View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
@@ -75,7 +75,7 @@ private extension SideTabBarView {
     }
     
     @ViewBuilder
-    private var selectedScreen: some View {
+    var selectedScreen: some View {
         switch selectedItem {
         case .charts: StatisticsScreen()
         case .chat: InDevelopingView()
@@ -86,7 +86,7 @@ private extension SideTabBarView {
     }
     
     @ViewBuilder
-    private var roundImage: some View {
+    var roundImage: some View {
         RoundImage(
             imageIcon: .Asset.User.dog.image,
             sideSize: imageSideSize
@@ -95,7 +95,7 @@ private extension SideTabBarView {
     }
     
     @ViewBuilder
-    private var buttonsStackView: some View {
+    var buttonsStackView: some View {
         SideBarButtonsStackView(
             selectedItem: $selectedItem,
             itemTypes: ItemType.allCases
@@ -103,7 +103,7 @@ private extension SideTabBarView {
     }
     
     @ViewBuilder
-    private var createNewButton: some View {
+    var createNewButton: some View {
         Button(action: {}) {
             Image(
                 uiImage: .Asset
@@ -150,6 +150,7 @@ extension SideTabBarView {
 extension SideTabBarView: Stubable {
     static func stub() -> any View {
         return SideTabBarView()
+            .environmentObject(StatisticsService())
     }
 }
 

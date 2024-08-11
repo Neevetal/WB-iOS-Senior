@@ -33,7 +33,7 @@ struct StarRatingView: View {
 
 private extension StarRatingView {
     @ViewBuilder
-    private var starImage: some View {
+    var starImage: some View {
         Image(uiImage: .Asset.Statistics.starIcon.image)
             .resizable()
             .scaledToFill()
@@ -41,7 +41,7 @@ private extension StarRatingView {
     }
     
     @ViewBuilder
-    private var ratingLabel: some View {
+    var ratingLabel: some View {
         Text("\(rating, specifier: "%.1f")")
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 14, weight: .medium))

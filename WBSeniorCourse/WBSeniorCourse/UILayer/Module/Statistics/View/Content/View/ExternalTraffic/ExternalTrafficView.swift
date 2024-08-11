@@ -47,14 +47,14 @@ struct ExternalTrafficView: View {
 
 private extension ExternalTrafficView {
     @ViewBuilder
-    private var titleLabel: some View {
+    var titleLabel: some View {
         Text(AppString.Statistics.ExternalTraffic.title)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 18, weight: .semiBold))
     }
     
     @ViewBuilder
-    private var infoRows: some View {
+    var infoRows: some View {
         VStack {
             TwoLabelsView()
             TwoLabelsView()

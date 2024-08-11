@@ -37,14 +37,14 @@ struct MarketingSpecialistsView: View {
 
 private extension MarketingSpecialistsView {
     @ViewBuilder
-    private var titleLabel: some View {
+    var titleLabel: some View {
         Text(AppString.Statistics.MarketingSpecialists.title)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 18, weight: .semiBold))
     }
     
     @ViewBuilder
-    private var specialistsList: some View {
+    var specialistsList: some View {
         LazyVStack(spacing: 0) {
             ForEach(service.specialists, id: \.self) { specialist in
                 MarketingSpecialistRow(specialist: specialist)

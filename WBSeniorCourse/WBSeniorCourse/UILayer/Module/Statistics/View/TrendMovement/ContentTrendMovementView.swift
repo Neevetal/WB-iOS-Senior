@@ -28,7 +28,7 @@ struct ContentTrendMovementView: View {
 
 private extension ContentTrendMovementView {
     @ViewBuilder
-    private var titleLabel: some View {
+    var titleLabel: some View {
         Text(AppString.Statistics.TrendMovement.title(2024))
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 18, weight: .semiBold))
