@@ -40,7 +40,6 @@ struct BackgroundImageView<Content>: View where Content: View {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFill()
-                
             }
                 .edgesIgnoringSafeArea(.all)
                 .frame(
