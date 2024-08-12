@@ -31,7 +31,7 @@
 		5C02FB762C4C29BE00232A90 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB752C4C29BE00232A90 /* TopBarView.swift */; };
 		5C02FB792C4C2A0F00232A90 /* YearlyTrendChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */; };
 		5C02FB7B2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB7A2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift */; };
-		5C02FB7D2C4C2A6300232A90 /* ContacDetailsTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB7C2C4C2A6300232A90 /* ContacDetailsTrendView.swift */; };
+		5C02FB7D2C4C2A6300232A90 /* ContactDetailsTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB7C2C4C2A6300232A90 /* ContactDetailsTrendView.swift */; };
 		5C02FB802C4C2A9200232A90 /* ContentStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB7F2C4C2A9200232A90 /* ContentStatisticsView.swift */; };
 		5C02FB842C4C2AC500232A90 /* SalesQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB832C4C2AC500232A90 /* SalesQuantityView.swift */; };
 		5C02FB872C4C2AE900232A90 /* MarketingSpecialistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB862C4C2AE900232A90 /* MarketingSpecialistsView.swift */; };
@@ -48,6 +48,7 @@
 		5C76B1882C6948AB00F12CCB /* MonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1872C6948AB00F12CCB /* MonthPicker.swift */; };
 		5C76B18B2C695CDF00F12CCB /* MonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B18A2C695CDF00F12CCB /* MonthItem.swift */; };
 		5C76B18E2C6A18D300F12CCB /* CircleProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */; };
+		5C76B1912C6A51DB00F12CCB /* ContactDetailsTrendRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -140,7 +141,7 @@
 		5C02FB752C4C29BE00232A90 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyTrendChartView.swift; sourceTree = "<group>"; };
 		5C02FB7A2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyStatisticsTrendView.swift; sourceTree = "<group>"; };
-		5C02FB7C2C4C2A6300232A90 /* ContacDetailsTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContacDetailsTrendView.swift; sourceTree = "<group>"; };
+		5C02FB7C2C4C2A6300232A90 /* ContactDetailsTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTrendView.swift; sourceTree = "<group>"; };
 		5C02FB7F2C4C2A9200232A90 /* ContentStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStatisticsView.swift; sourceTree = "<group>"; };
 		5C02FB832C4C2AC500232A90 /* SalesQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesQuantityView.swift; sourceTree = "<group>"; };
 		5C02FB862C4C2AE900232A90 /* MarketingSpecialistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingSpecialistsView.swift; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 		5C76B1872C6948AB00F12CCB /* MonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPicker.swift; sourceTree = "<group>"; };
 		5C76B18A2C695CDF00F12CCB /* MonthItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthItem.swift; sourceTree = "<group>"; };
 		5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressRow.swift; sourceTree = "<group>"; };
+		5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTrendRow.swift; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,7 +361,7 @@
 			children = (
 				5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */,
 				5C76B18C2C6A18B700F12CCB /* MonthlyStatisticsTrend */,
-				5C02FB7C2C4C2A6300232A90 /* ContacDetailsTrendView.swift */,
+				5C76B18F2C6A26AC00F12CCB /* ContactDetailsTrend */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -469,6 +471,15 @@
 				5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */,
 			);
 			path = MonthlyStatisticsTrend;
+			sourceTree = "<group>";
+		};
+		5C76B18F2C6A26AC00F12CCB /* ContactDetailsTrend */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB7C2C4C2A6300232A90 /* ContactDetailsTrendView.swift */,
+				5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */,
+			);
+			path = ContactDetailsTrend;
 			sourceTree = "<group>";
 		};
 		5C8531662C5CFD9F00A1E5EC /* WBSeniorCourseTests */ = {
@@ -971,7 +982,8 @@
 				5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */,
 				5C76B1832C693FAA00F12CCB /* TwoLabelsView.swift in Sources */,
 				5CCAACEF2C337E1E000CB0FD /* PopupView.swift in Sources */,
-				5C02FB7D2C4C2A6300232A90 /* ContacDetailsTrendView.swift in Sources */,
+				5C76B1912C6A51DB00F12CCB /* ContactDetailsTrendRow.swift in Sources */,
+				5C02FB7D2C4C2A6300232A90 /* ContactDetailsTrendView.swift in Sources */,
 				5C02FB602C47431100232A90 /* CargoView.swift in Sources */,
 				5C02FB7B2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift in Sources */,
 				5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */,

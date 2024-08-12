@@ -16,7 +16,6 @@ struct WBSeniorCourseApp: App {
     private let localizationManager: LocalizationManager
     private let cargos: [Cargo?]
     private let mcUtilit: MCUtilit
-    private let statisticsService: StatisticsService
     
     // MARK: - Initialization and deinitialization
     
@@ -29,7 +28,6 @@ struct WBSeniorCourseApp: App {
             nil
         ]
         self.mcUtilit = MCUtilit()
-        self.statisticsService = StatisticsService()
     }
     
     // MARK: - Body
@@ -37,7 +35,6 @@ struct WBSeniorCourseApp: App {
     var body: some Scene {
         WindowGroup {
             SideTabBarView()
-                .environmentObject(statisticsService)
         }
     }
 }

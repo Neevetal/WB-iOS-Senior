@@ -144,6 +144,7 @@ extension TrendMovementView: Stubable {
         return HStack(spacing: 0) {
             Spacer()
             TrendMovementView<EmptyView>() {}
+                .environmentObject(StatisticsService())
         }
     }
 }

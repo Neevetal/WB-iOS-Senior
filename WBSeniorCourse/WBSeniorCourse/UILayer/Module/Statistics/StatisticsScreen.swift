@@ -21,6 +21,10 @@ struct StatisticsScreen: View {
         case share
     }
     
+    // MARK: - Dependencies
+    
+    private let statisticsService = StatisticsService()
+    
     // MARK: - Property Wrappers
     
     @ObservedObject var store = StatisticsStore<State, Action>(state: .main) { prevState, action in
@@ -43,6 +47,7 @@ struct StatisticsScreen: View {
         TrendMovementView() {
             contentView
         }
+        .environmentObject(statisticsService)
     }
 }
 

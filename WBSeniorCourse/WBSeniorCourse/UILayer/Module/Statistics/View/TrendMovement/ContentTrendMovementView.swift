@@ -17,7 +17,7 @@ struct ContentTrendMovementView: View {
                 titleLabel
                 YearlyTrendChartView()
                 MonthlyStatisticsTrendView()
-                ContacDetailsTrendView()
+                ContactDetailsTrendView()
             }
         }
         .disableBounces()
@@ -36,8 +36,24 @@ private extension ContentTrendMovementView {
     }
 }
 
+// MARK: - Stubable
+
+extension ContentTrendMovementView: Stubable {
+    static func stub() -> any View {
+        return ZStack {
+            LinearGradient(
+                gradient: AppColor.Gradient.darkPurple.gradient,
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            ContentTrendMovementView()
+                .environmentObject(StatisticsService())
+        }
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    ContentTrendMovementView()
+    ContentTrendMovementView.stub()
 }
