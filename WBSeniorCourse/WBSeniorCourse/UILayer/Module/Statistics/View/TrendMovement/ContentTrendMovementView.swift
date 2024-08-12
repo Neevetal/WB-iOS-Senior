@@ -26,7 +26,7 @@ struct ContentTrendMovementView: View {
             VStack(alignment: .leading, spacing: 0) {
                 titleLabel
                 YearlyTrendChartView(with: $selectedTrend)
-                MonthlyStatisticsTrendView()
+                MonthlyStatisticsTrendView(selectedTrend: selectedTrend)
                 ContactDetailsTrendView()
             }
             .padding(.horizontal, 20)

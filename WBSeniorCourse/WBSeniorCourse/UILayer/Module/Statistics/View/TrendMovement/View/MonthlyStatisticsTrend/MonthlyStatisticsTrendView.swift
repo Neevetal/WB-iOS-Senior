@@ -9,6 +9,16 @@ import SwiftUI
 
 struct MonthlyStatisticsTrendView: View {
     
+    // MARK: - Properties
+    
+    private let selectedTrend: Trend
+    
+    // MARK: - Initialization and deinitialization
+    
+    init(selectedTrend: Trend) {
+        self.selectedTrend = selectedTrend
+    }
+    
     // MARK: - Body
     
     var body: some View {
@@ -34,7 +44,7 @@ struct MonthlyStatisticsTrendView: View {
 private extension MonthlyStatisticsTrendView {
     @ViewBuilder
     var titleLabel: some View {
-        Text(AppString.Statistics.TrendMovement.statisticsForMonth(09))
+        Text(AppString.Statistics.TrendMovement.statisticsForMonth(selectedTrend.monthId))
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 16, weight: .medium))
             .padding(.top, 20)
@@ -43,11 +53,11 @@ private extension MonthlyStatisticsTrendView {
     @ViewBuilder
     var priceView: some View {
         CircleProgressRow(
-            progress: .constant(0.6),
+            progress: .constant(selectedTrend.info.priceValue),
             model: .init(
                 icon: .Asset.Statistics.Progress.priceIcon.image,
                 title: AppString.Statistics.TrendMovement.price,
-                value: "869$"
+                value: "\(selectedTrend.info.price)$"
             )
         )
     }
@@ -55,11 +65,11 @@ private extension MonthlyStatisticsTrendView {
     @ViewBuilder
     var clicksView: some View {
         CircleProgressRow(
-            progress: .constant(0.24),
+            progress: .constant(selectedTrend.info.clicksValue),
             model: .init(
                 icon: .Asset.Statistics.Progress.clicksIcon.image,
                 title: AppString.Statistics.TrendMovement.clicks,
-                value: "24%"
+                value: "\(selectedTrend.info.clicksPercent)%"
             )
         )
     }
@@ -67,11 +77,11 @@ private extension MonthlyStatisticsTrendView {
     @ViewBuilder
     var purchasesView: some View {
         CircleProgressRow(
-            progress: .constant(0.9),
+            progress: .constant(selectedTrend.info.purchasesValue),
             model: .init(
                 icon: .Asset.Statistics.Progress.purchasesIcon.image,
                 title: AppString.Statistics.TrendMovement.purchases,
-                value: "22 300"
+                value: "\(selectedTrend.info.purchasesCount)"
             )
         )
     }
@@ -79,11 +89,11 @@ private extension MonthlyStatisticsTrendView {
     @ViewBuilder
     var helpView: some View {
         CircleProgressRow(
-            progress: .constant(0.01),
+            progress: .constant(selectedTrend.info.helpValue),
             model: .init(
                 icon: .Asset.Statistics.Progress.helpIcon.image,
                 title: AppString.Statistics.TrendMovement.help,
-                value: "1,2%"
+                value: "\(selectedTrend.info.helpPercent)%"
             )
         )
     }
@@ -95,7 +105,7 @@ extension MonthlyStatisticsTrendView: Stubable {
     static func stub() -> any View {
         return ZStack {
             Color.black.opacity(0.8)
-            MonthlyStatisticsTrendView()
+            MonthlyStatisticsTrendView(selectedTrend: .mock())
                 .frame(width: 320)
         }
     }

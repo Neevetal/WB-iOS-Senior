@@ -81,7 +81,7 @@ private extension YearlyTrendChartView {
         with monthId: Int,
         isSelected: Bool
     ) -> some View {
-        Text("\(monthId)")
+        Text(String(format: "%02d", monthId))
             .foregroundColor(
                 isSelected
                 ? AppColor.Text.White.main.color

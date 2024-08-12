@@ -70,7 +70,7 @@ enum AppString {
                 return "Движение тренда в \($0)"
             }
             static var statisticsForMonth: (Int) -> String = {
-                return "Статистика за \($0) месяц"
+                return "Статистика за " + String(format: "%02d", $0) + " месяц"
             }
             static let price = "Цена"
             static let purchases = "Покупки"
