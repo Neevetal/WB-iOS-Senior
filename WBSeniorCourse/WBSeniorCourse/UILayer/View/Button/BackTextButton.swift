@@ -37,7 +37,7 @@ struct BackTextButton: View {
 
 // MARK: - Nested types
 
-extension BackTextButton {
+private extension BackTextButton {
     enum Constants {
         static let iconName: String = "chevron.left"
     }

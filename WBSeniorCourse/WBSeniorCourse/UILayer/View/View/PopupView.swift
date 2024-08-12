@@ -59,7 +59,7 @@ private extension PopupView {
 
 // MARK: - Nested types
 
-extension PopupView {
+private extension PopupView {
     enum Constants {
         static var maxWidth: CGFloat {
             return UIDevice.current.userInterfaceIdiom == .pad

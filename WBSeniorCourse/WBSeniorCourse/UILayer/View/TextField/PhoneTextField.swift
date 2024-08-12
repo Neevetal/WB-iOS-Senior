@@ -158,7 +158,7 @@ private extension PhoneTextField {
 
 // MARK: - Nested types
 
-extension PhoneTextField {
+private extension PhoneTextField {
     enum Constants {
         static let xmarkImageName: String = "xmark.circle.fill"
         static let errorAnimation: Animation = .easeInOut(duration: 0.2)

@@ -20,7 +20,7 @@ struct ContactDetailsTrendView: View {
             titleLabel
             specialistsList
         }
-        .padding(20)
+        .padding(.vertical, 20)
     }
 }
 

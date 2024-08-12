@@ -49,6 +49,7 @@
 		5C76B18B2C695CDF00F12CCB /* MonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B18A2C695CDF00F12CCB /* MonthItem.swift */; };
 		5C76B18E2C6A18D300F12CCB /* CircleProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */; };
 		5C76B1912C6A51DB00F12CCB /* ContactDetailsTrendRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */; };
+		5C76B1932C6A6D2100F12CCB /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1922C6A6D2000F12CCB /* Trend.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -159,6 +160,7 @@
 		5C76B18A2C695CDF00F12CCB /* MonthItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthItem.swift; sourceTree = "<group>"; };
 		5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressRow.swift; sourceTree = "<group>"; };
 		5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTrendRow.swift; sourceTree = "<group>"; };
+		5C76B1922C6A6D2000F12CCB /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -422,6 +424,8 @@
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5C76B1922C6A6D2000F12CCB /* Trend.swift */,
+				5C85319C2C63C8B000A1E5EC /* MarketingSpecialist.swift */,
 				5C68CCF52C3C02C9002DB3E1 /* User.swift */,
 				5C02FB642C4744D200232A90 /* Cargo.swift */,
 				5C02FB372C44B27000232A90 /* Container */,
@@ -454,14 +458,6 @@
 				5C76B18A2C695CDF00F12CCB /* MonthItem.swift */,
 			);
 			path = Picker;
-			sourceTree = "<group>";
-		};
-		5C76B1892C695A4E00F12CCB /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				5C85319C2C63C8B000A1E5EC /* MarketingSpecialist.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		5C76B18C2C6A18B700F12CCB /* MonthlyStatisticsTrend */ = {
@@ -662,7 +658,6 @@
 		5CC34AB62C308F8400FDA808 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
-				5C76B1892C695A4E00F12CCB /* Entity */,
 				5C8531A02C63E05300A1E5EC /* Service */,
 				5C02FB4A2C4550C700232A90 /* Utilit */,
 				5C8531802C5D0A5700A1E5EC /* Network */,
@@ -996,6 +991,7 @@
 				5CD0BD5B2C5A4FBC001EDDCA /* InDevelopingView.swift in Sources */,
 				5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */,
 				5C8531A22C63E06A00A1E5EC /* StatisticsService.swift in Sources */,
+				5C76B1932C6A6D2100F12CCB /* Trend.swift in Sources */,
 				5C02FB732C4C298900232A90 /* TrendMovementView.swift in Sources */,
 				5C85318D2C5D2B7800A1E5EC /* MCUtilit.swift in Sources */,
 				5CC34ADB2C30CD2400FDA808 /* Asset.swift in Sources */,

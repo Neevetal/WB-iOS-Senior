@@ -89,7 +89,7 @@ private extension NavigationView {
 
 // MARK: - Nested types
 
-extension NavigationView {
+private extension NavigationView {
     enum Constants {
         static var backImageName: String { "chevron.left" }
     }

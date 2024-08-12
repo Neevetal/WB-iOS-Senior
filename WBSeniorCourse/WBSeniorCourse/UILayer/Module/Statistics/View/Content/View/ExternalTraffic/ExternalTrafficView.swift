@@ -11,7 +11,7 @@ struct ExternalTrafficView: View {
     
     // MARK: - Property Wrappers
     
-    @State var selectedMonth: MonthItem
+    @State private var selectedMonth: MonthItem
     
     // MARK: - Initialization and deinitialization
     

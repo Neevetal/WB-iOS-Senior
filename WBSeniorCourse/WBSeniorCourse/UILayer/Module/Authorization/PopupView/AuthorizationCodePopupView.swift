@@ -189,7 +189,7 @@ private extension AuthorizationCodePopupView {
 
 // MARK: - Nested types
 
-extension AuthorizationCodePopupView {
+private extension AuthorizationCodePopupView {
     enum Constants {
         static let phoneMask: String = "+7 (___) ___ - __ - __"
         static let fieldCount: Int = 4

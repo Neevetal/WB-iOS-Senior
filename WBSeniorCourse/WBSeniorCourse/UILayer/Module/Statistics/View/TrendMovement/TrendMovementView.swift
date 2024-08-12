@@ -115,7 +115,7 @@ private extension TrendMovementView {
 
 // MARK: - Nested types
 
-extension TrendMovementView {
+private extension TrendMovementView {
     enum ShowType {
         case open
         case close

@@ -113,7 +113,7 @@ private extension AuthorizationPhonePopupView {
 
 // MARK: - Nested types
 
-extension AuthorizationPhonePopupView {
+private extension AuthorizationPhonePopupView {
     enum Constants {
         static let phoneMask: String = "+7 (___) ___ - __ - __"
         static let errorAnimation: Animation = .easeInOut(duration: 0.2)

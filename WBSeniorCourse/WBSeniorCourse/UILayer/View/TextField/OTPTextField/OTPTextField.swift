@@ -137,7 +137,7 @@ private extension OTPTextField {
 
 // MARK: - Nested types
 
-extension OTPTextField {
+private extension OTPTextField {
     enum Constants {
         static var stackSpacing: CGFloat {
             let isIPad = UIDevice.current.userInterfaceIdiom == .pad

@@ -80,7 +80,7 @@ private extension PercentageCircleProgressView {
 
 // MARK: - Nested types
 
-extension PercentageCircleProgressView {
+private extension PercentageCircleProgressView {
     enum Constants {
         static var gradient = AngularGradient(
             gradient: AppColor.Gradient.green.gradient,
