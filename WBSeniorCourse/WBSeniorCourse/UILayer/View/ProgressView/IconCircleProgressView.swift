@@ -9,14 +9,22 @@ import SwiftUI
 
 struct IconCircleProgressView: View {
     
-    // MARK: - Properties
+    // MARK: - Property Wrappers
     
     @Binding private var progress: Double
     
+    // MARK: - Properties
+    
+    private var icon: UIImage
+    
     // MARK: - Initialization and deinitialization
     
-    init(progress: Binding<Double>) {
+    init(
+        progress: Binding<Double>,
+        icon: UIImage
+    ) {
         _progress = progress
+        self.icon = icon
     }
     
     // MARK: - Body
@@ -24,6 +32,8 @@ struct IconCircleProgressView: View {
     var body: some View {
         ZStack {
             circleProgressView
+            iconImage
+            
         }
     }
 }
@@ -36,34 +46,29 @@ private extension IconCircleProgressView {
         ZStack {
             Circle()
                 .stroke(
-                    Color.pink.opacity(0.5),
-                    lineWidth: 30
+                    AppColor.Background.White.main08.color,
+                    lineWidth: 6
                 )
             Circle()
                 .trim(from: 0, to: progress)
                 .stroke(
-                    Color.pink,
+                    AppColor.Background.Purple.main.color,
                     style: StrokeStyle(
-                        lineWidth: 30,
+                        lineWidth: 6,
                         lineCap: .round
                     )
                 )
-                .rotationEffect(.degrees(-90))
+                .rotationEffect(.degrees(45))
                 .animation(.easeOut, value: progress)
         }
     }
     
     @ViewBuilder
-    var titleLabel: some View {
-        Text("\(progress)%")
-            .foregroundColor(AppColor.Text.White.main.color)
-            .font(.montserratFont(size: 16, weight: .medium))
-    }
-    
-    var commentLabel: some View {
-        Text("")
-            .foregroundColor(AppColor.Text.gray.color)
-            .font(.montserratFont(size: 12, weight: .regular))
+    var iconImage: some View {
+        Image(uiImage: icon)
+            .resizable()
+            .scaledToFill()
+            .padding(14)
     }
 }
 
@@ -73,7 +78,11 @@ extension IconCircleProgressView: Stubable {
     static func stub() -> any View {
         return ZStack {
             Color.black.opacity(0.8)
-            IconCircleProgressView(progress: .constant(50))
+            IconCircleProgressView(
+                progress: .constant(0.5),
+                icon: .Asset.Statistics.Progress.clicksIcon.image
+            )
+            .frame(width: 48, height: 48)
         }
     }
 }

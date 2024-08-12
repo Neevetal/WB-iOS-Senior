@@ -9,9 +9,12 @@ import SwiftUI
 
 struct PercentageCircleProgressView: View {
     
-    // MARK: - Properties
+    // MARK: - Property Wrappers
     
     @Binding private var progress: Double
+    
+    // MARK: - Properties
+    
     private var circleProgress: Double
     
     // MARK: - Initialization and deinitialization

@@ -33,7 +33,6 @@ struct RoundImage: View {
         .scaledToFill()
         .clipShape(Circle())
         .frame(width: sideSize, height: sideSize)
-        
     }
 }
 

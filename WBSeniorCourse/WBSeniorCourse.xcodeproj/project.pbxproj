@@ -47,6 +47,7 @@
 		5C76B1852C693FC300F12CCB /* IconCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1842C693FC300F12CCB /* IconCircleProgressView.swift */; };
 		5C76B1882C6948AB00F12CCB /* MonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1872C6948AB00F12CCB /* MonthPicker.swift */; };
 		5C76B18B2C695CDF00F12CCB /* MonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B18A2C695CDF00F12CCB /* MonthItem.swift */; };
+		5C76B18E2C6A18D300F12CCB /* CircleProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -155,6 +156,7 @@
 		5C76B1842C693FC300F12CCB /* IconCircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCircleProgressView.swift; sourceTree = "<group>"; };
 		5C76B1872C6948AB00F12CCB /* MonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPicker.swift; sourceTree = "<group>"; };
 		5C76B18A2C695CDF00F12CCB /* MonthItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthItem.swift; sourceTree = "<group>"; };
+		5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressRow.swift; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,7 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */,
-				5C02FB7A2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift */,
+				5C76B18C2C6A18B700F12CCB /* MonthlyStatisticsTrend */,
 				5C02FB7C2C4C2A6300232A90 /* ContacDetailsTrendView.swift */,
 			);
 			path = View;
@@ -458,6 +460,15 @@
 				5C85319C2C63C8B000A1E5EC /* MarketingSpecialist.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		5C76B18C2C6A18B700F12CCB /* MonthlyStatisticsTrend */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB7A2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift */,
+				5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */,
+			);
+			path = MonthlyStatisticsTrend;
 			sourceTree = "<group>";
 		};
 		5C8531662C5CFD9F00A1E5EC /* WBSeniorCourseTests */ = {
@@ -1020,6 +1031,7 @@
 				5C02FB2D2C4490B400232A90 /* MockNavigationRootView.swift in Sources */,
 				5C02FB462C45456800232A90 /* LocalizationManager.swift in Sources */,
 				5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */,
+				5C76B18E2C6A18D300F12CCB /* CircleProgressRow.swift in Sources */,
 				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
 				5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */,
 				5C02FB632C47447B00232A90 /* Array + Extension.swift in Sources */,
