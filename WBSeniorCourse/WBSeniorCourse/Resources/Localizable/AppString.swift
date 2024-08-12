@@ -62,7 +62,7 @@ enum AppString {
                 return "\($0) чел."
             }
             static let newClients = "Новые клиенты"
-            static let TotalFromExternalTraffic = "Всего с внешнего трафика"
+            static let totalFromExternalTraffic = "Всего с внешнего трафика"
         }
         
         enum TrendMovement {

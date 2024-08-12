@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ExternalTrafficView: View {
     
+    // MARK: - Dependencies
+    
+    @EnvironmentObject private var service: StatisticsService
+    
     // MARK: - Property Wrappers
     
     @State private var selectedMonth: MonthItem
@@ -30,6 +34,9 @@ struct ExternalTrafficView: View {
                         titleLabel
                         Spacer()
                         MonthPicker(item: $selectedMonth)
+                            .onChange(of: selectedMonth) { value in
+                                service.updateSelectedExternalTraffic(with: value.id)
+                            }
                     }
                     HStack(spacing: 16) {
                         circleProgressView
@@ -55,21 +62,43 @@ private extension ExternalTrafficView {
     
     @ViewBuilder
     var circleProgressView: some View {
-        PercentageCircleProgressView(progress: .constant(0.78))
-            .frame(width: 190, height: 190)
+        PercentageCircleProgressView(
+            progress: .constant(service.selectedExternalTraffic.purchasesValue)
+        )
+        .frame(width: 190, height: 190)
     }
     
     @ViewBuilder
     var infoRows: some View {
         VStack(spacing: 12) {
             TwoLabelsView(
-                titleText: "445 чел.",
-                commentText: "Всего с внешнего трафика"
+                titleText: AppString.Statistics.ExternalTraffic.countOfPersons(
+                    service.selectedExternalTraffic.newClientsCount
+                ),
+                commentText: AppString.Statistics.ExternalTraffic.newClients
             )
             TwoLabelsView(
-                titleText: "445 чел.",
-                commentText: "Всего с внешнего трафика"
+                titleText: AppString.Statistics.ExternalTraffic.countOfPersons(
+                    service.selectedExternalTraffic.clientsCount
+                ),
+                commentText: AppString.Statistics.ExternalTraffic.totalFromExternalTraffic
             )
+        }
+    }
+}
+
+// MARK: - Stubable
+
+extension ExternalTrafficView: Stubable {
+    static func stub() -> any View {
+        return ZStack {
+            LinearGradient(
+                gradient: AppColor.Gradient.darkPurple.gradient,
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            ExternalTrafficView()
+                .environmentObject(StatisticsService())
         }
     }
 }
@@ -77,5 +106,5 @@ private extension ExternalTrafficView {
 // MARK: - Preview
 
 #Preview {
-    ExternalTrafficView()
+    ExternalTrafficView.stub()
 }

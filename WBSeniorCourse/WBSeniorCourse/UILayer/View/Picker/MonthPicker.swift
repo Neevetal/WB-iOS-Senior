@@ -12,11 +12,13 @@ struct MonthPicker: View {
     // MARK: - Property Wrappers
     
     @Binding private var selectedMonth: MonthItem
+    @Binding private var selectedIndex: Int
     
     // MARK: - Initialization and deinitialization
     
-    init(item: Binding<MonthItem>) {
+    init(item: Binding<MonthItem>, selectedIndex: Binding<Int> = .constant(0)) {
         _selectedMonth = item
+        _selectedIndex = selectedIndex
     }
     
     // MARK: - Body

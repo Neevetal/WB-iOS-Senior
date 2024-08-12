@@ -9,15 +9,9 @@ import SwiftUI
 
 struct ContentTrendMovementView: View {
     
-    // MARK: - Properties
-    
-    @State private var selectedTrend: Trend
-    
     // MARK: - Initialization and deinitialization
     
-    init() {
-        self.selectedTrend = .mock()
-    }
+    init() {}
     
     // MARK: - Body
     
@@ -25,8 +19,8 @@ struct ContentTrendMovementView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 0) {
                 titleLabel
-                YearlyTrendChartView(with: $selectedTrend)
-                MonthlyStatisticsTrendView(selectedTrend: selectedTrend)
+                YearlyTrendChartView()
+                MonthlyStatisticsTrendView()
                 ContactDetailsTrendView()
             }
             .padding(.horizontal, 20)

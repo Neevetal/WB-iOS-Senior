@@ -33,6 +33,7 @@ struct TwoLabelsView: View {
             AppColor.Background.White.main04.color
                 .cornerRadius(16)
         )
+        .frame(width: 146)
     }
 }
 

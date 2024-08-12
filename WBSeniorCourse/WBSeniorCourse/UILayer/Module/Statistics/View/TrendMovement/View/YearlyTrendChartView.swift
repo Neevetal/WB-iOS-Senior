@@ -10,25 +10,14 @@ import Charts
 
 struct YearlyTrendChartView: View {
     
-    // MARK: - Property Wrappers
+    // MARK: - Dependencies
     
-    @Binding private var selectedTrend: Trend
-    
-    // MARK: - Properties
-    
-    private let trends: [Trend]
-    
-    // MARK: - Initialization and deinitialization
-    
-    init(with selectedTrend: Binding<Trend>) {
-        trends = Trend.arrayMock()
-        _selectedTrend = selectedTrend
-    }
+    @EnvironmentObject private var service: StatisticsService
     
     // MARK: - Body
     
     var body: some View {
-        Chart(trends) { trend in
+        Chart(service.trends) { trend in
             BarMark(
                 x: .value("MonthId", trend.monthId),
                 y: .value("Movie", trend.movie),
@@ -36,7 +25,7 @@ struct YearlyTrendChartView: View {
             )
             .cornerRadius(4)
             .foregroundStyle(
-                selectedTrend.id == trend.id
+                service.selectedTrend.id == trend.id
                 ? AppColor.Background.blue.color
                 : AppColor.Background.White.main.color
             )
@@ -47,7 +36,7 @@ struct YearlyTrendChartView: View {
             ) {
                 createAnnotationLabel(
                     with: trend.monthId,
-                    isSelected: selectedTrend.id == trend.id
+                    isSelected: service.selectedTrend.id == trend.id
                 )
             }
         }
@@ -102,12 +91,12 @@ private extension YearlyTrendChartView {
         let xPosition = location.x - geometry[proxy.plotAreaFrame].origin.x
         guard
             let xbar: Int = proxy.value(atX: xPosition),
-            let trand = trends.first(where: { $0.monthId == xbar })
+            let trend = service.trends.first(where: { $0.monthId == xbar })
         else {
             return
         }
         
-        selectedTrend = trand
+        service.selectedTrend = trend
     }
 }
 
@@ -121,8 +110,9 @@ extension YearlyTrendChartView: Stubable {
                 startPoint: .top,
                 endPoint: .bottom
             )
-            YearlyTrendChartView(with: .constant(.mock()))
+            YearlyTrendChartView()
                 .frame(width: 320, height: 200)
+                .environmentObject(StatisticsService())
         }
     }
 }

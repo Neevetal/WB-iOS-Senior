@@ -51,6 +51,8 @@
 		5C76B1912C6A51DB00F12CCB /* ContactDetailsTrendRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */; };
 		5C76B1932C6A6D2100F12CCB /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1922C6A6D2000F12CCB /* Trend.swift */; };
 		5C76B1962C6AB43F00F12CCB /* TrendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1952C6AB43F00F12CCB /* TrendInfo.swift */; };
+		5C76B1982C6ABBE500F12CCB /* ExternalTraffic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1972C6ABBE500F12CCB /* ExternalTraffic.swift */; };
+		5C76B19A2C6AC63C00F12CCB /* SalesYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1992C6AC63C00F12CCB /* SalesYear.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -163,6 +165,8 @@
 		5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTrendRow.swift; sourceTree = "<group>"; };
 		5C76B1922C6A6D2000F12CCB /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		5C76B1952C6AB43F00F12CCB /* TrendInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendInfo.swift; sourceTree = "<group>"; };
+		5C76B1972C6ABBE500F12CCB /* ExternalTraffic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalTraffic.swift; sourceTree = "<group>"; };
+		5C76B1992C6AC63C00F12CCB /* SalesYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesYear.swift; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -394,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				5C02FB832C4C2AC500232A90 /* SalesQuantityView.swift */,
+				5C76B1992C6AC63C00F12CCB /* SalesYear.swift */,
 			);
 			path = SalesQuantity;
 			sourceTree = "<group>";
@@ -485,6 +490,7 @@
 				5C85319C2C63C8B000A1E5EC /* MarketingSpecialist.swift */,
 				5C76B1922C6A6D2000F12CCB /* Trend.swift */,
 				5C76B1952C6AB43F00F12CCB /* TrendInfo.swift */,
+				5C76B1972C6ABBE500F12CCB /* ExternalTraffic.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -1007,6 +1013,7 @@
 				5C85318D2C5D2B7800A1E5EC /* MCUtilit.swift in Sources */,
 				5CC34ADB2C30CD2400FDA808 /* Asset.swift in Sources */,
 				5C02FB6D2C4C28F200232A90 /* StatisticsScreen.swift in Sources */,
+				5C76B1982C6ABBE500F12CCB /* ExternalTraffic.swift in Sources */,
 				5C8531842C5D0ABA00A1E5EC /* HTTPMethod.swift in Sources */,
 				5C02FB702C4C292300232A90 /* SideTabBarView.swift in Sources */,
 				5C02FB3E2C44C20D00232A90 /* LocalizableView.swift in Sources */,
@@ -1044,6 +1051,7 @@
 				5C02FB392C44B2A200232A90 /* AnyContainer.swift in Sources */,
 				5C02FB842C4C2AC500232A90 /* SalesQuantityView.swift in Sources */,
 				5C02FB252C44866B00232A90 /* Screen.swift in Sources */,
+				5C76B19A2C6AC63C00F12CCB /* SalesYear.swift in Sources */,
 				5C02FB492C4545A900232A90 /* AppStorageKey.swift in Sources */,
 				5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */,
 				5C02FB272C44891D00232A90 /* NavigationView.swift in Sources */,
