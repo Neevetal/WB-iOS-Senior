@@ -40,6 +40,7 @@ struct ExternalTrafficView: View {
                     }
                     HStack(spacing: 16) {
                         circleProgressView
+                        Spacer()
                         infoRows
                     }
                 }

@@ -24,16 +24,17 @@ struct TwoLabelsView: View {
     // MARK: - Body
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            titleLabel
-            commentLabel
+        HStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 4) {
+                titleLabel
+                commentLabel
+            }
+            Spacer()
         }
         .padding(12)
-        .background(
-            AppColor.Background.White.main04.color
-                .cornerRadius(16)
-        )
-        .frame(width: 146)
+        .background(AppColor.Background.White.main04.color)
+        .frame(minWidth: 146, maxWidth: 180)
+        .cornerRadius(16)
     }
 }
 
@@ -43,12 +44,14 @@ private extension TwoLabelsView {
     @ViewBuilder
     var titleLabel: some View {
         Text(titleText)
+            .multilineTextAlignment(.leading)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 16, weight: .medium))
     }
     
     var commentLabel: some View {
         Text(commentText)
+            .multilineTextAlignment(.leading)
             .foregroundColor(AppColor.Text.gray.color)
             .font(.montserratFont(size: 12, weight: .regular))
     }
@@ -64,6 +67,7 @@ extension TwoLabelsView: Stubable {
                 titleText: "445 чел.",
                 commentText: "Всего с внешнего трафика"
             )
+            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
         }
     }
 }
