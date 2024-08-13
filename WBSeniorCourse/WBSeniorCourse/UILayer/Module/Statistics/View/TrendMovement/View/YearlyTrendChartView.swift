@@ -23,7 +23,7 @@ struct YearlyTrendChartView: View {
                 y: .value("Movie", trend.movie),
                 width: 9
             )
-            .cornerRadius(4)
+            .clipShape(Capsule())
             .foregroundStyle(
                 service.selectedTrend.id == trend.id
                 ? AppColor.Background.blue.color

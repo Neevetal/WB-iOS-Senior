@@ -19,11 +19,14 @@ struct ContentTrendMovementView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 0) {
                 titleLabel
+                    .padding(.horizontal, 20)
                 YearlyTrendChartView()
+                    .padding(.trailing, 20)
                 MonthlyStatisticsTrendView()
+                    .padding(.horizontal, 20)
                 ContactDetailsTrendView()
+                    .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
         }
         .disableBounces()
     }
