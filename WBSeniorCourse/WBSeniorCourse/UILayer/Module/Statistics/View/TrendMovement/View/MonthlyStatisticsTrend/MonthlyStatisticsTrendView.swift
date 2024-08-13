@@ -28,7 +28,6 @@ struct MonthlyStatisticsTrendView: View {
                     helpView
                 }
             }
-            .padding(.bottom, 16)
         }
     }
 }

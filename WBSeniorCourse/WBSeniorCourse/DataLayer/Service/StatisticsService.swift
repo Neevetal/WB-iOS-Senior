@@ -16,7 +16,7 @@ final class StatisticsService: ObservableObject {
     
     // MARK: - Properties
     
-    public let salesYears: [SalesYear] = [.mock2023(), .mock2024()]
+    public let salesYears: [SalesYear] = SalesYear.arrayMock()
     public let specialists: [MarketingSpecialist] = MarketingSpecialist.specialistsMock()
     public let externalTraffics: [ExternalTraffic] = ExternalTraffic.arrayMock()
     public let trends: [Trend] = Trend.arrayMock()

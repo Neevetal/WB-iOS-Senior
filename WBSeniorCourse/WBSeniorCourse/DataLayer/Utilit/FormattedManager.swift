@@ -49,7 +49,15 @@ extension FormattedManager {
         return formatter
     }()
     
-    static func generateMonths() -> [MonthItem] {
-        return (1...12).map { MonthItem(month: $0) }
+    static let shortMonthFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "LLL"
+        return formatter
+    }()
+    
+    static func generateMonths(
+        formatter: DateFormatter = FormattedManager.monthFormatter
+    ) -> [MonthItem] {
+        return (1...12).map { MonthItem(month: $0, formatter: formatter) }
     }
 }

@@ -15,6 +15,7 @@ struct MonthItem: Identifiable, Hashable {
     
     init(
         month: Int,
+        formatter: DateFormatter = FormattedManager.monthFormatter,
         calendar: Calendar = Calendar.current
     ) {
         self.id = month
@@ -24,7 +25,7 @@ struct MonthItem: Identifiable, Hashable {
             value: month,
             of: Date()
         ) {
-            self.name = FormattedManager.monthFormatter.string(from: date)
+            self.name = formatter.string(from: date)
         } else {
             self.name = ""
         }

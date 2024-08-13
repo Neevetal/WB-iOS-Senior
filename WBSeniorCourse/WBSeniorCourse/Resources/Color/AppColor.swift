@@ -15,6 +15,7 @@ enum AppColor {
         case red = "redBackgroundColor"
         case green = "greenBackgroundColor"
         case blue = "blueBackgroundColor"
+        case gray = "grayBackgroundColor"
         
         enum White: String {
             case main = "whiteBackgroundColor"

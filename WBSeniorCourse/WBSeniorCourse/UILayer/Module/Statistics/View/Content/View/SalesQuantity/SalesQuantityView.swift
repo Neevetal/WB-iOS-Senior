@@ -10,9 +10,9 @@ import Charts
 
 struct SalesQuantityView: View {
     
-    // MARK: - Properties
+    // MARK: - Dependencies
     
-    private let data = [SalesYear.mock2023(), SalesYear.mock2024()]
+    @EnvironmentObject private var service: StatisticsService
     
     // MARK: - Body
     
@@ -25,16 +25,26 @@ struct SalesQuantityView: View {
                         titleLabel
                         percentageSalesLabel
                         chartView
-                            .frame(minWidth: 64 * 12, maxWidth: .infinity)
-                            .frame(height: 445)
-                            .fixedSize(horizontal: false, vertical: false)
                     }
                     .padding(24)
                 }
                 .disableBounces()
             }
+            .frame(height: 445)
             .cornerRadius(28)
     }
+    
+    let graphLineAreaGradient = LinearGradient(
+        gradient: Gradient (
+            colors: [
+                Color.blue.opacity(1),
+                Color.blue.opacity(0.5),
+                .clear,
+            ]
+        ),
+        startPoint: .top,
+        endPoint: .bottom
+    )
 }
 
 // MARK: - UI Properties
@@ -61,97 +71,83 @@ private extension SalesQuantityView {
     
     @ViewBuilder
     var chartView: some View {
-        Chart(data) { year in
+        Chart(service.salesYears) { year in
             ForEach(year.months, id: \.name) { month in
                 AreaMark(
                     x: .value("Month", month.name),
                     y: .value("Values", month.salesCount),
                     stacking: .unstacked
                 )
-                .foregroundStyle(by: .value("year", year.name))
                 .interpolationMethod(.catmullRom)
+                .foregroundStyle(graphLineAreaGradient)
                 
                 LineMark(
                     x: .value("Month", month.name),
                     y: .value("Values", month.salesCount)
                 )
+                .foregroundStyle(.blue)
+                .accessibilityLabel("\(month.name)")
+                .accessibilityValue("\(month.salesCount)$")
                 .interpolationMethod(.catmullRom)
                 .lineStyle(StrokeStyle(lineWidth: 3))
-                .foregroundStyle(.blue)
             }
         }
         .chartLegend(.hidden)
         .chartXAxis {
-            AxisMarks(position: .bottom, values: .automatic) { value in
-                AxisValueLabel() {
+            AxisMarks(position: .bottom) { value in
+                AxisValueLabel {
                     if let value = value.as(String.self) {
-                        Text("\(value)")
-                            .foregroundStyle(Color.white)
+                        Text(value.capitalized)
+                            .foregroundStyle(AppColor.Text.gray.color)
+                            .padding(.top, 16)
                     }
                 }
             }
         }
         .chartYAxis {
-            AxisMarks(position: .leading, values: .automatic) { value in
-                AxisValueLabel() {
+            AxisMarks(
+                position: .leading,
+                values: [0, 200, 400, 600, 800, 999]
+            ) { value in
+                AxisGridLine(
+                    centered: true,
+                    stroke: StrokeStyle(dash: [4.0, 4.0])
+                )
+                .foregroundStyle(AppColor.Background.gray.color)
+                AxisValueLabel {
                     if let value = value.as(Int.self) {
                         Text("\(value)")
-                            .foregroundStyle(Color.white)
+                            .foregroundStyle(AppColor.Text.gray.color)
+                            .frame(width: 40)
+                            .padding(.trailing, 16)
                     }
                 }
             }
         }
-        .chartForegroundStyleScale(
-            range: Gradient(colors: [.yellow, .green])
-        )
+        .chartYScale(domain: 0...999)
+        .frame(width: 68 * 12)
         .padding(.top, 24)
     }
 }
 
-// MARK: - Accessibility
+// MARK: - Stubable
 
-//extension SalesQuantityView: AXChartDescriptorRepresentable {
-//    func makeChartDescriptor() -> AXChartDescriptor {
-//        let min = data.map(\.uvIndex).min() ?? 0
-//        let max = data.map(\.uvIndex).max() ?? 0
-//
-//        // A closure that takes a date and converts it to a label for axes
-//        let dateTupleStringConverter: (((date: Date, uvIndex: Int)) -> (String)) = { dataPoint in
-//            dataPoint.date.formatted(date: .omitted, time: .standard)
-//        }
-//        
-//        let xAxis = AXCategoricalDataAxisDescriptor(
-//            title: "Time of day",
-//            categoryOrder: data.map { dateTupleStringConverter($0) }
-//        )
-//
-//        let yAxis = AXNumericDataAxisDescriptor(
-//            title: "UV Index value",
-//            range: Double(min)...Double(max),
-//            gridlinePositions: []
-//        ) { value in "\(Int(value))" }
-//
-//        let series = AXDataSeriesDescriptor(
-//            name: "UV Index",
-//            isContinuous: true,
-//            dataPoints: data.map {
-//                .init(x: dateTupleStringConverter($0), y: Double($0.uvIndex))
-//            }
-//        )
-//
-//        return AXChartDescriptor(
-//            title: "UV Index",
-//            summary: nil,
-//            xAxis: xAxis,
-//            yAxis: yAxis,
-//            additionalAxes: [],
-//            series: [series]
-//        )
-//    }
-//}
+extension SalesQuantityView: Stubable {
+    static func stub() -> any View {
+        return ZStack {
+            LinearGradient(
+                gradient: AppColor.Gradient.darkPurple.gradient,
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            SalesQuantityView()
+                .environmentObject(StatisticsService())
+        }
+    }
+}
 
 // MARK: - Preview
 
 #Preview {
-    SalesQuantityView()
+    SalesQuantityView.stub()
 }

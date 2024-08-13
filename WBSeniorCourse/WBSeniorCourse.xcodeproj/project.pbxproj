@@ -398,7 +398,6 @@
 			isa = PBXGroup;
 			children = (
 				5C02FB832C4C2AC500232A90 /* SalesQuantityView.swift */,
-				5C76B1992C6AC63C00F12CCB /* SalesYear.swift */,
 			);
 			path = SalesQuantity;
 			sourceTree = "<group>";
@@ -487,6 +486,7 @@
 		5C76B1942C6AB43400F12CCB /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				5C76B1992C6AC63C00F12CCB /* SalesYear.swift */,
 				5C85319C2C63C8B000A1E5EC /* MarketingSpecialist.swift */,
 				5C76B1922C6A6D2000F12CCB /* Trend.swift */,
 				5C76B1952C6AB43F00F12CCB /* TrendInfo.swift */,
