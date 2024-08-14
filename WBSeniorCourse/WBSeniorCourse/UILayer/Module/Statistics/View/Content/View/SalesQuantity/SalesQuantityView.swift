@@ -33,18 +33,6 @@ struct SalesQuantityView: View {
             .frame(height: 445)
             .cornerRadius(28)
     }
-    
-    let graphLineAreaGradient = LinearGradient(
-        gradient: Gradient (
-            colors: [
-                Color.blue.opacity(1),
-                Color.blue.opacity(0.5),
-                .clear,
-            ]
-        ),
-        startPoint: .top,
-        endPoint: .bottom
-    )
 }
 
 // MARK: - UI Properties
@@ -71,26 +59,56 @@ private extension SalesQuantityView {
     
     @ViewBuilder
     var chartView: some View {
-        Chart(service.salesYears) { year in
-            ForEach(year.months, id: \.name) { month in
+        Chart {
+            ForEach(service.salesYears[0].months, id: \.name) { month in
                 AreaMark(
-                    x: .value("Month", month.name),
-                    y: .value("Values", month.salesCount),
+                    x: .value("Month2023", month.name),
+                    y: .value("Values2023", month.salesCount),
                     stacking: .unstacked
                 )
                 .interpolationMethod(.catmullRom)
-                .foregroundStyle(graphLineAreaGradient)
+                .foregroundStyle(LinearGradient(
+                    gradient: AppColor.Gradient.blue.gradient,
+                    startPoint: .top,
+                    endPoint: .bottom
+                ))
                 
                 LineMark(
-                    x: .value("Month", month.name),
-                    y: .value("Values", month.salesCount)
+                    x: .value("Month2023", month.name),
+                    y: .value("Values2023", month.salesCount)
                 )
-                .foregroundStyle(.blue)
+                .foregroundStyle(AppColor.Background.blue.color)
                 .accessibilityLabel("\(month.name)")
                 .accessibilityValue("\(month.salesCount)$")
                 .interpolationMethod(.catmullRom)
                 .lineStyle(StrokeStyle(lineWidth: 3))
             }
+            .foregroundStyle(by: .value("Type", "Values2023"))
+            
+            ForEach(service.salesYears[1].months, id: \.name) { month in
+                AreaMark(
+                    x: .value("Month2024", month.name),
+                    y: .value("Values2024", month.salesCount),
+                    stacking: .unstacked
+                )
+                .interpolationMethod(.catmullRom)
+                .foregroundStyle(LinearGradient(
+                    gradient: AppColor.Gradient.purple.gradient,
+                    startPoint: .top,
+                    endPoint: .bottom
+                ))
+                
+                LineMark(
+                    x: .value("Month2024", month.name),
+                    y: .value("Values2024", month.salesCount)
+                )
+                .foregroundStyle(AppColor.Background.Purple.main.color)
+                .accessibilityLabel("\(month.name)")
+                .accessibilityValue("\(month.salesCount)$")
+                .interpolationMethod(.catmullRom)
+                .lineStyle(StrokeStyle(lineWidth: 3))
+            }
+            .foregroundStyle(by: .value("Type", "Values2024"))
         }
         .chartLegend(.hidden)
         .chartXAxis {

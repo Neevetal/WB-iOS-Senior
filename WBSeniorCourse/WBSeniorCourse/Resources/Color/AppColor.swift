@@ -53,6 +53,7 @@ enum AppColor {
     enum Gradient {
         case purple
         case darkPurple
+        case blue
         case darkBlue
         case green
         
@@ -65,6 +66,10 @@ enum AppColor {
             case .darkPurple: [
                 "darkPurple94GradientColor",
                 "darkBlack49GradientColor"
+            ]
+            case .blue: [
+                "blue56GradientColor",
+                "blue0GradientColor"
             ]
             case .darkBlue: [
                 "darkBlue74GradientColor",
