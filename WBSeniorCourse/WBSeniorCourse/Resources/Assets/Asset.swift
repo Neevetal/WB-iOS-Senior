@@ -51,6 +51,7 @@ extension UIImage {
             case slidersIcon = "slidersIcon"
             case starIcon = "starIcon"
             case aiSupportBackground = "aiSupportBackground"
+            case chartPin = "chartPin"
             
             enum Progress: String {
                 case clicksIcon = "progressClicksIcon"

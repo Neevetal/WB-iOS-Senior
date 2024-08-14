@@ -14,6 +14,10 @@ struct SalesQuantityView: View {
     
     @EnvironmentObject private var service: StatisticsService
     
+    // MARK: - Property Wrappers
+    
+    @State private var selectedXMonth: SalesMonth?
+    
     // MARK: - Body
     
     var body: some View {
@@ -107,6 +111,24 @@ private extension SalesQuantityView {
                 .accessibilityValue("\(month.salesCount)$")
                 .interpolationMethod(.catmullRom)
                 .lineStyle(StrokeStyle(lineWidth: 3))
+                .symbol() {
+                    ZStack {
+                        Image(uiImage: .Asset.Statistics.chartPin.image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 32, height: 32)
+                        VStack {
+                            Text("\(month.salesCount)")
+                                .foregroundColor(AppColor.Text.White.main.color)
+                                .font(.montserratFont(size: 14, weight: .medium))
+                                .padding(5)
+                                .background(AppColor.Background.White.main08.color)
+                                .cornerRadius(8)
+                        }
+                        .offset(CGSize(width: 0, height: -30))
+                    }
+                    .opacity(selectedXMonth?.name == month.name ? 1 : 0)
+                }
             }
             .foregroundStyle(by: .value("Type", "Values2024"))
         }
@@ -145,6 +167,42 @@ private extension SalesQuantityView {
         .chartYScale(domain: 0...999)
         .frame(width: 68 * 12)
         .padding(.top, 24)
+        .chartOverlay { proxy in
+            GeometryReader { geometry in
+                ZStack(alignment: .top) {
+                    Rectangle()
+                        .fill(.clear)
+                        .contentShape(Rectangle())
+                        .onTapGesture { location in
+                            doSelection(
+                                at: location,
+                                proxy: proxy,
+                                geometry: geometry
+                            )
+                        }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Private methods
+
+private extension SalesQuantityView {
+    func doSelection(
+        at location: CGPoint,
+        proxy: ChartProxy,
+        geometry: GeometryProxy
+    ) {
+        let xPosition = location.x - geometry[proxy.plotAreaFrame].origin.x
+        guard
+            let xbar: String = proxy.value(atX: xPosition),
+            let month = service.salesYears[1].months.first(where: { $0.name == xbar })
+        else {
+            return
+        }
+        
+        selectedXMonth = month
     }
 }
 
