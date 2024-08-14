@@ -44,11 +44,12 @@ struct ExternalTrafficView: View {
                                 service.updateSelectedExternalTraffic(with: value.id)
                             }
                     }
-                    infoRfefefefows
+                    progressView
                 }
                 .padding(20)
             }
             .cornerRadius(28)
+            .padding(.vertical, 24)
     }
 }
 
@@ -63,7 +64,7 @@ private extension ExternalTrafficView {
     }
     
     @ViewBuilder
-    var infoRfefefefows: some View {
+    var progressView: some View {
         switch horizontalSizeClass {
         case .compact:
             VStack(spacing: 16) {
