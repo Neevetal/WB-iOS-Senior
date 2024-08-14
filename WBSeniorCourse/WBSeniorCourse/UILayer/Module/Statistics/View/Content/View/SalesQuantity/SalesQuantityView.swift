@@ -17,6 +17,7 @@ struct SalesQuantityView: View {
     // MARK: - Property Wrappers
     
     @State private var selectedXMonth: SalesMonth?
+    @State private var salesDifference: Int = 0
     
     // MARK: - Body
     
@@ -51,12 +52,21 @@ private extension SalesQuantityView {
     
     @ViewBuilder
     var percentageSalesLabel: some View {
-        Text(
-            AppString.Statistics.SalesQuantity.percentageOfSales(53)
-            + " "
-            + AppString.Statistics.SalesQuantity.comparedLastYear
-        )
-        .foregroundColor(AppColor.Text.White.main.color)
+        HStack(spacing: 0) {
+            Text(
+                "\(salesDifference > 0 ? "+" : "")"
+                + AppString.Statistics.SalesQuantity.percentageOfSales(salesDifference)
+                + " "
+            )
+            .foregroundColor(
+                salesDifference > 0
+                ? AppColor.Text.green.color
+                : AppColor.Text.red.color
+            )
+            
+            Text(AppString.Statistics.SalesQuantity.comparedLastYear)
+            .foregroundColor(AppColor.Text.White.main.color)
+        }
         .font(.montserratFont(size: 14, weight: .regular))
         .padding(.top, 6)
     }
@@ -203,6 +213,20 @@ private extension SalesQuantityView {
         }
         
         selectedXMonth = month
+        getSalesDifference()
+    }
+    
+    func getSalesDifference() {
+        guard
+            let value = selectedXMonth?.salesCount,
+            let month = service.salesYears[0].months.first(
+            where: { $0.name == selectedXMonth?.name }
+        ) else {
+            return
+        }
+        
+        let result: Int = (value - month.salesCount) / 10
+        salesDifference = result
     }
 }
 

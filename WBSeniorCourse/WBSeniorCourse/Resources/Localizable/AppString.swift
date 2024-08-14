@@ -40,7 +40,7 @@ enum AppString {
         enum SalesQuantity {
             static let title = "Количество продаж"
             static var percentageOfSales: (Int) -> String = {
-                return "+\($0)% продаж"
+                return "\($0)% продаж"
             }
             static let comparedLastYear = "сравнительно с прошлым годом"
         }

@@ -38,6 +38,7 @@ enum AppColor {
         
         case red = "redTextColor"
         case gray = "grayTextColor"
+        case green = "greenTextColor"
     }
     
     // MARK: - Shadow
