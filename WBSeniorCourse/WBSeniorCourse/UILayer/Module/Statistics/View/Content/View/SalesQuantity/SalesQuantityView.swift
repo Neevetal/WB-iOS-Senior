@@ -226,7 +226,7 @@ private extension SalesQuantityView {
             return
         }
         
-        let result: Int = (value - month.salesCount) / 10
+        let result: Int = Int((Double(value) / Double(month.salesCount)) * 100 - 100)
         salesDifference = result
     }
 }
