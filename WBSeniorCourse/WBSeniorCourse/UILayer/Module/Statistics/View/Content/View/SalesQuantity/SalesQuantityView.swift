@@ -68,6 +68,7 @@ private extension SalesQuantityView {
             .foregroundColor(AppColor.Text.White.main.color)
         }
         .font(.montserratFont(size: 14, weight: .regular))
+        .opacity(salesDifference == 0 ? 0 : 1)
         .padding(.top, 6)
     }
     
