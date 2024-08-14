@@ -35,7 +35,7 @@ struct CargoView: View {
 
 private extension CargoView {
     @ViewBuilder
-    private var totalVolumeView: some View {
+    var totalVolumeView: some View {
         Text("Суммарный обьем")
             .font(.title)
             .foregroundColor(.black)
@@ -44,7 +44,7 @@ private extension CargoView {
             .foregroundColor(.black)
     }
     
-    private var safeCargoInfoView: some View {
+    var safeCargoInfoView: some View {
         VStack(spacing: 12) {
             Button(action: {
                 let safeCargo = getRandomCargo()

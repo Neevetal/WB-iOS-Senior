@@ -61,7 +61,7 @@ struct SideBarButtonsStackView: View {
 
 private extension SideBarButtonsStackView {
     @ViewBuilder
-    private var gradientRectangle: some View {
+    var gradientRectangle: some View {
         Rectangle()
             .fill(LinearGradient(
                 gradient: AppColor.Gradient.purple.gradient,

@@ -32,7 +32,7 @@ struct AuthorizationScreen: View {
 
 private extension AuthorizationScreen {
     @ViewBuilder
-    private var currentPopup: some View {
+    var currentPopup: some View {
         switch step {
         case .phone:
             AuthorizationPhonePopupView(user: .init(wrappedValue: user), step: $step)

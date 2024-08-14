@@ -55,7 +55,7 @@ struct CalculatorView: View {
 
 private extension CalculatorView {
     @ViewBuilder
-    private var displayTextField: some View {
+    var displayTextField: some View {
         TextField("0", text: $display)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
@@ -65,7 +65,7 @@ private extension CalculatorView {
     }
     
     @ViewBuilder
-    private var operationButtons: some View {
+    var operationButtons: some View {
         HStack {
             ForEach(OperationType.allCases, id: \.self) { type in
                 Button(
@@ -79,7 +79,7 @@ private extension CalculatorView {
     }
     
     @ViewBuilder
-    private var resultButton: some View {
+    var resultButton: some View {
         Button(
             action: { calculateResult() }
         ) {
@@ -97,7 +97,7 @@ private extension CalculatorView {
 
 // MARK: - Private methods
 
-extension CalculatorView {
+private extension CalculatorView {
     func performOperation(_ operation: OperationType) {
         guard let value = Double(display)
         else {

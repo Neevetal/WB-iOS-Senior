@@ -31,7 +31,7 @@
 		5C02FB762C4C29BE00232A90 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB752C4C29BE00232A90 /* TopBarView.swift */; };
 		5C02FB792C4C2A0F00232A90 /* YearlyTrendChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */; };
 		5C02FB7B2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB7A2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift */; };
-		5C02FB7D2C4C2A6300232A90 /* ContacDetailsTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB7C2C4C2A6300232A90 /* ContacDetailsTrendView.swift */; };
+		5C02FB7D2C4C2A6300232A90 /* ContactDetailsTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB7C2C4C2A6300232A90 /* ContactDetailsTrendView.swift */; };
 		5C02FB802C4C2A9200232A90 /* ContentStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB7F2C4C2A9200232A90 /* ContentStatisticsView.swift */; };
 		5C02FB842C4C2AC500232A90 /* SalesQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB832C4C2AC500232A90 /* SalesQuantityView.swift */; };
 		5C02FB872C4C2AE900232A90 /* MarketingSpecialistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB862C4C2AE900232A90 /* MarketingSpecialistsView.swift */; };
@@ -40,6 +40,19 @@
 		5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */; };
 		5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF52C3C02C9002DB3E1 /* User.swift */; };
 		5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */; };
+		5C76B1712C64185E00F12CCB /* ContentTrendMovementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1702C64185E00F12CCB /* ContentTrendMovementView.swift */; };
+		5C76B1732C661D5400F12CCB /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1722C661D5400F12CCB /* StarRatingView.swift */; };
+		5C76B1812C693F6B00F12CCB /* PercentageCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1802C693F6B00F12CCB /* PercentageCircleProgressView.swift */; };
+		5C76B1832C693FAA00F12CCB /* TwoLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1822C693FAA00F12CCB /* TwoLabelsView.swift */; };
+		5C76B1852C693FC300F12CCB /* IconCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1842C693FC300F12CCB /* IconCircleProgressView.swift */; };
+		5C76B1882C6948AB00F12CCB /* MonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1872C6948AB00F12CCB /* MonthPicker.swift */; };
+		5C76B18B2C695CDF00F12CCB /* MonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B18A2C695CDF00F12CCB /* MonthItem.swift */; };
+		5C76B18E2C6A18D300F12CCB /* CircleProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */; };
+		5C76B1912C6A51DB00F12CCB /* ContactDetailsTrendRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */; };
+		5C76B1932C6A6D2100F12CCB /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1922C6A6D2000F12CCB /* Trend.swift */; };
+		5C76B1962C6AB43F00F12CCB /* TrendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1952C6AB43F00F12CCB /* TrendInfo.swift */; };
+		5C76B1982C6ABBE500F12CCB /* ExternalTraffic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1972C6ABBE500F12CCB /* ExternalTraffic.swift */; };
+		5C76B19A2C6AC63C00F12CCB /* SalesYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76B1992C6AC63C00F12CCB /* SalesYear.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -51,6 +64,10 @@
 		5C85318B2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85318A2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift */; };
 		5C85318D2C5D2B7800A1E5EC /* MCUtilit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85318C2C5D2B7800A1E5EC /* MCUtilit.swift */; };
 		5C8531902C5D31C900A1E5EC /* MCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85318F2C5D31C900A1E5EC /* MCView.swift */; };
+		5C8531992C62BBD800A1E5EC /* DisableBouncesModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531982C62BBD800A1E5EC /* DisableBouncesModifier.swift */; };
+		5C85319B2C63C89F00A1E5EC /* MarketingSpecialistRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85319A2C63C89F00A1E5EC /* MarketingSpecialistRow.swift */; };
+		5C85319D2C63C8B000A1E5EC /* MarketingSpecialist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85319C2C63C8B000A1E5EC /* MarketingSpecialist.swift */; };
+		5C8531A22C63E06A00A1E5EC /* StatisticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531A12C63E06A00A1E5EC /* StatisticsService.swift */; };
 		5C9DA6B52C4C628900D63B78 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DA6B42C4C628900D63B78 /* RoundedCorner.swift */; };
 		5C9DA6B72C4C819F00D63B78 /* ImageTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DA6B62C4C819F00D63B78 /* ImageTitleButton.swift */; };
 		5C9DA6BA2C4C8BF100D63B78 /* SideBarButtonsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DA6B92C4C8BF100D63B78 /* SideBarButtonsStackView.swift */; };
@@ -128,7 +145,7 @@
 		5C02FB752C4C29BE00232A90 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyTrendChartView.swift; sourceTree = "<group>"; };
 		5C02FB7A2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyStatisticsTrendView.swift; sourceTree = "<group>"; };
-		5C02FB7C2C4C2A6300232A90 /* ContacDetailsTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContacDetailsTrendView.swift; sourceTree = "<group>"; };
+		5C02FB7C2C4C2A6300232A90 /* ContactDetailsTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTrendView.swift; sourceTree = "<group>"; };
 		5C02FB7F2C4C2A9200232A90 /* ContentStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStatisticsView.swift; sourceTree = "<group>"; };
 		5C02FB832C4C2AC500232A90 /* SalesQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesQuantityView.swift; sourceTree = "<group>"; };
 		5C02FB862C4C2AE900232A90 /* MarketingSpecialistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingSpecialistsView.swift; sourceTree = "<group>"; };
@@ -137,6 +154,19 @@
 		5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		5C68CCF52C3C02C9002DB3E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStep.swift; sourceTree = "<group>"; };
+		5C76B1702C64185E00F12CCB /* ContentTrendMovementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTrendMovementView.swift; sourceTree = "<group>"; };
+		5C76B1722C661D5400F12CCB /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		5C76B1802C693F6B00F12CCB /* PercentageCircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCircleProgressView.swift; sourceTree = "<group>"; };
+		5C76B1822C693FAA00F12CCB /* TwoLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelsView.swift; sourceTree = "<group>"; };
+		5C76B1842C693FC300F12CCB /* IconCircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCircleProgressView.swift; sourceTree = "<group>"; };
+		5C76B1872C6948AB00F12CCB /* MonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPicker.swift; sourceTree = "<group>"; };
+		5C76B18A2C695CDF00F12CCB /* MonthItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthItem.swift; sourceTree = "<group>"; };
+		5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressRow.swift; sourceTree = "<group>"; };
+		5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTrendRow.swift; sourceTree = "<group>"; };
+		5C76B1922C6A6D2000F12CCB /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
+		5C76B1952C6AB43F00F12CCB /* TrendInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendInfo.swift; sourceTree = "<group>"; };
+		5C76B1972C6ABBE500F12CCB /* ExternalTraffic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalTraffic.swift; sourceTree = "<group>"; };
+		5C76B1992C6AC63C00F12CCB /* SalesYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesYear.swift; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +180,10 @@
 		5C85318A2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonStyle.swift; sourceTree = "<group>"; };
 		5C85318C2C5D2B7800A1E5EC /* MCUtilit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCUtilit.swift; sourceTree = "<group>"; };
 		5C85318F2C5D31C900A1E5EC /* MCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCView.swift; sourceTree = "<group>"; };
+		5C8531982C62BBD800A1E5EC /* DisableBouncesModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableBouncesModifier.swift; sourceTree = "<group>"; };
+		5C85319A2C63C89F00A1E5EC /* MarketingSpecialistRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingSpecialistRow.swift; sourceTree = "<group>"; };
+		5C85319C2C63C8B000A1E5EC /* MarketingSpecialist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingSpecialist.swift; sourceTree = "<group>"; };
+		5C8531A12C63E06A00A1E5EC /* StatisticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsService.swift; sourceTree = "<group>"; };
 		5C9DA6B42C4C628900D63B78 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		5C9DA6B62C4C819F00D63B78 /* ImageTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleButton.swift; sourceTree = "<group>"; };
 		5C9DA6B92C4C8BF100D63B78 /* SideBarButtonsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarButtonsStackView.swift; sourceTree = "<group>"; };
@@ -324,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				5C02FB722C4C298900232A90 /* TrendMovementView.swift */,
+				5C76B1702C64185E00F12CCB /* ContentTrendMovementView.swift */,
 				5C02FB772C4C29FC00232A90 /* View */,
 			);
 			path = TrendMovement;
@@ -333,8 +368,8 @@
 			isa = PBXGroup;
 			children = (
 				5C02FB782C4C2A0F00232A90 /* YearlyTrendChartView.swift */,
-				5C02FB7A2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift */,
-				5C02FB7C2C4C2A6300232A90 /* ContacDetailsTrendView.swift */,
+				5C76B18C2C6A18B700F12CCB /* MonthlyStatisticsTrend */,
+				5C76B18F2C6A26AC00F12CCB /* ContactDetailsTrend */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				5C02FB862C4C2AE900232A90 /* MarketingSpecialistsView.swift */,
+				5C85319A2C63C89F00A1E5EC /* MarketingSpecialistRow.swift */,
 			);
 			path = MarketingSpecialists;
 			sourceTree = "<group>";
@@ -394,6 +430,7 @@
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5C76B1942C6AB43400F12CCB /* Statistics */,
 				5C68CCF52C3C02C9002DB3E1 /* User.swift */,
 				5C02FB642C4744D200232A90 /* Cargo.swift */,
 				5C02FB372C44B27000232A90 /* Container */,
@@ -408,6 +445,54 @@
 				5CC34AC42C30931D00FDA808 /* AuthorizationCodePopupView.swift */,
 			);
 			path = PopupView;
+			sourceTree = "<group>";
+		};
+		5C76B17F2C693F5600F12CCB /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				5C76B1802C693F6B00F12CCB /* PercentageCircleProgressView.swift */,
+				5C76B1842C693FC300F12CCB /* IconCircleProgressView.swift */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		5C76B1862C69489F00F12CCB /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				5C76B1872C6948AB00F12CCB /* MonthPicker.swift */,
+				5C76B18A2C695CDF00F12CCB /* MonthItem.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		5C76B18C2C6A18B700F12CCB /* MonthlyStatisticsTrend */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB7A2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift */,
+				5C76B18D2C6A18D300F12CCB /* CircleProgressRow.swift */,
+			);
+			path = MonthlyStatisticsTrend;
+			sourceTree = "<group>";
+		};
+		5C76B18F2C6A26AC00F12CCB /* ContactDetailsTrend */ = {
+			isa = PBXGroup;
+			children = (
+				5C02FB7C2C4C2A6300232A90 /* ContactDetailsTrendView.swift */,
+				5C76B1902C6A51DB00F12CCB /* ContactDetailsTrendRow.swift */,
+			);
+			path = ContactDetailsTrend;
+			sourceTree = "<group>";
+		};
+		5C76B1942C6AB43400F12CCB /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				5C76B1992C6AC63C00F12CCB /* SalesYear.swift */,
+				5C85319C2C63C8B000A1E5EC /* MarketingSpecialist.swift */,
+				5C76B1922C6A6D2000F12CCB /* Trend.swift */,
+				5C76B1952C6AB43F00F12CCB /* TrendInfo.swift */,
+				5C76B1972C6ABBE500F12CCB /* ExternalTraffic.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		5C8531662C5CFD9F00A1E5EC /* WBSeniorCourseTests */ = {
@@ -451,6 +536,14 @@
 				5C85318F2C5D31C900A1E5EC /* MCView.swift */,
 			);
 			path = MultipeerConnectivity;
+			sourceTree = "<group>";
+		};
+		5C8531A02C63E05300A1E5EC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5C8531A12C63E06A00A1E5EC /* StatisticsService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		5C9DA6B82C4C8BD000D63B78 /* View */ = {
@@ -567,6 +660,8 @@
 		5CC34AB52C308F7700FDA808 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C76B1862C69489F00F12CCB /* Picker */,
+				5C76B17F2C693F5600F12CCB /* ProgressView */,
 				5CAD79E12C57DC66002682F3 /* TabBar */,
 				5CC34AD72C30979F00FDA808 /* View */,
 				5CC34ABA2C30920300FDA808 /* Button */,
@@ -580,6 +675,7 @@
 		5CC34AB62C308F8400FDA808 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				5C8531A02C63E05300A1E5EC /* Service */,
 				5C02FB4A2C4550C700232A90 /* Utilit */,
 				5C8531802C5D0A5700A1E5EC /* Network */,
 				5C02FB472C45459B00232A90 /* Storage */,
@@ -648,6 +744,8 @@
 				5CCAACEC2C336EF5000CB0FD /* BackgroundImageView.swift */,
 				5CC34AD82C3097AF00FDA808 /* GradientView.swift */,
 				5CCAACEE2C337E1E000CB0FD /* PopupView.swift */,
+				5C76B1722C661D5400F12CCB /* StarRatingView.swift */,
+				5C76B1822C693FAA00F12CCB /* TwoLabelsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -725,6 +823,7 @@
 			children = (
 				5CF2D83D2C356C4700BE02D6 /* OTPTextFieldModifier.swift */,
 				5CF2D8412C3775DD00BE02D6 /* KeyboardModifier.swift */,
+				5C8531982C62BBD800A1E5EC /* DisableBouncesModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -893,8 +992,10 @@
 				5C9DA6B52C4C628900D63B78 /* RoundedCorner.swift in Sources */,
 				5CC34B0C2C315C4800FDA808 /* AppString.swift in Sources */,
 				5CF2D83B2C355AEE00BE02D6 /* OTPTextField+ViewType.swift in Sources */,
+				5C76B1832C693FAA00F12CCB /* TwoLabelsView.swift in Sources */,
 				5CCAACEF2C337E1E000CB0FD /* PopupView.swift in Sources */,
-				5C02FB7D2C4C2A6300232A90 /* ContacDetailsTrendView.swift in Sources */,
+				5C76B1912C6A51DB00F12CCB /* ContactDetailsTrendRow.swift in Sources */,
+				5C02FB7D2C4C2A6300232A90 /* ContactDetailsTrendView.swift in Sources */,
 				5C02FB602C47431100232A90 /* CargoView.swift in Sources */,
 				5C02FB7B2C4C2A3B00232A90 /* MonthlyStatisticsTrendView.swift in Sources */,
 				5CC34B142C3164AC00FDA808 /* AppColor.swift in Sources */,
@@ -906,37 +1007,51 @@
 				5C02FB8D2C4C2B4800232A90 /* AISupportView.swift in Sources */,
 				5CD0BD5B2C5A4FBC001EDDCA /* InDevelopingView.swift in Sources */,
 				5CC34ACB2C3093B600FDA808 /* PhoneTextField.swift in Sources */,
+				5C8531A22C63E06A00A1E5EC /* StatisticsService.swift in Sources */,
+				5C76B1932C6A6D2100F12CCB /* Trend.swift in Sources */,
 				5C02FB732C4C298900232A90 /* TrendMovementView.swift in Sources */,
 				5C85318D2C5D2B7800A1E5EC /* MCUtilit.swift in Sources */,
 				5CC34ADB2C30CD2400FDA808 /* Asset.swift in Sources */,
 				5C02FB6D2C4C28F200232A90 /* StatisticsScreen.swift in Sources */,
+				5C76B1982C6ABBE500F12CCB /* ExternalTraffic.swift in Sources */,
 				5C8531842C5D0ABA00A1E5EC /* HTTPMethod.swift in Sources */,
 				5C02FB702C4C292300232A90 /* SideTabBarView.swift in Sources */,
 				5C02FB3E2C44C20D00232A90 /* LocalizableView.swift in Sources */,
 				5C02FB212C441ACC00232A90 /* NavigationManager.swift in Sources */,
 				5CD0BD5D2C5A5E53001EDDCA /* StatisticsStore.swift in Sources */,
+				5C76B1712C64185E00F12CCB /* ContentTrendMovementView.swift in Sources */,
+				5C76B18B2C695CDF00F12CCB /* MonthItem.swift in Sources */,
 				5C02FB792C4C2A0F00232A90 /* YearlyTrendChartView.swift in Sources */,
+				5C76B1852C693FC300F12CCB /* IconCircleProgressView.swift in Sources */,
 				5C02FB762C4C29BE00232A90 /* TopBarView.swift in Sources */,
 				5CC34AD32C30948B00FDA808 /* Stubable.swift in Sources */,
 				5CC34AC32C30931100FDA808 /* AuthorizationPhonePopupView.swift in Sources */,
 				5C8531902C5D31C900A1E5EC /* MCView.swift in Sources */,
+				5C85319D2C63C8B000A1E5EC /* MarketingSpecialist.swift in Sources */,
 				5C85318B2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift in Sources */,
 				5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */,
 				5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
 				5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */,
 				5C02FB302C44ADBE00232A90 /* Stack.swift in Sources */,
+				5C76B1732C661D5400F12CCB /* StarRatingView.swift in Sources */,
+				5C8531992C62BBD800A1E5EC /* DisableBouncesModifier.swift in Sources */,
 				5C02FB322C44AE8C00232A90 /* Queue.swift in Sources */,
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
 				5C9DA6BA2C4C8BF100D63B78 /* SideBarButtonsStackView.swift in Sources */,
 				5C02FB4C2C4550D600232A90 /* FormattedManager.swift in Sources */,
+				5C76B1962C6AB43F00F12CCB /* TrendInfo.swift in Sources */,
 				5C02FB232C44865D00232A90 /* NavigationType.swift in Sources */,
+				5C76B1882C6948AB00F12CCB /* MonthPicker.swift in Sources */,
+				5C76B1812C693F6B00F12CCB /* PercentageCircleProgressView.swift in Sources */,
 				5CC34B0F2C31635300FDA808 /* PurpleButtonStyle.swift in Sources */,
 				5C02FB872C4C2AE900232A90 /* MarketingSpecialistsView.swift in Sources */,
+				5C85319B2C63C89F00A1E5EC /* MarketingSpecialistRow.swift in Sources */,
 				5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */,
 				5C02FB392C44B2A200232A90 /* AnyContainer.swift in Sources */,
 				5C02FB842C4C2AC500232A90 /* SalesQuantityView.swift in Sources */,
 				5C02FB252C44866B00232A90 /* Screen.swift in Sources */,
+				5C76B19A2C6AC63C00F12CCB /* SalesYear.swift in Sources */,
 				5C02FB492C4545A900232A90 /* AppStorageKey.swift in Sources */,
 				5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */,
 				5C02FB272C44891D00232A90 /* NavigationView.swift in Sources */,
@@ -944,6 +1059,7 @@
 				5C02FB2D2C4490B400232A90 /* MockNavigationRootView.swift in Sources */,
 				5C02FB462C45456800232A90 /* LocalizationManager.swift in Sources */,
 				5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */,
+				5C76B18E2C6A18D300F12CCB /* CircleProgressRow.swift in Sources */,
 				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
 				5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */,
 				5C02FB632C47447B00232A90 /* Array + Extension.swift in Sources */,

@@ -51,7 +51,7 @@ struct PopupView<Content>: View where Content: View {
 
 private extension PopupView {
     @ViewBuilder
-    private var loader: some View {
+    var loader: some View {
         ProgressView()
             .tint(.white)
     }
@@ -59,7 +59,7 @@ private extension PopupView {
 
 // MARK: - Nested types
 
-extension PopupView {
+private extension PopupView {
     enum Constants {
         static var maxWidth: CGFloat {
             return UIDevice.current.userInterfaceIdiom == .pad

@@ -36,6 +36,53 @@ enum AppString {
         static let statistics = "Статистика"
         static let displayingWidgets = "Отображение виджетов"
         static let share = "Поделиться"
+        
+        enum SalesQuantity {
+            static let title = "Количество продаж"
+            static var percentageOfSales: (Int) -> String = {
+                return "\($0)% продаж"
+            }
+            static let comparedLastYear = "сравнительно с прошлым годом"
+        }
+        
+        enum MarketingSpecialists {
+            static let title = "Маркетинговые специалисты"
+            static var salesCompleted: (Int, Int) -> String = {
+                return "Выполнено продаж: \($0) / \($1)"
+            }
+            static var completed: (Int) -> String = {
+                return "Выполнено \($0)%"
+            }
+        }
+        
+        enum ExternalTraffic {
+            static let title = "Внешний трафик"
+            static let fromAllPurchases = "От всех покупок"
+            static var countOfPersons: (Int) -> String = {
+                return "\($0) чел."
+            }
+            static let newClients = "Новые клиенты"
+            static let totalFromExternalTraffic = "Всего с внешнего трафика"
+        }
+        
+        enum TrendMovement {
+            static var title: (Int) -> String = {
+                return "Движение тренда в \($0)"
+            }
+            static var statisticsForMonth: (Int) -> String = {
+                return "Статистика за " + String(format: "%02d", $0) + " месяц"
+            }
+            static let price = "Цена"
+            static let purchases = "Покупки"
+            static let clicks = "Клики"
+            static let help = "Помощь"
+            static let contactDetails = "Данные для связи"
+        }
+        
+        enum AISupport {
+            static let title = "ИИ в техподдержке"
+            static let helpIsNeeded = "Нужна помощь"
+        }
     }
     
     // MARK: - MultipeerConnectivity

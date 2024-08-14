@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatisticsScreen: View {
     
-    enum State {
+    enum ViewType {
         case main
         case widgets
         case share
@@ -21,9 +21,13 @@ struct StatisticsScreen: View {
         case share
     }
     
+    // MARK: - Dependencies
+    
+    private let statisticsService = StatisticsService()
+    
     // MARK: - Property Wrappers
     
-    @ObservedObject var store = StatisticsStore<State, Action>(state: .main) { prevState, action in
+    @ObservedObject var store = StatisticsStore<ViewType, Action>(state: .main) { prevState, action in
         switch action {
         case .showMain:
             print("Вернулись на главный экран")
@@ -43,6 +47,7 @@ struct StatisticsScreen: View {
         TrendMovementView() {
             contentView
         }
+        .environmentObject(statisticsService)
     }
 }
 
@@ -50,18 +55,42 @@ struct StatisticsScreen: View {
 
 private extension StatisticsScreen {
     @ViewBuilder
-    private var contentView: some View {
+    var contentView: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 0) {
                 TopBarView(store: store)
                 ContentStatisticsView()
             }
         }
+        .disableBounces()
+    }
+}
+
+// MARK: - Stubable
+
+extension StatisticsScreen: Stubable {
+    static func stub() -> any View {
+        let store = StatisticsStore<StatisticsScreen.ViewType, StatisticsScreen.Action>(state: StatisticsScreen.ViewType.main) { prevState, action in
+            switch action {
+            case .showMain:
+                print("Вернулись на главный экран")
+                return .main
+            case .showWidgets:
+                print("Открыли настройку виджетов")
+                return .widgets
+            case .share:
+                print("Поделились статистикой")
+                return .share
+            }
+        }
+        
+        return StatisticsScreen(store: store)
+            .environmentObject(StatisticsService())
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    StatisticsScreen()
+    StatisticsScreen.stub()
 }

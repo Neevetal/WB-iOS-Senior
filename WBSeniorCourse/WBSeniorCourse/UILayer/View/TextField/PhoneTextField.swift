@@ -74,7 +74,7 @@ struct PhoneTextField: View {
 
 private extension PhoneTextField {
     @ViewBuilder
-    private var textField: some View {
+    var textField: some View {
         TextField("", text: $text)
             .accentColor(AppColor.Background.White.main.color)
             .foregroundColor(AppColor.Text.White.main.color)
@@ -94,7 +94,7 @@ private extension PhoneTextField {
     }
     
     @ViewBuilder
-    private var clearButton: some View {
+    var clearButton: some View {
         Image(systemName: Constants.xmarkImageName)
             .foregroundColor(AppColor.Background.White.main.color)
             .onTapGesture {
@@ -105,7 +105,7 @@ private extension PhoneTextField {
     }
     
     @ViewBuilder
-    private var errorLabel: some View {
+    var errorLabel: some View {
         Text(errorText)
             .foregroundColor(AppColor.Text.red.color)
             .font(.montserratFont(size: 12, weight: .medium))
@@ -158,7 +158,7 @@ private extension PhoneTextField {
 
 // MARK: - Nested types
 
-extension PhoneTextField {
+private extension PhoneTextField {
     enum Constants {
         static let xmarkImageName: String = "xmark.circle.fill"
         static let errorAnimation: Animation = .easeInOut(duration: 0.2)

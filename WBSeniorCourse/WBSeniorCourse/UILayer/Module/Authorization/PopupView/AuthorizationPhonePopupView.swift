@@ -46,7 +46,7 @@ struct AuthorizationPhonePopupView: View {
 
 private extension AuthorizationPhonePopupView {
     @ViewBuilder
-    private var authorizationText: some View {
+    var authorizationText: some View {
         Text(AppString.Authorization.authorization)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 24, weight: .semiBold))
@@ -54,16 +54,16 @@ private extension AuthorizationPhonePopupView {
     }
     
     @ViewBuilder
-    private var roundImage: some View {
+    var roundImage: some View {
         RoundImage(
-            imageIcon: .Asset.Authorization.profileIcon.image,
+            imageIcon: .Asset.User.dog.image,
             sideSize: 96
         )
         .padding(.top, 28)
     }
     
     @ViewBuilder
-    private var loginPhoneNumberText: some View {
+    var loginPhoneNumberText: some View {
         Text(AppString.Authorization.loginPhoneNumber)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 16, weight: .regular))
@@ -71,7 +71,7 @@ private extension AuthorizationPhonePopupView {
     }
     
     @ViewBuilder
-    private var phoneTextField: some View {
+    var phoneTextField: some View {
         PhoneTextField(
             phoneNumber: $user.phone,
             isError: $isError,
@@ -83,7 +83,7 @@ private extension AuthorizationPhonePopupView {
     }
     
     @ViewBuilder
-    private var requestCodeButton: some View {
+    var requestCodeButton: some View {
         Button(AppString.Authorization.requestCode) {
             getCode()
         }
@@ -113,7 +113,7 @@ private extension AuthorizationPhonePopupView {
 
 // MARK: - Nested types
 
-extension AuthorizationPhonePopupView {
+private extension AuthorizationPhonePopupView {
     enum Constants {
         static let phoneMask: String = "+7 (___) ___ - __ - __"
         static let errorAnimation: Animation = .easeInOut(duration: 0.2)

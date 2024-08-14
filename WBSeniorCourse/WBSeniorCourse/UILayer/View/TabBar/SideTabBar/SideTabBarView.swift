@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SideTabBarView: View{
+struct SideTabBarView: View {
     
     // MARK: - Property Wrappers
     
@@ -58,7 +58,7 @@ struct SideTabBarView: View{
 
 private extension SideTabBarView {
     @ViewBuilder
-    private var tabBar: some View {
+    var tabBar: some View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
@@ -75,7 +75,7 @@ private extension SideTabBarView {
     }
     
     @ViewBuilder
-    private var selectedScreen: some View {
+    var selectedScreen: some View {
         switch selectedItem {
         case .charts: StatisticsScreen()
         case .chat: InDevelopingView()
@@ -86,16 +86,16 @@ private extension SideTabBarView {
     }
     
     @ViewBuilder
-    private var roundImage: some View {
+    var roundImage: some View {
         RoundImage(
-            imageIcon: .Asset.Authorization.profileIcon.image,
+            imageIcon: .Asset.User.dog.image,
             sideSize: imageSideSize
         )
         .padding(.top, verticalOffset)
     }
     
     @ViewBuilder
-    private var buttonsStackView: some View {
+    var buttonsStackView: some View {
         SideBarButtonsStackView(
             selectedItem: $selectedItem,
             itemTypes: ItemType.allCases
@@ -103,11 +103,11 @@ private extension SideTabBarView {
     }
     
     @ViewBuilder
-    private var createNewButton: some View {
+    var createNewButton: some View {
         Button(action: {}) {
             Image(
                 uiImage: .Asset
-                    .Statistics.SideBar
+                    .SideBar
                     .plusCircleIcon.image
             )
             .resizable()
@@ -131,15 +131,15 @@ extension SideTabBarView {
         var icon: UIImage {
             switch self {
             case .charts:
-                return .Asset.Statistics.SideBar.chartsIcon.image
+                return .Asset.SideBar.chartsIcon.image
             case .chat:
-                return .Asset.Statistics.SideBar.chatIcon.image
+                return .Asset.SideBar.chatIcon.image
             case .fire:
-                return .Asset.Statistics.SideBar.fireIcon.image
+                return .Asset.SideBar.fireIcon.image
             case .calendar:
-                return .Asset.Statistics.SideBar.calendarIcon.image
+                return .Asset.SideBar.calendarIcon.image
             case .settings:
-                return .Asset.Statistics.SideBar.settingsIcon.image
+                return .Asset.SideBar.settingsIcon.image
             }
         }
     }
@@ -150,6 +150,7 @@ extension SideTabBarView {
 extension SideTabBarView: Stubable {
     static func stub() -> any View {
         return SideTabBarView()
+            .environmentObject(StatisticsService())
     }
 }
 

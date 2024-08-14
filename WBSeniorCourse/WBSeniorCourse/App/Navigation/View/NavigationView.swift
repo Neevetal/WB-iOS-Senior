@@ -58,7 +58,7 @@ struct NavigationView<Content: View>: View {
 
 private extension NavigationView {
     @ViewBuilder
-    private var backButton: some View {
+    var backButton: some View {
         Button(action: {
             withAnimation {
                 navigationManager.pop()
@@ -89,7 +89,7 @@ private extension NavigationView {
 
 // MARK: - Nested types
 
-extension NavigationView {
+private extension NavigationView {
     enum Constants {
         static var backImageName: String { "chevron.left" }
     }

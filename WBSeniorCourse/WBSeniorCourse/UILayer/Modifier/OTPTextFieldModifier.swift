@@ -36,7 +36,7 @@ struct OTPTextFieldModifier: ViewModifier {
 
 // MARK: - Nested types
 
-extension OTPTextFieldModifier {
+private extension OTPTextFieldModifier {
     enum Constants {
         static var fontSize: CGFloat {
             let isIPad = UIDevice.current.userInterfaceIdiom == .pad

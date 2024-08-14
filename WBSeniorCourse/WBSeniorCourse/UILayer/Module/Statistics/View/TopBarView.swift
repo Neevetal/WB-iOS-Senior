@@ -12,7 +12,7 @@ struct TopBarView: View {
     // MARK: - Property Wrappers
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @ObservedObject var store: StatisticsStore<StatisticsScreen.State, StatisticsScreen.Action>
+    @ObservedObject var store: StatisticsStore<StatisticsScreen.ViewType, StatisticsScreen.Action>
     
     // MARK: - Body
     
@@ -32,7 +32,7 @@ struct TopBarView: View {
 
 private extension TopBarView {
     @ViewBuilder
-    private var statisticsLabel: some View {
+    var statisticsLabel: some View {
         Text(AppString.Statistics.statistics)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(
@@ -42,7 +42,7 @@ private extension TopBarView {
     }
     
     @ViewBuilder
-    private var displayingWidgetsButton: some View {
+    var displayingWidgetsButton: some View {
         ImageTitleButton(
             text: horizontalSizeClass == .regular
             ? AppString.Statistics.displayingWidgets
@@ -54,7 +54,7 @@ private extension TopBarView {
     }
     
     @ViewBuilder
-    private var shareButton: some View {
+    var shareButton: some View {
         ImageTitleButton(
             text: horizontalSizeClass == .regular
             ? AppString.Statistics.share

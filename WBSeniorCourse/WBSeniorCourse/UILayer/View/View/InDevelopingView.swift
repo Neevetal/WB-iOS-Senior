@@ -40,14 +40,14 @@ struct InDevelopingView: View {
 
 private extension InDevelopingView {
     @ViewBuilder
-    private var titleLabel: some View {
+    var titleLabel: some View {
         Text(AppString.Common.screenInDevelopment)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: textFontSize, weight: .semiBold))
     }
     
     @ViewBuilder
-    private var iconImage: some View {
+    var iconImage: some View {
         Image(systemName: Constants.iconImageName)
             .resizable()
             .scaledToFill()

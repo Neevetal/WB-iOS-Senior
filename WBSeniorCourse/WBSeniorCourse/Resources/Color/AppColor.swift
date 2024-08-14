@@ -14,9 +14,12 @@ enum AppColor {
     enum Background: String {
         case red = "redBackgroundColor"
         case green = "greenBackgroundColor"
+        case blue = "blueBackgroundColor"
+        case gray = "grayBackgroundColor"
         
         enum White: String {
             case main = "whiteBackgroundColor"
+            case main04 = "whiteBackgroundColor04"
             case main08 = "whiteBackgroundColor08"
         }
         
@@ -34,6 +37,8 @@ enum AppColor {
         }
         
         case red = "redTextColor"
+        case gray = "grayTextColor"
+        case green = "greenTextColor"
     }
     
     // MARK: - Shadow
@@ -49,6 +54,9 @@ enum AppColor {
     enum Gradient {
         case purple
         case darkPurple
+        case blue
+        case darkBlue
+        case green
         
         var colorNames: [String] {
             switch self {
@@ -59,7 +67,20 @@ enum AppColor {
             case .darkPurple: [
                 "darkPurple94GradientColor",
                 "darkBlack49GradientColor"
-            ]}
+            ]
+            case .blue: [
+                "blue56GradientColor",
+                "blue0GradientColor"
+            ]
+            case .darkBlue: [
+                "darkBlue74GradientColor",
+                "darkBlue71GradientColor"
+            ]
+            case .green: [
+                "green0GradientColor",
+                "green100GradientColor"
+            ]
+            }
         }
     }
 }

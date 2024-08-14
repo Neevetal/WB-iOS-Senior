@@ -31,7 +31,12 @@ struct TrendMovementView<Content>: View where Content: View {
     var body: some View {
         ZStack(alignment: .trailing) {
             content
-                .padding(.trailing, horizontalSizeClass == .compact ? 0 : contentSpacing)
+                .padding(
+                    .trailing,
+                    horizontalSizeClass == .compact
+                    ? 0
+                    : contentSpacing
+                )
             sideView
         }
         .animation(.easeInOut, value: xSideOffset)
@@ -48,10 +53,12 @@ struct TrendMovementView<Content>: View where Content: View {
 
 private extension TrendMovementView {
     @ViewBuilder
-    private var sideView: some View {
+    var sideView: some View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
-            points: (.leading, .trailing)) {}
+            points: (.leading, .trailing)) {
+                ContentTrendMovementView()
+            }
             .frame(width: Constants.sideViewWidth)
             .cornerRadius(44, corners: [.topLeft, .bottomLeft])
             .offset(x: xSideOffset)
@@ -108,7 +115,7 @@ private extension TrendMovementView {
 
 // MARK: - Nested types
 
-extension TrendMovementView {
+private extension TrendMovementView {
     enum ShowType {
         case open
         case close
@@ -137,6 +144,7 @@ extension TrendMovementView: Stubable {
         return HStack(spacing: 0) {
             Spacer()
             TrendMovementView<EmptyView>() {}
+                .environmentObject(StatisticsService())
         }
     }
 }

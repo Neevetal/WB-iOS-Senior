@@ -39,3 +39,25 @@ extension FormattedManager {
         return Self.measurementFormatter.string(from: measurement)
     }
 }
+
+// MARK: - Month
+
+extension FormattedManager {
+    static let monthFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "LLLL yyyy"
+        return formatter
+    }()
+    
+    static let shortMonthFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "LLL"
+        return formatter
+    }()
+    
+    static func generateMonths(
+        formatter: DateFormatter = FormattedManager.monthFormatter
+    ) -> [MonthItem] {
+        return (1...12).map { MonthItem(month: $0, formatter: formatter) }
+    }
+}

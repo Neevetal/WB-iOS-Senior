@@ -20,13 +20,28 @@ extension UIImage {
                 case purpleBackgroundImage = "purpleBackgroundImage"
                 case purpleBackgroundImagePNG = "purpleBackgroundImagePNG"
             }
+            
+            enum Chevron: String {
+                case downIcon = "chevronDownIcon"
+                case rightIcon = "chevronRightIcon"
+            }
         }
         
         // MARK: - Authorization
         
         enum Authorization: String {
-            case profileIcon = "profileIcon"
             case mailIcon = "mailIcon"
+        }
+        
+        // MARK: - SideBar
+        
+        enum SideBar: String {
+            case calendarIcon = "calendarIcon"
+            case chartsIcon = "chartsIcon"
+            case chatIcon = "chatIcon"
+            case fireIcon = "fireIcon"
+            case plusCircleIcon = "plusCircleIcon"
+            case settingsIcon = "settingsIcon"
         }
         
         // MARK: - Statistics
@@ -34,15 +49,27 @@ extension UIImage {
         enum Statistics: String {
             case shareIcon = "shareIcon"
             case slidersIcon = "slidersIcon"
+            case starIcon = "starIcon"
+            case aiSupportBackground = "aiSupportBackground"
+            case chartPin = "chartPin"
             
-            enum SideBar: String {
-                case calendarIcon = "calendarIcon"
-                case chartsIcon = "chartsIcon"
-                case chatIcon = "chatIcon"
-                case fireIcon = "fireIcon"
-                case plusCircleIcon = "plusCircleIcon"
-                case settingsIcon = "settingsIcon"
+            enum Progress: String {
+                case clicksIcon = "progressClicksIcon"
+                case helpIcon = "progressHelpIcon"
+                case priceIcon = "progressPriceIcon"
+                case purchasesIcon = "progressPurchasesIcon"
             }
+        }
+        
+        // MARK: - User
+        
+        enum User: String {
+            case dog = "dogUserIcon"
+            case cat = "catUserIcon"
+            case man1 = "man1UserIcon"
+            case man2 = "man2UserIcon"
+            case man3 = "man3UserIcon"
+            case man4 = "man4UserIcon"
         }
     }
 }
