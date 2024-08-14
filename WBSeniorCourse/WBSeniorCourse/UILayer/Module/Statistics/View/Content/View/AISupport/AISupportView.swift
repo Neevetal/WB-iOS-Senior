@@ -19,7 +19,6 @@ struct AISupportView: View {
                 helpButton
             }
         }
-        .frame(height: 134)
         .cornerRadius(28)
     }
 }

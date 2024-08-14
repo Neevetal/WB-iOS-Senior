@@ -15,6 +15,7 @@ struct ExternalTrafficView: View {
     
     // MARK: - Property Wrappers
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var selectedMonth: MonthItem
     
     // MARK: - Initialization and deinitialization
@@ -29,7 +30,12 @@ struct ExternalTrafficView: View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(
+                    alignment: horizontalSizeClass == .compact 
+                    ? .center
+                    : .leading,
+                    spacing: 24
+                ) {
                     HStack(alignment: .top) {
                         titleLabel
                         Spacer()
@@ -38,15 +44,10 @@ struct ExternalTrafficView: View {
                                 service.updateSelectedExternalTraffic(with: value.id)
                             }
                     }
-                    HStack(spacing: 16) {
-                        circleProgressView
-                        Spacer()
-                        infoRows
-                    }
+                    infoRfefefefows
                 }
                 .padding(20)
             }
-            .frame(height: 280)
             .cornerRadius(28)
     }
 }
@@ -59,6 +60,26 @@ private extension ExternalTrafficView {
         Text(AppString.Statistics.ExternalTraffic.title)
             .foregroundColor(AppColor.Text.White.main.color)
             .font(.montserratFont(size: 18, weight: .semiBold))
+    }
+    
+    @ViewBuilder
+    var infoRfefefefows: some View {
+        switch horizontalSizeClass {
+        case .compact:
+            VStack(spacing: 16) {
+                circleProgressView
+                Spacer()
+                infoRows
+            }
+        case .regular:
+            HStack(spacing: 16) {
+                circleProgressView
+                Spacer()
+                infoRows
+            }
+        default:
+            EmptyView()
+        }
     }
     
     @ViewBuilder

@@ -28,7 +28,6 @@ struct MarketingSpecialistsView: View {
                 }
                 .disableBounces()
             }
-            .frame(height: 438)
             .cornerRadius(28)
     }
 }

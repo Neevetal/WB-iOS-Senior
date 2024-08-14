@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatisticsScreen: View {
     
-    enum State {
+    enum ViewType {
         case main
         case widgets
         case share
@@ -27,7 +27,7 @@ struct StatisticsScreen: View {
     
     // MARK: - Property Wrappers
     
-    @ObservedObject var store = StatisticsStore<State, Action>(state: .main) { prevState, action in
+    @ObservedObject var store = StatisticsStore<ViewType, Action>(state: .main) { prevState, action in
         switch action {
         case .showMain:
             print("Вернулись на главный экран")
@@ -70,7 +70,7 @@ private extension StatisticsScreen {
 
 extension StatisticsScreen: Stubable {
     static func stub() -> any View {
-        let store = StatisticsStore<StatisticsScreen.State, StatisticsScreen.Action>(state: StatisticsScreen.State.main) { prevState, action in
+        let store = StatisticsStore<StatisticsScreen.ViewType, StatisticsScreen.Action>(state: StatisticsScreen.ViewType.main) { prevState, action in
             switch action {
             case .showMain:
                 print("Вернулись на главный экран")

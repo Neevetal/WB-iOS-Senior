@@ -12,7 +12,7 @@ struct TopBarView: View {
     // MARK: - Property Wrappers
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @ObservedObject var store: StatisticsStore<StatisticsScreen.State, StatisticsScreen.Action>
+    @ObservedObject var store: StatisticsStore<StatisticsScreen.ViewType, StatisticsScreen.Action>
     
     // MARK: - Body
     

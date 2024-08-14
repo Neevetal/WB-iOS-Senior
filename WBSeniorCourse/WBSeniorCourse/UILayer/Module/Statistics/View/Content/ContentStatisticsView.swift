@@ -40,21 +40,25 @@ private extension ContentStatisticsView {
     @ViewBuilder
     var salesQuantityView: some View {
         SalesQuantityView()
+            .frame(height: 445)
     }
     
     @ViewBuilder
     var marketingSpecialistsView: some View {
         MarketingSpecialistsView()
+            .frame(height: 438)
     }
     
     @ViewBuilder
     var externalTrafficView: some View {
         ExternalTrafficView()
+           // .frame(height: 445)
     }
     
     @ViewBuilder
     var aiSupportView: some View {
         AISupportView()
+            .frame(height: 134)
     }
 }
 

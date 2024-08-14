@@ -25,17 +25,16 @@ struct SalesQuantityView: View {
         GradientView(
             gradient: AppColor.Gradient.darkPurple.gradient,
             points: (.leading, .trailing)) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        titleLabel
-                        percentageSalesLabel
+                VStack(alignment: .leading, spacing: 0) {
+                    titleLabel
+                    percentageSalesLabel
+                    ScrollView(.horizontal, showsIndicators: false) {
                         chartView
                     }
-                    .padding(24)
+                    .disableBounces()
                 }
-                .disableBounces()
+                .padding(24)
             }
-            .frame(height: 445)
             .cornerRadius(28)
     }
 }
@@ -65,7 +64,7 @@ private extension SalesQuantityView {
             )
             
             Text(AppString.Statistics.SalesQuantity.comparedLastYear)
-            .foregroundColor(AppColor.Text.White.main.color)
+                .foregroundColor(AppColor.Text.White.main.color)
         }
         .font(.montserratFont(size: 14, weight: .regular))
         .opacity(salesDifference == 0 ? 0 : 1)
@@ -221,8 +220,8 @@ private extension SalesQuantityView {
         guard
             let value = selectedXMonth?.salesCount,
             let month = service.salesYears[0].months.first(
-            where: { $0.name == selectedXMonth?.name }
-        ) else {
+                where: { $0.name == selectedXMonth?.name }
+            ) else {
             return
         }
         
