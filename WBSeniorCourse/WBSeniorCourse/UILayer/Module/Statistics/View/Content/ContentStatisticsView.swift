@@ -26,7 +26,7 @@ struct ContentStatisticsView: View {
             case .landscapeLeft, .landscapeRight:
                 fullGrid
             default:
-                EmptyView()
+                smallGrid
             }
         default:
             EmptyView()
