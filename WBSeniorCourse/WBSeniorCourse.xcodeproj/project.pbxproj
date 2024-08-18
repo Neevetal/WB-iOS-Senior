@@ -428,6 +428,13 @@
 			path = AISupport;
 			sourceTree = "<group>";
 		};
+		5C5628F92C72103C005AD88B /* Generate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generate;
+			sourceTree = "<group>";
+		};
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				5CC34B052C31589600FDA808 /* Info.plist */,
+				5C5628F92C72103C005AD88B /* Generate */,
 				5CC34ADC2C30CD3000FDA808 /* Assets */,
 				5CC34B102C31640A00FDA808 /* Color */,
 				5CC34ADE2C30CD5B00FDA808 /* Localizable */,
