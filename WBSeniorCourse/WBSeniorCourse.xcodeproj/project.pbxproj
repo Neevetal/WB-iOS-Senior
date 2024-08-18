@@ -37,6 +37,7 @@
 		5C02FB872C4C2AE900232A90 /* MarketingSpecialistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB862C4C2AE900232A90 /* MarketingSpecialistsView.swift */; };
 		5C02FB8A2C4C2B1500232A90 /* ExternalTrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB892C4C2B1500232A90 /* ExternalTrafficView.swift */; };
 		5C02FB8D2C4C2B4800232A90 /* AISupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB8C2C4C2B4800232A90 /* AISupportView.swift */; };
+		5C5628FD2C724B66005AD88B /* VtexAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5628FC2C724B66005AD88B /* VtexAPI */; };
 		5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */; };
 		5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF52C3C02C9002DB3E1 /* User.swift */; };
 		5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */; };
@@ -240,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5628FD2C724B66005AD88B /* VtexAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +437,13 @@
 			path = Generate;
 			sourceTree = "<group>";
 		};
+		5C5628FB2C724B66005AD88B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +596,7 @@
 				5C8531662C5CFD9F00A1E5EC /* WBSeniorCourseTests */,
 				5C8531732C5CFDB400A1E5EC /* WBSeniorCourseUITests */,
 				5CC34A9F2C30869300FDA808 /* Products */,
+				5C5628FB2C724B66005AD88B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -890,6 +900,9 @@
 			dependencies = (
 			);
 			name = WBSeniorCourse;
+			packageProductDependencies = (
+				5C5628FC2C724B66005AD88B /* VtexAPI */,
+			);
 			productName = WBSeniorCourse;
 			productReference = 5CC34A9E2C30869300FDA808 /* WBSeniorCourse.app */;
 			productType = "com.apple.product-type.application";
@@ -1398,6 +1411,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C5628FC2C724B66005AD88B /* VtexAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VtexAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CC34A962C30869300FDA808 /* Project object */;
 }
