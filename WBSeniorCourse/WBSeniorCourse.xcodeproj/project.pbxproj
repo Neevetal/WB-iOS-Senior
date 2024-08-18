@@ -151,6 +151,7 @@
 		5C02FB862C4C2AE900232A90 /* MarketingSpecialistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingSpecialistsView.swift; sourceTree = "<group>"; };
 		5C02FB892C4C2B1500232A90 /* ExternalTrafficView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalTrafficView.swift; sourceTree = "<group>"; };
 		5C02FB8C2C4C2B4800232A90 /* AISupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISupportView.swift; sourceTree = "<group>"; };
+		5C5628F82C720F1B005AD88B /* VtexAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = VtexAPI; path = Module/VtexAPI; sourceTree = "<group>"; };
 		5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		5C68CCF52C3C02C9002DB3E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStep.swift; sourceTree = "<group>"; };
@@ -574,6 +575,7 @@
 		5CC34A952C30869300FDA808 = {
 			isa = PBXGroup;
 			children = (
+				5C5628F82C720F1B005AD88B /* VtexAPI */,
 				5CC34AA02C30869300FDA808 /* WBSeniorCourse */,
 				5C8531662C5CFD9F00A1E5EC /* WBSeniorCourseTests */,
 				5C8531732C5CFDB400A1E5EC /* WBSeniorCourseUITests */,
