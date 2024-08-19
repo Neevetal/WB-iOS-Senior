@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import VtexAPI
 
 final class StatisticsService: ObservableObject {
     
@@ -13,6 +14,7 @@ final class StatisticsService: ObservableObject {
     
     @Published public var selectedExternalTraffic: ExternalTraffic
     @Published public var selectedTrend: Trend
+    @Published public var products: [Product] = []
     
     // MARK: - Properties
     
@@ -36,5 +38,18 @@ extension StatisticsService {
     func updateSelectedExternalTraffic(with monthIndex: Int) {
         let index = monthIndex - 1
         selectedExternalTraffic = externalTraffics[index]
+    }
+}
+
+// MARK: - API
+
+extension StatisticsService {
+    func getProducts(limit: Int) {
+        DefaultAPI.getProducts(limit: limit) { [weak self] products, error in
+            guard let self, let products else { return }
+            self.products = products
+            print("data", products)
+            print("error", error)
+        }
     }
 }

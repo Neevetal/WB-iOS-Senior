@@ -1,0 +1,120 @@
+openapi: 3.0.2
+info:
+  title: Fake Online Store API
+  description: A fake online store API for testing and development purposes.
+  version: 1.0.0
+servers:
+  - url: https://fakestoreapi.com
+paths:
+  /products:
+    get:
+      summary: Retrieve all products
+      operationId: getProducts
+      parameters:
+        - name: limit
+          in: query
+          description: The maximum number of products to return.
+          schema:
+            type: integer
+        - name: sort
+          in: query
+          description: The sorting order for the returned products (asc or desc).
+          schema:
+            type: string
+            enum: [asc, desc]
+      description: Returns a list of all products available in the fake online store.
+      responses:
+        "200":
+          description: A list of products in JSON format.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+  /products/{id}:
+    get:
+      summary: Retrieve a single product
+      description: Returns a single product with the specified ID.
+      operationId: getProductById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the product to retrieve.
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: The specified product in JSON format.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+  /categories:
+    get:
+      summary: Retrieve all categories
+      operationId: getCategories
+      description: Returns a list of all categories available in the fake online store.
+      responses:
+        "200":
+          description: A list of categories in JSON format.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /products/category/{category}:
+    get:
+      summary: Retrieve products in a specific category
+      description: Returns a list of products in the specified category.
+      operationId: getProductsByCategory
+      parameters:
+        - name: category
+          in: path
+          description: The category of products to retrieve.
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: The maximum number of products to return.
+          schema:
+            type: integer
+        - name: sort
+          in: query
+          description: The sorting order for the returned products (asc or desc).
+          schema:
+            type: string
+            enum: [asc, desc]
+      responses:
+        "200":
+          description: A list of products in JSON format.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        category:
+          type: string
+        image:
+          type: string
+      required:
+        - id
+        - title
+        - price

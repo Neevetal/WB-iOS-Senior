@@ -74,10 +74,10 @@ private extension SalesQuantityView {
     @ViewBuilder
     var chartView: some View {
         Chart {
-            ForEach(service.salesYears[0].months, id: \.name) { month in
+            ForEach(service.products, id: \.id) { product in
                 AreaMark(
-                    x: .value("Month2023", month.name),
-                    y: .value("Values2023", month.salesCount),
+                    x: .value("Month2023", product.id),
+                    y: .value("Values2023", product.price),
                     stacking: .unstacked
                 )
                 .interpolationMethod(.catmullRom)
@@ -88,59 +88,14 @@ private extension SalesQuantityView {
                 ))
                 
                 LineMark(
-                    x: .value("Month2023", month.name),
-                    y: .value("Values2023", month.salesCount)
+                    x: .value("Month2023", product.id),
+                    y: .value("Values2023", product.price)
                 )
                 .foregroundStyle(AppColor.Background.blue.color)
-                .accessibilityLabel("\(month.name)")
-                .accessibilityValue("\(month.salesCount)$")
                 .interpolationMethod(.catmullRom)
                 .lineStyle(StrokeStyle(lineWidth: 3))
             }
             .foregroundStyle(by: .value("Type", "Values2023"))
-            
-            ForEach(service.salesYears[1].months, id: \.name) { month in
-                AreaMark(
-                    x: .value("Month2024", month.name),
-                    y: .value("Values2024", month.salesCount),
-                    stacking: .unstacked
-                )
-                .interpolationMethod(.catmullRom)
-                .foregroundStyle(LinearGradient(
-                    gradient: AppColor.Gradient.purple.gradient,
-                    startPoint: .top,
-                    endPoint: .bottom
-                ))
-                
-                LineMark(
-                    x: .value("Month2024", month.name),
-                    y: .value("Values2024", month.salesCount)
-                )
-                .foregroundStyle(AppColor.Background.Purple.main.color)
-                .accessibilityLabel("\(month.name)")
-                .accessibilityValue("\(month.salesCount)$")
-                .interpolationMethod(.catmullRom)
-                .lineStyle(StrokeStyle(lineWidth: 3))
-                .symbol() {
-                    ZStack {
-                        Image(uiImage: .Asset.Statistics.chartPin.image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 32, height: 32)
-                        VStack {
-                            Text("\(month.salesCount)")
-                                .foregroundColor(AppColor.Text.White.main.color)
-                                .font(.montserratFont(size: 14, weight: .medium))
-                                .padding(5)
-                                .background(AppColor.Background.White.main08.color)
-                                .cornerRadius(8)
-                        }
-                        .offset(CGSize(width: 0, height: -30))
-                    }
-                    .opacity(selectedXMonth?.name == month.name ? 1 : 0)
-                }
-            }
-            .foregroundStyle(by: .value("Type", "Values2024"))
         }
         .chartLegend(.hidden)
         .chartXAxis {
@@ -157,7 +112,7 @@ private extension SalesQuantityView {
         .chartYAxis {
             AxisMarks(
                 position: .leading,
-                values: [0, 200, 400, 600, 800, 999]
+                values: [0, 50, 100, 150, 200]
             ) { value in
                 AxisGridLine(
                     centered: true,
@@ -174,7 +129,7 @@ private extension SalesQuantityView {
                 }
             }
         }
-        .chartYScale(domain: 0...999)
+        .chartYScale(domain: 0...200)
         .frame(width: 68 * 12)
         .padding(.top, 24)
         .chartOverlay { proxy in

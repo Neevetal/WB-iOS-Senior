@@ -47,6 +47,9 @@ struct StatisticsScreen: View {
         TrendMovementView() {
             contentView
         }
+        .task {
+            statisticsService.getProducts(limit: 20)
+        }
         .environmentObject(statisticsService)
     }
 }
