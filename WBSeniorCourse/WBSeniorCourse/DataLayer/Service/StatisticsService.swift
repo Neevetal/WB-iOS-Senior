@@ -14,9 +14,7 @@ final class StatisticsService: ObservableObject {
     
     @Published public var selectedExternalTraffic: ExternalTraffic
     @Published public var selectedTrend: Trend
-    
-    @Published public var productRating: GetProductRating200Response?
-    @Published public var reviews: [GetalistofReviews200ResponseDataInner] = []
+    @Published public var products: [Product] = []
     
     // MARK: - Properties
     
@@ -45,35 +43,13 @@ extension StatisticsService {
 
 // MARK: - API
 
-// key fg5kYZDIqhSwEusxgpmh5hWCXWewbC
-
 extension StatisticsService {
-    func getProductRating(completion: @escaping (GetProductRating200Response) -> Void) {
-        RatingAPI.getProductRating(
-            productId: "",
-            contentType: "",
-            accept: ""
-        ) { [weak self] data, error in
-            guard let self else { return }
-            self.productRating = data
-            completion(data!)
-        }
-    }
-    
-    func getListOfReviews(completion: @escaping ([GetalistofReviews200ResponseDataInner]) -> Void) {
-        ReviewAPI.getalistofReviews(
-            searchTerm: "",
-            from: "",
-            to: "",
-            orderBy: "",
-            status: false,
-            productId: "",
-            contentType: "",
-            accept: ""
-        ) { [weak self] data, error in
-            guard let self else { return }
-            self.reviews = data?.data ?? []
-            completion(data?.data ?? [])
+    func getProducts(limit: Int) {
+        DefaultAPI.getProducts(limit: limit) { [weak self] products, error in
+            guard let self, let products else { return }
+            self.products = products
+            print("data", products)
+            print("error", error)
         }
     }
 }
