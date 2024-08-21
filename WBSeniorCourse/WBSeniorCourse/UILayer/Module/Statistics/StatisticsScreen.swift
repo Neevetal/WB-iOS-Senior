@@ -23,7 +23,7 @@ struct StatisticsScreen: View {
     
     // MARK: - Dependencies
     
-    private let statisticsService = StatisticsService()
+    @Injected private var statisticsService: StatisticsService
     
     // MARK: - Property Wrappers
     
