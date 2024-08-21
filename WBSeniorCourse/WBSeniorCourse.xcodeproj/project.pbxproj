@@ -38,6 +38,9 @@
 		5C02FB8A2C4C2B1500232A90 /* ExternalTrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB892C4C2B1500232A90 /* ExternalTrafficView.swift */; };
 		5C02FB8D2C4C2B4800232A90 /* AISupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02FB8C2C4C2B4800232A90 /* AISupportView.swift */; };
 		5C5628FD2C724B66005AD88B /* VtexAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5628FC2C724B66005AD88B /* VtexAPI */; };
+		5C56290C2C75F1EF005AD88B /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56290B2C75F1EF005AD88B /* Injected.swift */; };
+		5C56290E2C75F231005AD88B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 5C56290D2C75F231005AD88B /* Swinject */; };
+		5C5629102C75F248005AD88B /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56290F2C75F248005AD88B /* Injection.swift */; };
 		5C68CCF32C3C0264002DB3E1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */; };
 		5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF52C3C02C9002DB3E1 /* User.swift */; };
 		5C68CCF82C3C0336002DB3E1 /* AuthorizationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */; };
@@ -153,6 +156,8 @@
 		5C02FB892C4C2B1500232A90 /* ExternalTrafficView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalTrafficView.swift; sourceTree = "<group>"; };
 		5C02FB8C2C4C2B4800232A90 /* AISupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISupportView.swift; sourceTree = "<group>"; };
 		5C5628F82C720F1B005AD88B /* VtexAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = VtexAPI; path = Module/VtexAPI; sourceTree = "<group>"; };
+		5C56290B2C75F1EF005AD88B /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		5C56290F2C75F248005AD88B /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		5C68CCF22C3C0264002DB3E1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		5C68CCF52C3C02C9002DB3E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C68CCF72C3C0336002DB3E1 /* AuthorizationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationStep.swift; sourceTree = "<group>"; };
@@ -242,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5628FD2C724B66005AD88B /* VtexAPI in Frameworks */,
+				5C56290E2C75F231005AD88B /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +448,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C56290A2C75F1CE005AD88B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				5C56290F2C75F248005AD88B /* Injection.swift */,
+				5C56290B2C75F1EF005AD88B /* Injected.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		5C68CCF42C3C02BC002DB3E1 /* Model */ = {
@@ -695,6 +710,7 @@
 		5CC34AB62C308F8400FDA808 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				5C56290A2C75F1CE005AD88B /* DI */,
 				5C8531A02C63E05300A1E5EC /* Service */,
 				5C02FB4A2C4550C700232A90 /* Utilit */,
 				5C8531802C5D0A5700A1E5EC /* Network */,
@@ -902,6 +918,7 @@
 			name = WBSeniorCourse;
 			packageProductDependencies = (
 				5C5628FC2C724B66005AD88B /* VtexAPI */,
+				5C56290D2C75F231005AD88B /* Swinject */,
 			);
 			productName = WBSeniorCourse;
 			productReference = 5CC34A9E2C30869300FDA808 /* WBSeniorCourse.app */;
@@ -940,6 +957,9 @@
 				ru,
 			);
 			mainGroup = 5CC34A952C30869300FDA808;
+			packageReferences = (
+				5C5629092C75F1C2005AD88B /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = 5CC34A9F2C30869300FDA808 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1054,6 +1074,7 @@
 				5C85318B2C5D12FD00A1E5EC /* CalculatorButtonStyle.swift in Sources */,
 				5CF2D8382C349BD700BE02D6 /* OTPTextField.swift in Sources */,
 				5CCAACED2C336EF5000CB0FD /* BackgroundImageView.swift in Sources */,
+				5C5629102C75F248005AD88B /* Injection.swift in Sources */,
 				5CC34AA22C30869300FDA808 /* WBSeniorCourseApp.swift in Sources */,
 				5CF2D8402C3618A800BE02D6 /* BackTextButton.swift in Sources */,
 				5C02FB302C44ADBE00232A90 /* Stack.swift in Sources */,
@@ -1063,6 +1084,7 @@
 				5CC34AD62C30976C00FDA808 /* RoundImage.swift in Sources */,
 				5C9DA6BA2C4C8BF100D63B78 /* SideBarButtonsStackView.swift in Sources */,
 				5C02FB4C2C4550D600232A90 /* FormattedManager.swift in Sources */,
+				5C56290C2C75F1EF005AD88B /* Injected.swift in Sources */,
 				5C76B1962C6AB43F00F12CCB /* TrendInfo.swift in Sources */,
 				5C02FB232C44865D00232A90 /* NavigationType.swift in Sources */,
 				5C76B1882C6948AB00F12CCB /* MonthPicker.swift in Sources */,
@@ -1412,10 +1434,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		5C5629092C75F1C2005AD88B /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		5C5628FC2C724B66005AD88B /* VtexAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VtexAPI;
+		};
+		5C56290D2C75F231005AD88B /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C5629092C75F1C2005AD88B /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

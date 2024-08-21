@@ -46,7 +46,9 @@ extension StatisticsService {
 extension StatisticsService {
     func getProducts(limit: Int) {
         DefaultAPI.getProducts(limit: limit) { [weak self] products, error in
-            guard let self, let products else { return }
+            guard let self, let products else { 
+                return
+            }
             self.products = products
             print("data", products)
             print("error", error)
