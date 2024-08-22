@@ -43,6 +43,7 @@ private extension ToDoListView {
     @ViewBuilder
     var addButton: some View {
         Button(AppString.ToDo.addItem, action: addNewItem)
+            .disabled(newItemTitle.isEmpty)
     }
     
     @ViewBuilder
