@@ -9,31 +9,60 @@ import SwiftUI
 import SwiftData
 
 struct ToDoListView: View {
-    @State private var newItemTitle = ""
+    
+    // MARK: - Property Wrappers
+    
     @Environment(\.modelContext) private var context
-    @Query var todos: [ToDoItem]
+    @State private var newItemTitle = ""
+    @Query var items: [ToDoItem]
+    
+    // MARK: - Body
     
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Enter new item", text: $newItemTitle)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                Button("Add Item", action: addNewItem)
-                
-                List(todos) { item in
-                    ToDoRow(item: item)
-                }
+                newItemTextField
+                addButton
+                itemsList
             }
-            .navigationTitle("Todo List")
+            .navigationTitle(AppString.ToDo.navigationTitle)
         }
     }
+}
+
+// MARK: - UI Properties
+
+private extension ToDoListView {
+    @ViewBuilder
+    var newItemTextField: some View {
+        TextField(AppString.ToDo.enterNewItem, text: $newItemTitle)
+            .textFieldStyle(.roundedBorder)
+            .padding()
+    }
     
-    private func addNewItem() {
+    @ViewBuilder
+    var addButton: some View {
+        Button(AppString.ToDo.addItem, action: addNewItem)
+    }
+    
+    @ViewBuilder
+    var itemsList: some View {
+        List(items) { item in
+            ToDoRow(item: item)
+        }
+    }
+}
+
+// MARK: - Private methods
+
+private extension ToDoListView {
+    func addNewItem() {
         context.insert(ToDoItem(title: newItemTitle))
         newItemTitle = ""
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     ToDoListView()
