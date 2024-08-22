@@ -104,4 +104,12 @@ enum AppString {
         static let dates = "Dates_L10n_Key"
         static let distance = "Distance_L10n_Key"
     }
+    
+    // MARK: - ToDo
+    
+    enum ToDo {
+        static let navigationTitle = "Заметки"
+        static let enterNewItem = "Новая заметка"
+        static let addItem = "Добавить"
+    }
 }

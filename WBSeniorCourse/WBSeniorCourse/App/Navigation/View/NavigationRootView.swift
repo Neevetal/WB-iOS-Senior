@@ -1,5 +1,5 @@
 //
-//  NavigationView.swift
+//  NavigationRootView.swift
 //  WBSeniorCourse
 //
 //  Created by Vitaly Malkov on 15.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavigationView<Content: View>: View {
+struct NavigationRootView<Content: View>: View {
     
     // MARK: - Property Wrappers
     
@@ -56,7 +56,7 @@ struct NavigationView<Content: View>: View {
 
 // MARK: - UI Properties
 
-private extension NavigationView {
+private extension NavigationRootView {
     @ViewBuilder
     var backButton: some View {
         Button(action: {
@@ -74,7 +74,7 @@ private extension NavigationView {
 
 // MARK: - Private methods
 
-private extension NavigationView {
+private extension NavigationRootView {
     func transition(for type: NavigationType) -> AnyTransition {
         switch type {
         case .push:
@@ -89,7 +89,7 @@ private extension NavigationView {
 
 // MARK: - Nested types
 
-private extension NavigationView {
+private extension NavigationRootView {
     enum Constants {
         static var backImageName: String { "chevron.left" }
     }
