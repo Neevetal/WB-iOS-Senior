@@ -19,6 +19,9 @@ struct ToDoListView: View {
     // MARK: - Body
     
     var body: some View {
+#if os(watchOS)
+        watchView
+        #else
         NavigationView {
             VStack {
                 newItemTextField
@@ -27,6 +30,7 @@ struct ToDoListView: View {
             }
             .navigationTitle(AppString.ToDo.navigationTitle)
         }
+#endif
     }
 }
 
@@ -36,7 +40,7 @@ private extension ToDoListView {
     @ViewBuilder
     var newItemTextField: some View {
         TextField(AppString.ToDo.enterNewItem, text: $newItemTitle)
-            .textFieldStyle(.roundedBorder)
+            .textFieldStyle(.plain)
             .padding()
     }
     
@@ -50,6 +54,23 @@ private extension ToDoListView {
     var itemsList: some View {
         List(items) { item in
             ToDoRow(item: item)
+        }
+    }
+}
+
+// MARK: - WatchOS
+
+private extension ToDoListView {
+    @ViewBuilder
+    var watchView: some View {
+        ScrollView(.vertical) {
+            Group {
+                newItemTextField
+                addButton
+                ForEach(items) { item in
+                    ToDoRow(item: item)
+                }
+            }
         }
     }
 }

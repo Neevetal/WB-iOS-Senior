@@ -61,10 +61,14 @@
 		5C80FAC12C77783A007C6C89 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC02C77783A007C6C89 /* ToDoItem.swift */; };
 		5C80FAC32C777916007C6C89 /* ToDoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC22C777916007C6C89 /* ToDoRow.swift */; };
 		5C80FACB2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FACA2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift */; };
-		5C80FACD2C77D617007C6C89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FACC2C77D617007C6C89 /* ContentView.swift */; };
 		5C80FACF2C77D618007C6C89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C80FACE2C77D618007C6C89 /* Assets.xcassets */; };
 		5C80FAD22C77D618007C6C89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C80FAD12C77D618007C6C89 /* Preview Assets.xcassets */; };
 		5C80FAD52C77D618007C6C89 /* WatchWBSeniorCourse Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C80FAC82C77D617007C6C89 /* WatchWBSeniorCourse Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C80FADA2C788641007C6C89 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FABE2C777822007C6C89 /* ToDoListView.swift */; };
+		5C80FADB2C788644007C6C89 /* ToDoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC22C777916007C6C89 /* ToDoRow.swift */; };
+		5C80FADC2C788652007C6C89 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC02C77783A007C6C89 /* ToDoItem.swift */; };
+		5C80FADD2C788665007C6C89 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
+		5C80FADE2C788675007C6C89 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0B2C315C4800FDA808 /* AppString.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -208,7 +212,6 @@
 		5C80FAC22C777916007C6C89 /* ToDoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRow.swift; sourceTree = "<group>"; };
 		5C80FAC82C77D617007C6C89 /* WatchWBSeniorCourse Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchWBSeniorCourse Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C80FACA2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWBSeniorCourseApp.swift; sourceTree = "<group>"; };
-		5C80FACC2C77D617007C6C89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C80FACE2C77D618007C6C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C80FAD12C77D618007C6C89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -578,7 +581,6 @@
 			isa = PBXGroup;
 			children = (
 				5C80FACA2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift */,
-				5C80FACC2C77D617007C6C89 /* ContentView.swift */,
 				5C80FACE2C77D618007C6C89 /* Assets.xcassets */,
 				5C80FAD02C77D618007C6C89 /* Preview Content */,
 			);
@@ -1109,7 +1111,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C80FACD2C77D617007C6C89 /* ContentView.swift in Sources */,
+				5C80FADE2C788675007C6C89 /* AppString.swift in Sources */,
+				5C80FADA2C788641007C6C89 /* ToDoListView.swift in Sources */,
+				5C80FADD2C788665007C6C89 /* Stubable.swift in Sources */,
+				5C80FADC2C788652007C6C89 /* ToDoItem.swift in Sources */,
+				5C80FADB2C788644007C6C89 /* ToDoRow.swift in Sources */,
 				5C80FACB2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

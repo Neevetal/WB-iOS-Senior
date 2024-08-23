@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct WatchWBSeniorCourse_Watch_AppApp: App {
+    
+    // MARK: - Body
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ToDoListView()
+                .modelContainer(for: ToDoItem.self)
         }
     }
 }
