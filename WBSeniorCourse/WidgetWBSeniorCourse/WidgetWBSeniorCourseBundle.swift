@@ -12,6 +12,5 @@ import SwiftUI
 struct WidgetWBSeniorCourseBundle: WidgetBundle {
     var body: some Widget {
         WidgetWBSeniorCourse()
-        WidgetWBSeniorCourseLiveActivity()
     }
 }

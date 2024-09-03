@@ -80,7 +80,6 @@
 		5C80FB4A2C8763DE007C6C89 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C80FB0F2C87280B007C6C89 /* WidgetKit.framework */; };
 		5C80FB4B2C8763DE007C6C89 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C80FB112C87280B007C6C89 /* SwiftUI.framework */; };
 		5C80FB4E2C8763DE007C6C89 /* WidgetWBSeniorCourseBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB4D2C8763DE007C6C89 /* WidgetWBSeniorCourseBundle.swift */; };
-		5C80FB502C8763DE007C6C89 /* WidgetWBSeniorCourseLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB4F2C8763DE007C6C89 /* WidgetWBSeniorCourseLiveActivity.swift */; };
 		5C80FB522C8763DE007C6C89 /* WidgetWBSeniorCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB512C8763DE007C6C89 /* WidgetWBSeniorCourse.swift */; };
 		5C80FB542C8763DE007C6C89 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB532C8763DE007C6C89 /* AppIntent.swift */; };
 		5C80FB562C8763DF007C6C89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C80FB552C8763DF007C6C89 /* Assets.xcassets */; };
@@ -256,7 +255,6 @@
 		5C80FB112C87280B007C6C89 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		5C80FB492C8763DE007C6C89 /* WidgetWBSeniorCourseExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetWBSeniorCourseExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C80FB4D2C8763DE007C6C89 /* WidgetWBSeniorCourseBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWBSeniorCourseBundle.swift; sourceTree = "<group>"; };
-		5C80FB4F2C8763DE007C6C89 /* WidgetWBSeniorCourseLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWBSeniorCourseLiveActivity.swift; sourceTree = "<group>"; };
 		5C80FB512C8763DE007C6C89 /* WidgetWBSeniorCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWBSeniorCourse.swift; sourceTree = "<group>"; };
 		5C80FB532C8763DE007C6C89 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		5C80FB552C8763DF007C6C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -682,7 +680,6 @@
 			isa = PBXGroup;
 			children = (
 				5C80FB4D2C8763DE007C6C89 /* WidgetWBSeniorCourseBundle.swift */,
-				5C80FB4F2C8763DE007C6C89 /* WidgetWBSeniorCourseLiveActivity.swift */,
 				5C80FB512C8763DE007C6C89 /* WidgetWBSeniorCourse.swift */,
 				5C80FB532C8763DE007C6C89 /* AppIntent.swift */,
 				5C80FB552C8763DF007C6C89 /* Assets.xcassets */,
@@ -1298,7 +1295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C80FB502C8763DE007C6C89 /* WidgetWBSeniorCourseLiveActivity.swift in Sources */,
 				5C80FB542C8763DE007C6C89 /* AppIntent.swift in Sources */,
 				5C80FB522C8763DE007C6C89 /* WidgetWBSeniorCourse.swift in Sources */,
 				5C80FB4E2C8763DE007C6C89 /* WidgetWBSeniorCourseBundle.swift in Sources */,
