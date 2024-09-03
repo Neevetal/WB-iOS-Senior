@@ -32,4 +32,12 @@ extension ToDoItem {
     static func mock() -> ToDoItem {
         return ToDoItem(title: "Заголовок")
     }
+    
+    static func arrayMock() -> [ToDoItem] {
+        return [
+            ToDoItem(title: "Заголовок 1"),
+            ToDoItem(title: "Заголовок 2"),
+            ToDoItem(title: "Заголовок 3")
+        ]
+    }
 }
