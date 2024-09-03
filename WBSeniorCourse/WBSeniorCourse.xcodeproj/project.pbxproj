@@ -69,6 +69,14 @@
 		5C80FADC2C788652007C6C89 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC02C77783A007C6C89 /* ToDoItem.swift */; };
 		5C80FADD2C788665007C6C89 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
 		5C80FADE2C788675007C6C89 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0B2C315C4800FDA808 /* AppString.swift */; };
+		5C80FAFA2C870443007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAF92C870443007C6C89 /* WatchWBSeniorCourseApp.swift */; };
+		5C80FAFE2C870444007C6C89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C80FAFD2C870444007C6C89 /* Assets.xcassets */; };
+		5C80FB012C870444007C6C89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C80FB002C870444007C6C89 /* Preview Assets.xcassets */; };
+		5C80FB052C8704A8007C6C89 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC02C77783A007C6C89 /* ToDoItem.swift */; };
+		5C80FB062C8704AB007C6C89 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FABE2C777822007C6C89 /* ToDoListView.swift */; };
+		5C80FB072C8704AD007C6C89 /* ToDoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC22C777916007C6C89 /* ToDoRow.swift */; };
+		5C80FB082C8705D3007C6C89 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
+		5C80FB092C8705DF007C6C89 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0B2C315C4800FDA808 /* AppString.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -214,6 +222,10 @@
 		5C80FACA2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWBSeniorCourseApp.swift; sourceTree = "<group>"; };
 		5C80FACE2C77D618007C6C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C80FAD12C77D618007C6C89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C80FAF72C870443007C6C89 /* WatchWBSeniorCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchWBSeniorCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C80FAF92C870443007C6C89 /* WatchWBSeniorCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWBSeniorCourseApp.swift; sourceTree = "<group>"; };
+		5C80FAFD2C870444007C6C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C80FB002C870444007C6C89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +281,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		5C80FAC52C77D617007C6C89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C80FAF42C870443007C6C89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -595,6 +614,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5C80FAF82C870443007C6C89 /* WatchWBSeniorCourse */ = {
+			isa = PBXGroup;
+			children = (
+				5C80FAF92C870443007C6C89 /* WatchWBSeniorCourseApp.swift */,
+				5C80FAFD2C870444007C6C89 /* Assets.xcassets */,
+				5C80FAFF2C870444007C6C89 /* Preview Content */,
+			);
+			path = WatchWBSeniorCourse;
+			sourceTree = "<group>";
+		};
+		5C80FAFF2C870444007C6C89 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5C80FB002C870444007C6C89 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		5C8531662C5CFD9F00A1E5EC /* WBSeniorCourseTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -679,6 +716,7 @@
 				5C8531662C5CFD9F00A1E5EC /* WBSeniorCourseTests */,
 				5C8531732C5CFDB400A1E5EC /* WBSeniorCourseUITests */,
 				5C80FAC92C77D617007C6C89 /* WatchWBSeniorCourse Watch App */,
+				5C80FAF82C870443007C6C89 /* WatchWBSeniorCourse */,
 				5CC34A9F2C30869300FDA808 /* Products */,
 				5C5628FB2C724B66005AD88B /* Frameworks */,
 			);
@@ -691,6 +729,7 @@
 				5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */,
 				5C8531722C5CFDB400A1E5EC /* WBSeniorCourseUITests.xctest */,
 				5C80FAC82C77D617007C6C89 /* WatchWBSeniorCourse Watch App.app */,
+				5C80FAF72C870443007C6C89 /* WatchWBSeniorCourse.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -954,6 +993,23 @@
 			productReference = 5C80FAC82C77D617007C6C89 /* WatchWBSeniorCourse Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5C80FAF62C870443007C6C89 /* WatchWBSeniorCourse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C80FB042C870444007C6C89 /* Build configuration list for PBXNativeTarget "WatchWBSeniorCourse" */;
+			buildPhases = (
+				5C80FAF32C870443007C6C89 /* Sources */,
+				5C80FAF42C870443007C6C89 /* Frameworks */,
+				5C80FAF52C870443007C6C89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatchWBSeniorCourse;
+			productName = WatchWBSeniorCourse;
+			productReference = 5C80FAF72C870443007C6C89 /* WatchWBSeniorCourse.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5C8531642C5CFD9F00A1E5EC /* WBSeniorCourseTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C85316B2C5CFD9F00A1E5EC /* Build configuration list for PBXNativeTarget "WBSeniorCourseTests" */;
@@ -1026,6 +1082,9 @@
 					5C80FAC72C77D617007C6C89 = {
 						CreatedOnToolsVersion = 15.3;
 					};
+					5C80FAF62C870443007C6C89 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					5C8531642C5CFD9F00A1E5EC = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 5CC34A9D2C30869300FDA808;
@@ -1060,6 +1119,7 @@
 				5C8531642C5CFD9F00A1E5EC /* WBSeniorCourseTests */,
 				5C8531712C5CFDB400A1E5EC /* WBSeniorCourseUITests */,
 				5C80FAC72C77D617007C6C89 /* WatchWBSeniorCourse Watch App */,
+				5C80FAF62C870443007C6C89 /* WatchWBSeniorCourse */,
 			);
 		};
 /* End PBXProject section */
@@ -1071,6 +1131,15 @@
 			files = (
 				5C80FAD22C77D618007C6C89 /* Preview Assets.xcassets in Resources */,
 				5C80FACF2C77D618007C6C89 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C80FAF52C870443007C6C89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C80FB012C870444007C6C89 /* Preview Assets.xcassets in Resources */,
+				5C80FAFE2C870444007C6C89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1117,6 +1186,19 @@
 				5C80FADC2C788652007C6C89 /* ToDoItem.swift in Sources */,
 				5C80FADB2C788644007C6C89 /* ToDoRow.swift in Sources */,
 				5C80FACB2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C80FAF32C870443007C6C89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C80FAFA2C870443007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */,
+				5C80FB082C8705D3007C6C89 /* Stubable.swift in Sources */,
+				5C80FB092C8705DF007C6C89 /* AppString.swift in Sources */,
+				5C80FB072C8704AD007C6C89 /* ToDoRow.swift in Sources */,
+				5C80FB062C8704AB007C6C89 /* ToDoListView.swift in Sources */,
+				5C80FB052C8704A8007C6C89 /* ToDoItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1320,6 +1402,62 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Release;
+		};
+		5C80FB022C870444007C6C89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchWBSeniorCourse/Preview Content\"";
+				DEVELOPMENT_TEAM = 9ZH452JWRV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = WB.WatchWBSeniorCourse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.4;
+			};
+			name = Debug;
+		};
+		5C80FB032C870444007C6C89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchWBSeniorCourse/Preview Content\"";
+				DEVELOPMENT_TEAM = 9ZH452JWRV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = WB.WatchWBSeniorCourse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.4;
 			};
 			name = Release;
 		};
@@ -1586,6 +1724,15 @@
 			buildConfigurations = (
 				5C80FAD72C77D618007C6C89 /* Debug */,
 				5C80FAD82C77D618007C6C89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C80FB042C870444007C6C89 /* Build configuration list for PBXNativeTarget "WatchWBSeniorCourse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C80FB022C870444007C6C89 /* Debug */,
+				5C80FB032C870444007C6C89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
