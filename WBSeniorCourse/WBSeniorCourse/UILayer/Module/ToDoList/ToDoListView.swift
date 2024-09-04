@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ToDoListView: View {
     
-    // MARK: - Dependencies
+    // MARK: - Property Wrappers
     
-    private let service = ToDoItemService()
+    @Environment(\.scenePhase) var scenePhase
+    @State private var items: [ToDoItem] = []
+    @State var newTaskTitle: String = ""
     
     // MARK: - Body
     
@@ -36,22 +38,41 @@ struct ToDoListView: View {
 private extension ToDoListView {
     @ViewBuilder
     var newItemTextField: some View {
-        TextField(AppString.ToDo.enterNewItem, text: service.$newItemTitle)
+        TextField(AppString.ToDo.enterNewItem, text: $newTaskTitle)
             .textFieldStyle(.plain)
             .padding()
     }
     
     @ViewBuilder
     var addButton: some View {
-        Button(AppString.ToDo.addItem, action: service.addNewItem)
-            .disabled(service.newItemTitle.isEmpty)
+        Button(AppString.ToDo.addItem, action: createNewTask)
+            .disabled(newTaskTitle.isEmpty)
     }
     
     @ViewBuilder
     var itemsList: some View {
-        List(service.items) { item in
-            ToDoRow(item: item)
+        List(items) { item in
+            ToDoRow(item: item) {
+                rereadUserTasks()
+            }
         }
+        .onAppear {
+            rereadUserTasks()
+        }
+    }
+}
+
+// MARK: - Private methods
+
+private extension ToDoListView {
+    func createNewTask() {
+        let newTask = ToDoItem(title: newTaskTitle)
+        newTask.addOrUpdate()
+        rereadUserTasks()
+    }
+    
+    func rereadUserTasks() {
+        items = ToDoItem.getFromStore().sorted(by: { $0.creationDate > $1.creationDate })
     }
 }
 
@@ -64,10 +85,13 @@ private extension ToDoListView {
             Group {
                 newItemTextField
                 addButton
-                ForEach(service.items) { item in
-                    ToDoRow(item: item)
+                ForEach(items) { item in
+                    ToDoRow(item: item) {}
                 }
             }
+        }
+        .onAppear {
+            rereadUserTasks()
         }
     }
 }

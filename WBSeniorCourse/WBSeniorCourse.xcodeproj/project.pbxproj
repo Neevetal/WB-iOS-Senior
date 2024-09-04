@@ -85,12 +85,10 @@
 		5C80FB702C876807007C6C89 /* WidgetWBSeniorCourseExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5C80FB632C876806007C6C89 /* WidgetWBSeniorCourseExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5C80FB742C87680E007C6C89 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC02C77783A007C6C89 /* ToDoItem.swift */; };
 		5C80FB752C8910D1007C6C89 /* ToDoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC22C777916007C6C89 /* ToDoRow.swift */; };
-		5C80FB772C8911A5007C6C89 /* ToDoItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */; };
-		5C80FB782C8912DD007C6C89 /* ToDoItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */; };
 		5C80FB792C891378007C6C89 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
-		5C80FB7A2C891382007C6C89 /* ToDoItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */; };
-		5C80FB7B2C891383007C6C89 /* ToDoItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */; };
 		5C80FB7C2C891388007C6C89 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0B2C315C4800FDA808 /* AppString.swift */; };
+		5C80FB7F2C8923C0007C6C89 /* MarkTaskDoneIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB7E2C8923C0007C6C89 /* MarkTaskDoneIntent.swift */; };
+		5C80FB802C8923C0007C6C89 /* MarkTaskDoneIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB7E2C8923C0007C6C89 /* MarkTaskDoneIntent.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -265,8 +263,8 @@
 		5C80FB692C876806007C6C89 /* WidgetWBSeniorCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWBSeniorCourse.swift; sourceTree = "<group>"; };
 		5C80FB6B2C876807007C6C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C80FB6D2C876807007C6C89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemService.swift; sourceTree = "<group>"; };
 		5C80FB7D2C8917D4007C6C89 /* WBSeniorCourse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBSeniorCourse.entitlements; sourceTree = "<group>"; };
+		5C80FB7E2C8923C0007C6C89 /* MarkTaskDoneIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTaskDoneIntent.swift; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -689,6 +687,7 @@
 			children = (
 				5C80FB672C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift */,
 				5C80FB692C876806007C6C89 /* WidgetWBSeniorCourse.swift */,
+				5C80FB7E2C8923C0007C6C89 /* MarkTaskDoneIntent.swift */,
 				5C80FB6B2C876807007C6C89 /* Assets.xcassets */,
 				5C80FB6D2C876807007C6C89 /* Info.plist */,
 			);
@@ -742,7 +741,6 @@
 			isa = PBXGroup;
 			children = (
 				5C8531A12C63E06A00A1E5EC /* StatisticsService.swift */,
-				5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1281,7 +1279,6 @@
 				5C80FADE2C788675007C6C89 /* AppString.swift in Sources */,
 				5C80FADA2C788641007C6C89 /* ToDoListView.swift in Sources */,
 				5C80FADD2C788665007C6C89 /* Stubable.swift in Sources */,
-				5C80FB7B2C891383007C6C89 /* ToDoItemService.swift in Sources */,
 				5C80FADC2C788652007C6C89 /* ToDoItem.swift in Sources */,
 				5C80FADB2C788644007C6C89 /* ToDoRow.swift in Sources */,
 				5C80FACB2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */,
@@ -1295,7 +1292,6 @@
 				5C80FAFA2C870443007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */,
 				5C80FB082C8705D3007C6C89 /* Stubable.swift in Sources */,
 				5C80FB092C8705DF007C6C89 /* AppString.swift in Sources */,
-				5C80FB7A2C891382007C6C89 /* ToDoItemService.swift in Sources */,
 				5C80FB072C8704AD007C6C89 /* ToDoRow.swift in Sources */,
 				5C80FB062C8704AB007C6C89 /* ToDoListView.swift in Sources */,
 				5C80FB052C8704A8007C6C89 /* ToDoItem.swift in Sources */,
@@ -1307,11 +1303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C80FB7C2C891388007C6C89 /* AppString.swift in Sources */,
+				5C80FB802C8923C0007C6C89 /* MarkTaskDoneIntent.swift in Sources */,
 				5C80FB682C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift in Sources */,
 				5C80FB792C891378007C6C89 /* Stubable.swift in Sources */,
 				5C80FB6A2C876806007C6C89 /* WidgetWBSeniorCourse.swift in Sources */,
 				5C80FB752C8910D1007C6C89 /* ToDoRow.swift in Sources */,
-				5C80FB782C8912DD007C6C89 /* ToDoItemService.swift in Sources */,
 				5C80FB742C87680E007C6C89 /* ToDoItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1399,6 +1395,7 @@
 				5C9DA6BA2C4C8BF100D63B78 /* SideBarButtonsStackView.swift in Sources */,
 				5C02FB4C2C4550D600232A90 /* FormattedManager.swift in Sources */,
 				5C56290C2C75F1EF005AD88B /* Injected.swift in Sources */,
+				5C80FB7F2C8923C0007C6C89 /* MarkTaskDoneIntent.swift in Sources */,
 				5C76B1962C6AB43F00F12CCB /* TrendInfo.swift in Sources */,
 				5C02FB232C44865D00232A90 /* NavigationType.swift in Sources */,
 				5C76B1882C6948AB00F12CCB /* MonthPicker.swift in Sources */,
@@ -1420,7 +1417,6 @@
 				5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */,
 				5C76B18E2C6A18D300F12CCB /* CircleProgressRow.swift in Sources */,
 				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
-				5C80FB772C8911A5007C6C89 /* ToDoItemService.swift in Sources */,
 				5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */,
 				5C02FB632C47447B00232A90 /* Array + Extension.swift in Sources */,
 				5C02FB8A2C4C2B1500232A90 /* ExternalTrafficView.swift in Sources */,
