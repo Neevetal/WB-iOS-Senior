@@ -37,8 +37,11 @@ struct SimpleEntry: TimelineEntry {
     let items: [ToDoItem]
     
     static var current: SimpleEntry {
-        let service = ToDoItemService()
-        return SimpleEntry(date: .now, items: ToDoItem.arrayMock())
+        let tasks = ToDoItem.getFromStore()
+            .filter({ !$0.isDone }) // excluding completed tasks
+            .sorted(by: { $0.creationDate > $1.creationDate })
+        
+        return SimpleEntry(date: .now, items: tasks)
     }
 }
 
@@ -56,7 +59,7 @@ struct WidgetWBSeniorCourseEntryView : View {
     var body: some View {
         VStack {
             ForEach(entry.items) { item in
-                ToDoRow(item: item)
+                ToDoRow(item: item) {}
             }
         }
         .padding(.vertical, 12)

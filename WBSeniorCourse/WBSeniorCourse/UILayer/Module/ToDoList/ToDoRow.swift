@@ -11,7 +11,15 @@ struct ToDoRow: View {
     
     // MARK: - Properties
     
-    var item: ToDoItem
+    public var item: ToDoItem
+    private let updateAction: () -> Void
+    
+    // MARK: - Initialization and deinitialization
+    
+    init(item: ToDoItem, _ updateAction: @escaping () -> Void) {
+        self.item = item
+        self.updateAction = updateAction
+    }
     
     // MARK: - Body
     
@@ -42,7 +50,7 @@ private extension ToDoRow {
             : .gray
         )
         .onTapGesture {
-            item.isDone.toggle()
+            item.setStatus(isDone: !item.isDone)
         }
     }
     
@@ -57,7 +65,8 @@ private extension ToDoRow {
         Image(systemName: "trash")
             .foregroundColor(.red)
             .onTapGesture {
-             //   context.delete(item)
+                item.delete()
+                updateAction()
             }
     }
 }
@@ -66,7 +75,7 @@ private extension ToDoRow {
 
 extension ToDoRow: Stubable {
     static func stub() -> any View {
-        return ToDoRow(item: ToDoItem.mock())
+        return ToDoRow(item: ToDoItem.mock()) {}
     }
 }
 
