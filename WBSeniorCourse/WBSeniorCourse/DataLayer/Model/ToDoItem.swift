@@ -6,10 +6,8 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-class ToDoItem: Identifiable {
+class ToDoItem: Identifiable, Codable {
     var id: UUID
     var title: String
     var isDone: Bool
@@ -31,5 +29,13 @@ class ToDoItem: Identifiable {
 extension ToDoItem {
     static func mock() -> ToDoItem {
         return ToDoItem(title: "Заголовок")
+    }
+    
+    static func arrayMock() -> [ToDoItem] {
+        return [
+            ToDoItem(title: "Заголовок 1"),
+            ToDoItem(title: "Заголовок 2"),
+            ToDoItem(title: "Заголовок 3")
+        ]
     }
 }

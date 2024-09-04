@@ -77,6 +77,20 @@
 		5C80FB072C8704AD007C6C89 /* ToDoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC22C777916007C6C89 /* ToDoRow.swift */; };
 		5C80FB082C8705D3007C6C89 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
 		5C80FB092C8705DF007C6C89 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0B2C315C4800FDA808 /* AppString.swift */; };
+		5C80FB642C876806007C6C89 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C80FB0F2C87280B007C6C89 /* WidgetKit.framework */; };
+		5C80FB652C876806007C6C89 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C80FB112C87280B007C6C89 /* SwiftUI.framework */; };
+		5C80FB682C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB672C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift */; };
+		5C80FB6A2C876806007C6C89 /* WidgetWBSeniorCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB692C876806007C6C89 /* WidgetWBSeniorCourse.swift */; };
+		5C80FB6C2C876807007C6C89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C80FB6B2C876807007C6C89 /* Assets.xcassets */; };
+		5C80FB702C876807007C6C89 /* WidgetWBSeniorCourseExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5C80FB632C876806007C6C89 /* WidgetWBSeniorCourseExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C80FB742C87680E007C6C89 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC02C77783A007C6C89 /* ToDoItem.swift */; };
+		5C80FB752C8910D1007C6C89 /* ToDoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC22C777916007C6C89 /* ToDoRow.swift */; };
+		5C80FB772C8911A5007C6C89 /* ToDoItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */; };
+		5C80FB782C8912DD007C6C89 /* ToDoItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */; };
+		5C80FB792C891378007C6C89 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
+		5C80FB7A2C891382007C6C89 /* ToDoItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */; };
+		5C80FB7B2C891383007C6C89 /* ToDoItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */; };
+		5C80FB7C2C891388007C6C89 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0B2C315C4800FDA808 /* AppString.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -134,6 +148,13 @@
 			remoteGlobalIDString = 5C80FAC72C77D617007C6C89;
 			remoteInfo = "WatchWBSeniorCourse Watch App";
 		};
+		5C80FB6E2C876807007C6C89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CC34A962C30869300FDA808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C80FB622C876806007C6C89;
+			remoteInfo = WidgetWBSeniorCourseExtension;
+		};
 		5C8531692C5CFD9F00A1E5EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CC34A962C30869300FDA808 /* Project object */;
@@ -160,6 +181,17 @@
 				5C80FAD52C77D618007C6C89 /* WatchWBSeniorCourse Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C80FB222C87280C007C6C89 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5C80FB702C876807007C6C89 /* WidgetWBSeniorCourseExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -226,6 +258,15 @@
 		5C80FAF92C870443007C6C89 /* WatchWBSeniorCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWBSeniorCourseApp.swift; sourceTree = "<group>"; };
 		5C80FAFD2C870444007C6C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C80FB002C870444007C6C89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C80FB0F2C87280B007C6C89 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5C80FB112C87280B007C6C89 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5C80FB632C876806007C6C89 /* WidgetWBSeniorCourseExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetWBSeniorCourseExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C80FB672C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWBSeniorCourseBundle.swift; sourceTree = "<group>"; };
+		5C80FB692C876806007C6C89 /* WidgetWBSeniorCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWBSeniorCourse.swift; sourceTree = "<group>"; };
+		5C80FB6B2C876807007C6C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C80FB6D2C876807007C6C89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemService.swift; sourceTree = "<group>"; };
+		5C80FB7D2C8917D4007C6C89 /* WBSeniorCourse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBSeniorCourse.entitlements; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +332,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C80FB602C876806007C6C89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C80FB652C876806007C6C89 /* SwiftUI.framework in Frameworks */,
+				5C80FB642C876806007C6C89 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +555,8 @@
 		5C5628FB2C724B66005AD88B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C80FB0F2C87280B007C6C89 /* WidgetKit.framework */,
+				5C80FB112C87280B007C6C89 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -632,6 +684,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5C80FB662C876806007C6C89 /* WidgetWBSeniorCourse */ = {
+			isa = PBXGroup;
+			children = (
+				5C80FB672C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift */,
+				5C80FB692C876806007C6C89 /* WidgetWBSeniorCourse.swift */,
+				5C80FB6B2C876807007C6C89 /* Assets.xcassets */,
+				5C80FB6D2C876807007C6C89 /* Info.plist */,
+			);
+			path = WidgetWBSeniorCourse;
+			sourceTree = "<group>";
+		};
 		5C8531662C5CFD9F00A1E5EC /* WBSeniorCourseTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -679,6 +742,7 @@
 			isa = PBXGroup;
 			children = (
 				5C8531A12C63E06A00A1E5EC /* StatisticsService.swift */,
+				5C80FB762C8911A5007C6C89 /* ToDoItemService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -717,6 +781,7 @@
 				5C8531732C5CFDB400A1E5EC /* WBSeniorCourseUITests */,
 				5C80FAC92C77D617007C6C89 /* WatchWBSeniorCourse Watch App */,
 				5C80FAF82C870443007C6C89 /* WatchWBSeniorCourse */,
+				5C80FB662C876806007C6C89 /* WidgetWBSeniorCourse */,
 				5CC34A9F2C30869300FDA808 /* Products */,
 				5C5628FB2C724B66005AD88B /* Frameworks */,
 			);
@@ -730,6 +795,7 @@
 				5C8531722C5CFDB400A1E5EC /* WBSeniorCourseUITests.xctest */,
 				5C80FAC82C77D617007C6C89 /* WatchWBSeniorCourse Watch App.app */,
 				5C80FAF72C870443007C6C89 /* WatchWBSeniorCourse.app */,
+				5C80FB632C876806007C6C89 /* WidgetWBSeniorCourseExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -737,6 +803,7 @@
 		5CC34AA02C30869300FDA808 /* WBSeniorCourse */ = {
 			isa = PBXGroup;
 			children = (
+				5C80FB7D2C8917D4007C6C89 /* WBSeniorCourse.entitlements */,
 				5CC34AB02C308F2E00FDA808 /* App */,
 				5C02FB612C47446300232A90 /* Extension */,
 				5CC34AD02C30947100FDA808 /* Protocol */,
@@ -1010,6 +1077,23 @@
 			productReference = 5C80FAF72C870443007C6C89 /* WatchWBSeniorCourse.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5C80FB622C876806007C6C89 /* WidgetWBSeniorCourseExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C80FB712C876807007C6C89 /* Build configuration list for PBXNativeTarget "WidgetWBSeniorCourseExtension" */;
+			buildPhases = (
+				5C80FB5F2C876806007C6C89 /* Sources */,
+				5C80FB602C876806007C6C89 /* Frameworks */,
+				5C80FB612C876806007C6C89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetWBSeniorCourseExtension;
+			productName = WidgetWBSeniorCourseExtension;
+			productReference = 5C80FB632C876806007C6C89 /* WidgetWBSeniorCourseExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5C8531642C5CFD9F00A1E5EC /* WBSeniorCourseTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C85316B2C5CFD9F00A1E5EC /* Build configuration list for PBXNativeTarget "WBSeniorCourseTests" */;
@@ -1054,11 +1138,13 @@
 				5CC34A9B2C30869300FDA808 /* Frameworks */,
 				5CC34A9C2C30869300FDA808 /* Resources */,
 				5C80FAD62C77D618007C6C89 /* Embed Watch Content */,
+				5C80FB222C87280C007C6C89 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5C80FAD42C77D618007C6C89 /* PBXTargetDependency */,
+				5C80FB6F2C876807007C6C89 /* PBXTargetDependency */,
 			);
 			name = WBSeniorCourse;
 			packageProductDependencies = (
@@ -1083,6 +1169,9 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					5C80FAF62C870443007C6C89 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					5C80FB622C876806007C6C89 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 					5C8531642C5CFD9F00A1E5EC = {
@@ -1120,6 +1209,7 @@
 				5C8531712C5CFDB400A1E5EC /* WBSeniorCourseUITests */,
 				5C80FAC72C77D617007C6C89 /* WatchWBSeniorCourse Watch App */,
 				5C80FAF62C870443007C6C89 /* WatchWBSeniorCourse */,
+				5C80FB622C876806007C6C89 /* WidgetWBSeniorCourseExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1140,6 +1230,14 @@
 			files = (
 				5C80FB012C870444007C6C89 /* Preview Assets.xcassets in Resources */,
 				5C80FAFE2C870444007C6C89 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C80FB612C876806007C6C89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C80FB6C2C876807007C6C89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1183,6 +1281,7 @@
 				5C80FADE2C788675007C6C89 /* AppString.swift in Sources */,
 				5C80FADA2C788641007C6C89 /* ToDoListView.swift in Sources */,
 				5C80FADD2C788665007C6C89 /* Stubable.swift in Sources */,
+				5C80FB7B2C891383007C6C89 /* ToDoItemService.swift in Sources */,
 				5C80FADC2C788652007C6C89 /* ToDoItem.swift in Sources */,
 				5C80FADB2C788644007C6C89 /* ToDoRow.swift in Sources */,
 				5C80FACB2C77D617007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */,
@@ -1196,9 +1295,24 @@
 				5C80FAFA2C870443007C6C89 /* WatchWBSeniorCourseApp.swift in Sources */,
 				5C80FB082C8705D3007C6C89 /* Stubable.swift in Sources */,
 				5C80FB092C8705DF007C6C89 /* AppString.swift in Sources */,
+				5C80FB7A2C891382007C6C89 /* ToDoItemService.swift in Sources */,
 				5C80FB072C8704AD007C6C89 /* ToDoRow.swift in Sources */,
 				5C80FB062C8704AB007C6C89 /* ToDoListView.swift in Sources */,
 				5C80FB052C8704A8007C6C89 /* ToDoItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C80FB5F2C876806007C6C89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C80FB7C2C891388007C6C89 /* AppString.swift in Sources */,
+				5C80FB682C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift in Sources */,
+				5C80FB792C891378007C6C89 /* Stubable.swift in Sources */,
+				5C80FB6A2C876806007C6C89 /* WidgetWBSeniorCourse.swift in Sources */,
+				5C80FB752C8910D1007C6C89 /* ToDoRow.swift in Sources */,
+				5C80FB782C8912DD007C6C89 /* ToDoItemService.swift in Sources */,
+				5C80FB742C87680E007C6C89 /* ToDoItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1306,6 +1420,7 @@
 				5CF2D83E2C356C4700BE02D6 /* OTPTextFieldModifier.swift in Sources */,
 				5C76B18E2C6A18D300F12CCB /* CircleProgressRow.swift in Sources */,
 				5CC34AD92C3097AF00FDA808 /* GradientView.swift in Sources */,
+				5C80FB772C8911A5007C6C89 /* ToDoItemService.swift in Sources */,
 				5C68CCF62C3C02C9002DB3E1 /* User.swift in Sources */,
 				5C02FB632C47447B00232A90 /* Array + Extension.swift in Sources */,
 				5C02FB8A2C4C2B1500232A90 /* ExternalTrafficView.swift in Sources */,
@@ -1319,6 +1434,11 @@
 			isa = PBXTargetDependency;
 			target = 5C80FAC72C77D617007C6C89 /* WatchWBSeniorCourse Watch App */;
 			targetProxy = 5C80FAD32C77D618007C6C89 /* PBXContainerItemProxy */;
+		};
+		5C80FB6F2C876807007C6C89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C80FB622C876806007C6C89 /* WidgetWBSeniorCourseExtension */;
+			targetProxy = 5C80FB6E2C876807007C6C89 /* PBXContainerItemProxy */;
 		};
 		5C85316A2C5CFD9F00A1E5EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1458,6 +1578,60 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 17.4;
+			};
+			name = Release;
+		};
+		5C80FB722C876807007C6C89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9ZH452JWRV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetWBSeniorCourse/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetWBSeniorCourse;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = WB.WBSeniorCourse.WidgetWBSeniorCourse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C80FB732C876807007C6C89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9ZH452JWRV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetWBSeniorCourse/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetWBSeniorCourse;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = WB.WBSeniorCourse.WidgetWBSeniorCourse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1656,10 +1830,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WBSeniorCourse/WBSeniorCourse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WBSeniorCourse/Resources/Assets/Preview Content\"";
-				DEVELOPMENT_TEAM = 9ZH452JWRV;
+				DEVELOPMENT_TEAM = 6KKX8AA8AF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WBSeniorCourse/Resources/Info.plist;
@@ -1689,10 +1864,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WBSeniorCourse/WBSeniorCourse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WBSeniorCourse/Resources/Assets/Preview Content\"";
-				DEVELOPMENT_TEAM = 9ZH452JWRV;
+				DEVELOPMENT_TEAM = 6KKX8AA8AF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WBSeniorCourse/Resources/Info.plist;
@@ -1733,6 +1909,15 @@
 			buildConfigurations = (
 				5C80FB022C870444007C6C89 /* Debug */,
 				5C80FB032C870444007C6C89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C80FB712C876807007C6C89 /* Build configuration list for PBXNativeTarget "WidgetWBSeniorCourseExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C80FB722C876807007C6C89 /* Debug */,
+				5C80FB732C876807007C6C89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
