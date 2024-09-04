@@ -6,15 +6,12 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ToDoListView: View {
     
-    // MARK: - Property Wrappers
+    // MARK: - Dependencies
     
-    @Environment(\.modelContext) private var context
-    @State private var newItemTitle = ""
-    @Query var items: [ToDoItem]
+    private let service = ToDoItemService()
     
     // MARK: - Body
     
@@ -39,20 +36,20 @@ struct ToDoListView: View {
 private extension ToDoListView {
     @ViewBuilder
     var newItemTextField: some View {
-        TextField(AppString.ToDo.enterNewItem, text: $newItemTitle)
+        TextField(AppString.ToDo.enterNewItem, text: service.$newItemTitle)
             .textFieldStyle(.plain)
             .padding()
     }
     
     @ViewBuilder
     var addButton: some View {
-        Button(AppString.ToDo.addItem, action: addNewItem)
-            .disabled(newItemTitle.isEmpty)
+        Button(AppString.ToDo.addItem, action: service.addNewItem)
+            .disabled(service.newItemTitle.isEmpty)
     }
     
     @ViewBuilder
     var itemsList: some View {
-        List(items) { item in
+        List(service.items) { item in
             ToDoRow(item: item)
         }
     }
@@ -67,20 +64,11 @@ private extension ToDoListView {
             Group {
                 newItemTextField
                 addButton
-                ForEach(items) { item in
+                ForEach(service.items) { item in
                     ToDoRow(item: item)
                 }
             }
         }
-    }
-}
-
-// MARK: - Private methods
-
-private extension ToDoListView {
-    func addNewItem() {
-        context.insert(ToDoItem(title: newItemTitle))
-        newItemTitle = ""
     }
 }
 

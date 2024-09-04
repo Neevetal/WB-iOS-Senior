@@ -6,13 +6,8 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ToDoRow: View {
-    
-    // MARK: - Property Wrappers
-    
-    @Environment(\.modelContext) private var context
     
     // MARK: - Properties
     
@@ -62,7 +57,7 @@ private extension ToDoRow {
         Image(systemName: "trash")
             .foregroundColor(.red)
             .onTapGesture {
-                context.delete(item)
+             //   context.delete(item)
             }
     }
 }

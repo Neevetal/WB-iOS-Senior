@@ -15,7 +15,6 @@ struct WatchWBSeniorCourseApp: App {
     var body: some Scene {
         WindowGroup {
             ToDoListView()
-                .modelContainer(for: ToDoItem.self)
         }
     }
 }

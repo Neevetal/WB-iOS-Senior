@@ -10,6 +10,9 @@ import SwiftUI
 
 @main
 struct WidgetWBSeniorCourseBundle: WidgetBundle {
+    
+    // MARK: - Body
+    
     var body: some Widget {
         WidgetWBSeniorCourse()
     }

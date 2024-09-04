@@ -6,10 +6,8 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-class ToDoItem: Identifiable {
+class ToDoItem: Identifiable, Codable {
     var id: UUID
     var title: String
     var isDone: Bool
