@@ -87,8 +87,6 @@
 		5C80FB752C8910D1007C6C89 /* ToDoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FAC22C777916007C6C89 /* ToDoRow.swift */; };
 		5C80FB792C891378007C6C89 /* Stubable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34AD22C30948B00FDA808 /* Stubable.swift */; };
 		5C80FB7C2C891388007C6C89 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC34B0B2C315C4800FDA808 /* AppString.swift */; };
-		5C80FB7F2C8923C0007C6C89 /* MarkTaskDoneIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB7E2C8923C0007C6C89 /* MarkTaskDoneIntent.swift */; };
-		5C80FB802C8923C0007C6C89 /* MarkTaskDoneIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80FB7E2C8923C0007C6C89 /* MarkTaskDoneIntent.swift */; };
 		5C85315D2C5CFB4900A1E5EC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315C2C5CFB4900A1E5EC /* Calculator.swift */; };
 		5C8531772C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8531762C5CFDB400A1E5EC /* WBSeniorCourseUITestsLaunchTests.swift */; };
 		5C85317D2C5CFE1F00A1E5EC /* CalculatorUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */; };
@@ -264,7 +262,6 @@
 		5C80FB6B2C876807007C6C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C80FB6D2C876807007C6C89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C80FB7D2C8917D4007C6C89 /* WBSeniorCourse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBSeniorCourse.entitlements; sourceTree = "<group>"; };
-		5C80FB7E2C8923C0007C6C89 /* MarkTaskDoneIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTaskDoneIntent.swift; sourceTree = "<group>"; };
 		5C85315C2C5CFB4900A1E5EC /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5C85315F2C5CFC4E00A1E5EC /* CalculatorUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUnitTest.swift; sourceTree = "<group>"; };
 		5C8531652C5CFD9F00A1E5EC /* WBSeniorCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSeniorCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -687,7 +684,6 @@
 			children = (
 				5C80FB672C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift */,
 				5C80FB692C876806007C6C89 /* WidgetWBSeniorCourse.swift */,
-				5C80FB7E2C8923C0007C6C89 /* MarkTaskDoneIntent.swift */,
 				5C80FB6B2C876807007C6C89 /* Assets.xcassets */,
 				5C80FB6D2C876807007C6C89 /* Info.plist */,
 			);
@@ -1303,7 +1299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C80FB7C2C891388007C6C89 /* AppString.swift in Sources */,
-				5C80FB802C8923C0007C6C89 /* MarkTaskDoneIntent.swift in Sources */,
 				5C80FB682C876806007C6C89 /* WidgetWBSeniorCourseBundle.swift in Sources */,
 				5C80FB792C891378007C6C89 /* Stubable.swift in Sources */,
 				5C80FB6A2C876806007C6C89 /* WidgetWBSeniorCourse.swift in Sources */,
@@ -1395,7 +1390,6 @@
 				5C9DA6BA2C4C8BF100D63B78 /* SideBarButtonsStackView.swift in Sources */,
 				5C02FB4C2C4550D600232A90 /* FormattedManager.swift in Sources */,
 				5C56290C2C75F1EF005AD88B /* Injected.swift in Sources */,
-				5C80FB7F2C8923C0007C6C89 /* MarkTaskDoneIntent.swift in Sources */,
 				5C76B1962C6AB43F00F12CCB /* TrendInfo.swift in Sources */,
 				5C02FB232C44865D00232A90 /* NavigationType.swift in Sources */,
 				5C76B1882C6948AB00F12CCB /* MonthPicker.swift in Sources */,
@@ -1830,7 +1824,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WBSeniorCourse/Resources/Assets/Preview Content\"";
-				DEVELOPMENT_TEAM = 6KKX8AA8AF;
+				DEVELOPMENT_TEAM = 9L3P58CB38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WBSeniorCourse/Resources/Info.plist;
@@ -1864,7 +1858,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WBSeniorCourse/Resources/Assets/Preview Content\"";
-				DEVELOPMENT_TEAM = 6KKX8AA8AF;
+				DEVELOPMENT_TEAM = 9L3P58CB38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WBSeniorCourse/Resources/Info.plist;

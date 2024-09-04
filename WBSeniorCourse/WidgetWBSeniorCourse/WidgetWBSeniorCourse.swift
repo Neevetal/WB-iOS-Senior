@@ -19,16 +19,15 @@ struct Provider: TimelineProvider {
             return completion(SimpleEntry.mock())
         }
         
-        completion(SimpleEntry.current)
+        completion(SimpleEntry.mock())
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         if context.isPreview {
-            // if isPreview, then it was called from the widget gallery
-            return completion( Timeline(entries: [SimpleEntry.mock()], policy: .never))
+            return completion(Timeline(entries: [SimpleEntry.mock()], policy: .never))
         }
 
-        completion( Timeline(entries: [SimpleEntry.current], policy: .never))
+        completion(Timeline(entries: [SimpleEntry.mock()], policy: .never))
     }
 }
 
@@ -38,7 +37,7 @@ struct SimpleEntry: TimelineEntry {
     
     static var current: SimpleEntry {
         let tasks = ToDoItem.getFromStore()
-            .filter({ !$0.isDone }) // excluding completed tasks
+            .filter({ !$0.isDone })
             .sorted(by: { $0.creationDate > $1.creationDate })
         
         return SimpleEntry(date: .now, items: tasks)
