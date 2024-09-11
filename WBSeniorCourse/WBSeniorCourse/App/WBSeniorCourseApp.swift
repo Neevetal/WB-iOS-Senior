@@ -34,7 +34,7 @@ struct WBSeniorCourseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ToDoListView()
+            SideTabBarView()
         }
     }
 }

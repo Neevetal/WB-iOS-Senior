@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MarketingSpecialist: Hashable {
-    let name: String
+    var name: String
     let image: UIImage
     let grade: Grade
     let marketplace: Marketplace

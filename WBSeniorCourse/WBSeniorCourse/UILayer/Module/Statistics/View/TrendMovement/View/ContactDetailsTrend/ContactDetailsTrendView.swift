@@ -38,7 +38,7 @@ private extension ContactDetailsTrendView {
     @ViewBuilder
     var specialistsList: some View {
         LazyVStack(spacing: 0) {
-            ForEach(service.specialists, id: \.self) { specialist in
+            ForEach(service.users, id: \.self) { specialist in
                 ContactDetailsTrendRow(specialist: specialist)
                     .padding(.vertical, 4)
             }

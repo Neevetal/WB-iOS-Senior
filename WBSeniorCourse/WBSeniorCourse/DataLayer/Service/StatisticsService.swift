@@ -15,6 +15,7 @@ final class StatisticsService: ObservableObject {
     @Published public var selectedExternalTraffic: ExternalTraffic
     @Published public var selectedTrend: Trend
     @Published public var products: [Product] = []
+    @Published public var users: [MarketingSpecialist] = []
     
     // MARK: - Properties
     
@@ -32,6 +33,26 @@ final class StatisticsService: ObservableObject {
     }
 }
 
+// MARK: - Private methods
+
+private extension StatisticsService {
+    func prepareUsers(from users: [VtexAPI.User]) {
+        var result = [MarketingSpecialist]()
+        let names = users.map {
+            $0.name.firstname + " " + $0.name.lastname
+        }
+        
+        let mock = MarketingSpecialist.specialistsMock()
+        names.enumerated().forEach { index, name in
+            var user = mock[index]
+            user.name = name
+            result.append(user)
+        }
+        
+        self.users = result
+    }
+}
+
 // MARK: - Public methods
 
 extension StatisticsService {
@@ -45,13 +66,24 @@ extension StatisticsService {
 
 extension StatisticsService {
     func getProducts(limit: Int) {
-        DefaultAPI.getProducts(limit: limit) { [weak self] products, error in
-            guard let self, let products else { 
+        DefaultAPI.getProducts(limit: limit) { [weak self] products, _ in
+            guard let self, let products else {
                 return
             }
+            
+            print("products", products)
             self.products = products
-            print("data", products)
-            print("error", error)
+        }
+    }
+    
+    func getUsers(limit: Int) {
+        DefaultAPI.getUsers(limit: limit) { [weak self] users, _ in
+            guard let self, let users else {
+                return
+            }
+            
+            print("users", users)
+            self.prepareUsers(from: users)
         }
     }
 }

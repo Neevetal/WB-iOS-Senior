@@ -13,95 +13,6 @@ import AnyCodable
 open class DefaultAPI {
 
     /**
-     Retrieve all categories
-     
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    @discardableResult
-    open class func getCategories(apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: [String]?, _ error: Error?) -> Void)) -> RequestTask {
-        return getCategoriesWithRequestBuilder().execute(apiResponseQueue) { result in
-            switch result {
-            case let .success(response):
-                completion(response.body, nil)
-            case let .failure(error):
-                completion(nil, error)
-            }
-        }
-    }
-
-    /**
-     Retrieve all categories
-     - GET /categories
-     - Returns a list of all categories available in the fake online store.
-     - returns: RequestBuilder<[String]> 
-     */
-    open class func getCategoriesWithRequestBuilder() -> RequestBuilder<[String]> {
-        let localVariablePath = "/categories"
-        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
-        let localVariableParameters: [String: Any]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: Any?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<[String]>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
-    }
-
-    /**
-     Retrieve a single product
-     
-     - parameter id: (path) The ID of the product to retrieve. 
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    @discardableResult
-    open class func getProductById(id: Int, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Product?, _ error: Error?) -> Void)) -> RequestTask {
-        return getProductByIdWithRequestBuilder(id: id).execute(apiResponseQueue) { result in
-            switch result {
-            case let .success(response):
-                completion(response.body, nil)
-            case let .failure(error):
-                completion(nil, error)
-            }
-        }
-    }
-
-    /**
-     Retrieve a single product
-     - GET /products/{id}
-     - Returns a single product with the specified ID.
-     - parameter id: (path) The ID of the product to retrieve. 
-     - returns: RequestBuilder<Product> 
-     */
-    open class func getProductByIdWithRequestBuilder(id: Int) -> RequestBuilder<Product> {
-        var localVariablePath = "/products/{id}"
-        let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
-        let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{id}", with: idPostEscape, options: .literal, range: nil)
-        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
-        let localVariableParameters: [String: Any]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: Any?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<Product>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
-    }
-
-    /**
      * enum for parameter sort
      */
     public enum Sort_getProducts: String, CaseIterable {
@@ -162,23 +73,22 @@ open class DefaultAPI {
     /**
      * enum for parameter sort
      */
-    public enum Sort_getProductsByCategory: String, CaseIterable {
+    public enum Sort_getUsers: String, CaseIterable {
         case asc = "asc"
         case desc = "desc"
     }
 
     /**
-     Retrieve products in a specific category
+     Retrieve all users
      
-     - parameter category: (path) The category of products to retrieve. 
      - parameter limit: (query) The maximum number of products to return. (optional)
      - parameter sort: (query) The sorting order for the returned products (asc or desc). (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getProductsByCategory(category: String, limit: Int? = nil, sort: Sort_getProductsByCategory? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: [Product]?, _ error: Error?) -> Void)) -> RequestTask {
-        return getProductsByCategoryWithRequestBuilder(category: category, limit: limit, sort: sort).execute(apiResponseQueue) { result in
+    open class func getUsers(limit: Int? = nil, sort: Sort_getUsers? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: [User]?, _ error: Error?) -> Void)) -> RequestTask {
+        return getUsersWithRequestBuilder(limit: limit, sort: sort).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -189,19 +99,15 @@ open class DefaultAPI {
     }
 
     /**
-     Retrieve products in a specific category
-     - GET /products/category/{category}
-     - Returns a list of products in the specified category.
-     - parameter category: (path) The category of products to retrieve. 
+     Retrieve all users
+     - GET /users
+     - Returns a list of all products available in the fake online store.
      - parameter limit: (query) The maximum number of products to return. (optional)
      - parameter sort: (query) The sorting order for the returned products (asc or desc). (optional)
-     - returns: RequestBuilder<[Product]> 
+     - returns: RequestBuilder<[User]> 
      */
-    open class func getProductsByCategoryWithRequestBuilder(category: String, limit: Int? = nil, sort: Sort_getProductsByCategory? = nil) -> RequestBuilder<[Product]> {
-        var localVariablePath = "/products/category/{category}"
-        let categoryPreEscape = "\(APIHelper.mapValueToPathItem(category))"
-        let categoryPostEscape = categoryPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{category}", with: categoryPostEscape, options: .literal, range: nil)
+    open class func getUsersWithRequestBuilder(limit: Int? = nil, sort: Sort_getUsers? = nil) -> RequestBuilder<[User]> {
+        let localVariablePath = "/users"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
@@ -217,7 +123,7 @@ open class DefaultAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[Product]>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[User]>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }

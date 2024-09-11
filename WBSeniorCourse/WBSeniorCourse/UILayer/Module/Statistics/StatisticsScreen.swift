@@ -49,6 +49,7 @@ struct StatisticsScreen: View {
         }
         .task {
             statisticsService.getProducts(limit: 20)
+            statisticsService.getUsers(limit: 5)
         }
         .environmentObject(statisticsService)
     }
