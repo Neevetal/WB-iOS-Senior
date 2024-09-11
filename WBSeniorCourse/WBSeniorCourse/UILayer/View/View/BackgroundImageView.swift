@@ -41,12 +41,8 @@ struct BackgroundImageView<Content>: View where Content: View {
                     .resizable()
                     .scaledToFill()
             }
-                .edgesIgnoringSafeArea(.all)
-                .frame(
-                    width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.height
-                )
         )
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
